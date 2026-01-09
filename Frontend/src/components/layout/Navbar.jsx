@@ -178,31 +178,65 @@ const Navbar = () => {
 
                         {/* Menu Panel */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: -10 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: -10 }}
-                            transition={{ type: 'spring', stiffness: 400, damping: 30 }}
-                            className="fixed top-24 left-4 right-4 z-50 lg:hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-black/10 border border-white/30 dark:border-gray-800/50 overflow-hidden"
+                            initial={{ opacity: 0, x: -300 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -300 }}
+                            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                            className="fixed top-0 left-0 bottom-0 w-80 max-w-[85vw] z-50 lg:hidden bg-white dark:bg-slate-900 shadow-2xl"
                         >
-                            <div className="p-6">
-                                <div className="flex flex-col gap-2">
-                                    {navLinks.map((link, index) => (
-                                        <motion.button
-                                            key={link.href}
-                                            initial={{ opacity: 0, x: -20 }}
-                                            animate={{ opacity: 1, x: 0 }}
-                                            transition={{ delay: index * 0.05 }}
-                                            onClick={() => handleNavClick(link.href)}
-                                            className={`px-5 py-4 rounded-2xl text-left font-medium transition-all duration-300 ${isHomePage && activeSection === link.href
-                                                ? 'text-white bg-gradient-to-r from-sky-500 to-violet-500 shadow-lg shadow-sky-500/20'
-                                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800'
-                                                }`}
-                                        >
-                                            {link.name}
-                                        </motion.button>
-                                    ))}
-                                </div>
+                            {/* Header */}
+                            <div className="flex items-center justify-between px-6 py-6 border-b border-gray-200 dark:border-gray-800">
+                                <Link
+                                    to="/"
+                                    onClick={() => setIsOpen(false)}
+                                    className="text-xl font-bold bg-gradient-to-r from-sky-500 via-violet-500 to-fuchsia-500 bg-clip-text text-transparent"
+                                >
+                                    Portfolio
+                                </Link>
+
+                                {/* Theme Toggle */}
+                                <motion.button
+                                    onClick={toggleTheme}
+                                    className="p-2 rounded-lg bg-gray-100 dark:bg-slate-800 hover:bg-gray-200 dark:hover:bg-slate-700 transition-colors"
+                                    aria-label="Toggle theme"
+                                    whileTap={{ scale: 0.95 }}
+                                >
+                                    {isDark ? (
+                                        <HiSun className="w-5 h-5 text-yellow-500" />
+                                    ) : (
+                                        <HiMoon className="w-5 h-5 text-gray-600" />
+                                    )}
+                                </motion.button>
                             </div>
+
+                            {/* Menu Items */}
+                            <nav className="flex flex-col p-4">
+                                {navLinks.map((link, index) => (
+                                    <motion.button
+                                        key={link.href}
+                                        initial={{ opacity: 0, x: -20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: index * 0.05 }}
+                                        onClick={() => handleNavClick(link.href)}
+                                        className={`relative flex items-center pl-5 pr-4 py-3 mb-1 rounded-lg text-left font-medium transition-all duration-200 group ${isHomePage && activeSection === link.href
+                                            ? 'bg-sky-50 dark:bg-sky-900/20 text-sky-600 dark:text-sky-400'
+                                            : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-slate-800'
+                                            }`}
+                                    >
+                                        {/* Left accent bar for active state */}
+                                        {isHomePage && activeSection === link.href && (
+                                            <motion.div
+                                                layoutId="mobileActiveBar"
+                                                className="absolute left-0 top-1 bottom-1 w-1 bg-gradient-to-b from-sky-500 to-violet-500 rounded-r-full"
+                                                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                                            />
+                                        )}
+                                        <span className={`relative ${isHomePage && activeSection === link.href ? 'font-semibold' : ''}`}>
+                                            {link.name}
+                                        </span>
+                                    </motion.button>
+                                ))}
+                            </nav>
                         </motion.div>
                     </>
                 )}
