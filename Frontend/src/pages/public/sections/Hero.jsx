@@ -49,7 +49,7 @@ const Hero = () => {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-35"
         >
             {/* Background Effects */}
             <div className="absolute inset-0 -z-10">
