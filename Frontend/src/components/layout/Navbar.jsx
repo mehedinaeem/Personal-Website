@@ -62,8 +62,8 @@ const Navbar = () => {
                     {/* Main glass layer */}
                     <div
                         className={`absolute inset-0 transition-all duration-500 ${isScrolled
-                                ? 'bg-white/80 dark:bg-slate-900/85 backdrop-blur-3xl'
-                                : 'bg-transparent'
+                            ? 'bg-white/80 dark:bg-slate-900/85 backdrop-blur-3xl'
+                            : 'bg-transparent'
                             }`}
                     />
 
@@ -79,8 +79,8 @@ const Navbar = () => {
                     {/* Border with gradient */}
                     <div
                         className={`absolute bottom-0 left-0 right-0 h-px transition-all duration-500 ${isScrolled
-                                ? 'bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-700/50 opacity-100'
-                                : 'opacity-0'
+                            ? 'bg-gradient-to-r from-transparent via-gray-200 to-transparent dark:via-gray-700/50 opacity-100'
+                            : 'opacity-0'
                             }`}
                     />
 
@@ -120,7 +120,7 @@ const Navbar = () => {
 
                                     {/* Logo text */}
                                     <span className="text-2xl font-bold bg-gradient-to-r from-sky-600 via-violet-600 to-fuchsia-600 dark:from-sky-400 dark:via-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent font-display tracking-tight">
-                                        Portfolio
+                                        Naeem's World
                                     </span>
                                 </div>
 
@@ -137,8 +137,8 @@ const Navbar = () => {
                         {/* Desktop Navigation - Enhanced pill design */}
                         <div className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2">
                             <div className={`relative flex items-center gap-1 px-2 py-2 rounded-2xl transition-all duration-500 ${isScrolled
-                                    ? 'bg-gray-50/80 dark:bg-slate-800/80 backdrop-blur-xl border border-gray-200/60 dark:border-gray-700/60 shadow-lg shadow-black/5 dark:shadow-black/20'
-                                    : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/40 dark:border-gray-700/40'
+                                ? 'bg-gray-50/80 dark:bg-slate-800/80 backdrop-blur-xl border border-gray-200/60 dark:border-gray-700/60 shadow-lg shadow-black/5 dark:shadow-black/20'
+                                : 'bg-white/60 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/40 dark:border-gray-700/40'
                                 }`}>
                                 {/* Inner glow effect */}
                                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/60 to-transparent dark:from-white/5 dark:to-transparent pointer-events-none" />
@@ -170,8 +170,8 @@ const Navbar = () => {
                                         )}
 
                                         <span className={`relative z-10 block px-4 py-2 text-sm font-semibold tracking-wide transition-all duration-200 ${isHomePage && activeSection === link.href
-                                                ? 'text-white'
-                                                : 'text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white'
+                                            ? 'text-white'
+                                            : 'text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white'
                                             }`}>
                                             {link.name}
                                         </span>
@@ -206,8 +206,8 @@ const Navbar = () => {
 
                                 {/* Button container */}
                                 <div className={`relative p-3 rounded-full transition-all duration-300 ${isScrolled
-                                        ? 'bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-gray-700'
-                                        : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/60 dark:border-gray-700/60'
+                                    ? 'bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-gray-700'
+                                    : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/60 dark:border-gray-700/60'
                                     }`}>
                                     <div className="relative w-5 h-5">
                                         {/* Moon icon */}
@@ -279,8 +279,8 @@ const Navbar = () => {
                             <motion.button
                                 onClick={() => setIsOpen(!isOpen)}
                                 className={`lg:hidden relative group p-3 rounded-full transition-all duration-300 ${isScrolled
-                                        ? 'bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-gray-700'
-                                        : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/60 dark:border-gray-700/60'
+                                    ? 'bg-gray-100 dark:bg-slate-800 border border-gray-200 dark:border-gray-700'
+                                    : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/60 dark:border-gray-700/60'
                                     }`}
                                 aria-label="Toggle menu"
                                 whileHover={{ scale: 1.05 }}
@@ -371,7 +371,7 @@ const Navbar = () => {
                                             </div>
 
                                             <span className="text-xl font-bold bg-gradient-to-r from-sky-600 via-violet-600 to-fuchsia-600 dark:from-sky-400 dark:via-violet-400 dark:to-fuchsia-400 bg-clip-text text-transparent font-display">
-                                                Portfolio
+                                                Naeem's World
                                             </span>
                                         </div>
                                     </Link>
@@ -438,8 +438,8 @@ const Navbar = () => {
                                             }}
                                             onClick={() => handleNavClick(link.href)}
                                             className={`relative w-full text-left px-5 py-4 rounded-xl font-semibold transition-all duration-200 group ${isHomePage && activeSection === link.href
-                                                    ? 'bg-gradient-to-r from-sky-500 to-violet-500 text-white shadow-lg shadow-sky-500/25'
-                                                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 hover:pl-7'
+                                                ? 'bg-gradient-to-r from-sky-500 to-violet-500 text-white shadow-lg shadow-sky-500/25'
+                                                : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 hover:pl-7'
                                                 }`}
                                         >
                                             {/* Active indicator */}

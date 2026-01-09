@@ -19,7 +19,7 @@ const HomePage = () => {
     return (
         <>
             <Helmet>
-                <title>{config.app.name} | {config.app.author}</title>
+                {/* <title>{config.app.name} | {config.app.author}</title> */}
                 <meta
                     name="description"
                     content="Full-stack developer passionate about creating beautiful, functional, and user-friendly web applications."

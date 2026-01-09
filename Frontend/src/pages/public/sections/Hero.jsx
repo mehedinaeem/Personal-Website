@@ -11,8 +11,8 @@ import { Button } from '../../../components';
 import { useScrollTo } from '../../../hooks';
 
 const roles = [
-    'Full-Stack Developer',
-    'UI/UX Enthusiast',
+    'Software Engineer',
+    'Researcher',
     'Problem Solver',
     'Tech Explorer',
 ];
@@ -92,7 +92,7 @@ const Hero = () => {
                     className="mb-6"
                 >
                     <span className="inline-block px-4 py-2 rounded-full bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-sm font-medium">
-                        👋 Welcome to my portfolio
+                        👋 Welcome to my world!
                     </span>
                 </motion.div>
 
@@ -104,7 +104,7 @@ const Hero = () => {
                     className="heading-1 mb-4"
                 >
                     Hi, I'm{' '}
-                    <span className="gradient-text">John Doe</span>
+                    <span className="gradient-text">Md Mehedi Hasan Naeem</span>
                 </motion.h1>
 
                 {/* Role with typing effect */}
@@ -158,7 +158,7 @@ const Hero = () => {
                     className="flex justify-center gap-4"
                 >
                     <a
-                        href="#"
+                        href="https://github.com/mehedinaeem"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 rounded-xl bg-white dark:bg-dark-100 shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300"
@@ -167,7 +167,7 @@ const Hero = () => {
                         <FaGithub className="w-6 h-6" />
                     </a>
                     <a
-                        href="#"
+                        href="https://linkedin.com/in/mehedinaeem"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 rounded-xl bg-white dark:bg-dark-100 shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300"
