@@ -52,15 +52,15 @@ const About = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="absolute -bottom-6 -right-6 glass-strong p-4 rounded-xl shadow-xl"
+                            className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 glass-strong p-2 sm:p-4 rounded-lg sm:rounded-xl shadow-xl"
                         >
-                            <div className="flex items-center gap-3">
-                                <div className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center">
-                                    <HiBriefcase className="w-6 h-6 text-white" />
+                            <div className="flex items-center gap-2 sm:gap-3">
+                                <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-green-500 flex items-center justify-center">
+                                    <HiBriefcase className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
                                 </div>
                                 <div>
-                                    <p className="text-sm text-gray-500 dark:text-gray-400">Currently</p>
-                                    <p className="font-semibold text-gray-900 dark:text-white">Open to Work</p>
+                                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Currently</p>
+                                    <p className="text-xs sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">Open to Work</p>
                                 </div>
                             </div>
                         </motion.div>
