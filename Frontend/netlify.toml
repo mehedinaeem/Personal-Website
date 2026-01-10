@@ -3,11 +3,17 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
 
 # Environment Variables (set in Netlify dashboard)
-# VITE_API_BASE_URL
-# VITE_RECAPTCHA_SITE_KEY
-# VITE_CLOUDINARY_CLOUD_NAME
+# VITE_API_BASE_URL - Your production backend API URL
+# VITE_RECAPTCHA_SITE_KEY - Google reCAPTCHA site key (optional)
+# VITE_CLOUDINARY_CLOUD_NAME - Cloudinary cloud name (optional)
+# VITE_APP_NAME - Application name (optional, defaults to 'mehedinaeem')
+# VITE_APP_AUTHOR - Author name (optional, defaults to 'Full-Stack Developer')
 
 # SPA Redirects - Handle client-side routing
 [[redirects]]
