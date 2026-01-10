@@ -49,7 +49,7 @@ const Hero = () => {
     return (
         <section
             id="hero"
-            className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-35"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 md:pt-35 w-full max-w-full"
         >
             {/* Background Effects */}
             <div className="absolute inset-0 -z-10">
@@ -123,7 +123,7 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-10"
+                    className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 px-2"
                 >
                     I build exceptional digital experiences that are fast, accessible,
                     and designed with modern best practices. Let's create something amazing together.
@@ -134,17 +134,21 @@ const Hero = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
-                    className="flex justify-center items-center gap-5 mb-12"
+                    className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4 md:gap-5 mb-10 w-full px-4"
                 >
                     <Button
                         onClick={() => scrollTo('contact')}
                         icon={HiMail}
+                        size="sm"
+                        className="w-full sm:w-auto"
                     >
                         Get in Touch
                     </Button>
                     <Button
                         variant="secondary"
                         icon={HiDownload}
+                        size="sm"
+                        className="w-full sm:w-auto"
                     >
                         Download CV
                     </Button>
