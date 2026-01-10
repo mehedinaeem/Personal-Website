@@ -46,21 +46,21 @@ const About = () => {
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                         </div>
 
-                        {/* Floating card */}
+                        {/* Floating card - Extra small on mobile */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.3 }}
-                            className="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 glass-strong p-2 sm:p-4 rounded-lg sm:rounded-xl shadow-xl"
+                            className="absolute bottom-0 right-0 sm:-bottom-6 sm:-right-6 glass-strong p-1.5 sm:p-4 rounded-md sm:rounded-xl shadow-xl max-w-[140px] sm:max-w-none"
                         >
-                            <div className="flex items-center gap-2 sm:gap-3">
-                                <div className="w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-green-500 flex items-center justify-center">
-                                    <HiBriefcase className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+                            <div className="flex items-center gap-1.5 sm:gap-3">
+                                <div className="w-6 h-6 sm:w-12 sm:h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                                    <HiBriefcase className="w-3 h-3 sm:w-6 sm:h-6 text-white" />
                                 </div>
-                                <div>
-                                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">Currently</p>
-                                    <p className="text-xs sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">Open to Work</p>
+                                <div className="min-w-0">
+                                    <p className="text-[10px] sm:text-sm text-gray-500 dark:text-gray-400 leading-tight">Currently</p>
+                                    <p className="text-[11px] sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">Open to Work</p>
                                 </div>
                             </div>
                         </motion.div>
