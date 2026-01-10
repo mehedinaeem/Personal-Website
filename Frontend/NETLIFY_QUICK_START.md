@@ -20,7 +20,7 @@ Visit: https://app.netlify.com/
 
 ### 3. Configure Build
 ```
-Branch: netlify-deployment
+Branch: main
 Build command: npm run build
 Publish directory: dist
 ```
@@ -41,17 +41,10 @@ Your site will be live at: `https://random-name-123456.netlify.app`
 Site Settings → Domain Management → Add custom domain
 
 ### Automatic Updates
-Every push to `netlify-deployment` branch auto-deploys! 🎉
+Every push to `main` branch auto-deploys! 🎉
 
 ## Need More Details?
 See [DEPLOYMENT.md](./DEPLOYMENT.md) for full instructions.
-
-## Commit & Push This Branch
-```bash
-git add .
-git commit -m "Configure Netlify deployment with CI/CD"
-git push origin netlify-deployment
-```
 
 ---
 

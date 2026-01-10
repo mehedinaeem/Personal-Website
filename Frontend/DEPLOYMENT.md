@@ -12,7 +12,7 @@ This guide will walk you through deploying your portfolio frontend to Netlify wi
 
 ### 1. Prepare Your Repository
 
-The `netlify-deployment` branch is already configured with all necessary files:
+The `main` branch is already configured with all necessary files:
 - ✅ `netlify.toml` - Build and deployment configuration
 - ✅ `public/_headers` - Security and caching headers
 - ✅ `.env.production.example` - Environment variables template
@@ -27,7 +27,7 @@ The `netlify-deployment` branch is already configured with all necessary files:
 6. Configure build settings:
 
    ```
-   Branch to deploy: netlify-deployment
+   Branch to deploy: main
    Build command: npm run build
    Publish directory: dist
    ```
@@ -74,7 +74,7 @@ To use your own domain:
 
 Once configured, Netlify will automatically:
 
-- ✅ Deploy when you push to `netlify-deployment` branch
+- ✅ Deploy when you push to `main` branch
 - ✅ Build and test your code
 - ✅ Show deploy previews for pull requests
 - ✅ Rollback if deployment fails
@@ -85,7 +85,7 @@ Once configured, Netlify will automatically:
 # Make your changes
 git add .
 git commit -m "Your update message"
-git push origin netlify-deployment
+git push origin main
 ```
 
 Netlify will automatically detect the push and deploy the new version!
@@ -140,7 +140,7 @@ Replace `YOUR-SITE-ID` and `YOUR-SITE-NAME` with your actual values from Netlify
 ### Deploy Contexts
 
 You can configure different settings for:
-- **Production** (netlify-deployment branch)
+- **Production** (main branch)
 - **Deploy Previews** (pull requests)
 - **Branch Deploys** (other branches)
 
@@ -155,7 +155,7 @@ If something goes wrong:
 
 Every pull request gets its own preview URL:
 - Useful for testing before merging
-- Automatically created for PRs to `netlify-deployment`
+- Automatically created for PRs to `main`
 - Includes all environment variables
 
 ## Performance Optimization
