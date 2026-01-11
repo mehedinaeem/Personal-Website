@@ -1,0 +1,19 @@
+# Django
+Django>=5.0
+# Django REST Framework
+djangorestframework>=3.14
+djangorestframework-simplejwt>=5.3
+# CORS
+django-cors-headers>=4.3
+# Filtering
+django-filter>=24.0
+# Cron jobs
+django-crontab>=0.7.1
+# PostgreSQL adapter for Supabase
+psycopg2-binary>=2.9
+# Environment variables
+python-dotenv>=1.0
+# Production WSGI server
+gunicorn>=21.0
+# Whitenoise for static files
+whitenoise>=6.6
