@@ -15,6 +15,7 @@ import {
   AdminLayout,
   DashboardPage,
   ProjectsPage,
+  ApplicationsPage,
 } from './pages';
 
 const App = () => {
@@ -41,6 +42,7 @@ const App = () => {
                   }
                 >
                   <Route index element={<DashboardPage />} />
+                  <Route path="applications" element={<ApplicationsPage />} />
                   <Route path="projects" element={<ProjectsPage />} />
                   {/* Add more admin routes as needed */}
                   <Route path="skills" element={<DashboardPage />} />

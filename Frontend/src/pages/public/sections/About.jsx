@@ -5,6 +5,7 @@
 
 import { motion } from 'framer-motion';
 import { HiDownload, HiMail, HiLocationMarker, HiBriefcase } from 'react-icons/hi';
+import meImg from '../../../assets/images/me.jpg';
 import { SectionWrapper } from '../../../components';
 import { Button } from '../../../components';
 
@@ -39,7 +40,7 @@ const About = () => {
                         {/* Image container */}
                         <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                             <img
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop"
+                                src={meImg}
                                 alt="Profile"
                                 className="w-full h-full object-cover"
                             />

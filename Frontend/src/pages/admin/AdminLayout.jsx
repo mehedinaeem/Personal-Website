@@ -19,11 +19,13 @@ import {
     HiX,
     HiMoon,
     HiSun,
+    HiClipboardList,
 } from 'react-icons/hi';
 import { useAuth, useTheme } from '../../context';
 
 const navItems = [
     { name: 'Dashboard', path: '/admin', icon: HiHome },
+    { name: 'Applications', path: '/admin/applications', icon: HiClipboardList },
     { name: 'Projects', path: '/admin/projects', icon: HiCollection },
     { name: 'Skills', path: '/admin/skills', icon: HiLightBulb },
     { name: 'Blog', path: '/admin/blog', icon: HiDocument },
@@ -52,8 +54,8 @@ const AdminLayout = () => {
                 to={item.path}
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${isActive
-                        ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
-                        : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-100'
+                    ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/30'
+                    : 'text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-100'
                     }`}
             >
                 <item.icon className="w-5 h-5" />
