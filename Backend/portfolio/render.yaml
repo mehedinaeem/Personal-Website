@@ -1,0 +1,110 @@
+# Render Blueprint for Django Portfolio Backend
+# https://render.com/docs/blueprint-spec
+
+services:
+  # Main Django Web Service
+  - type: web
+    name: portfolio-api
+    runtime: python
+    plan: free
+    rootDir: Backend/portfolio
+    buildCommand: chmod +x build.sh && ./build.sh
+    startCommand: gunicorn portfolio.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      - key: DEBUG
+        value: "False"
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SIGNING_KEY
+        generateValue: true
+      - key: ALLOWED_HOSTS
+        sync: false  # Set in dashboard: your-app.onrender.com
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false  # Set in dashboard: https://your-frontend.netlify.app
+      # Supabase Database
+      - key: SUPABASE_DB_HOST
+        sync: false
+      - key: SUPABASE_DB_NAME
+        sync: false
+      - key: SUPABASE_DB_USER
+        sync: false
+      - key: SUPABASE_DB_PASSWORD
+        sync: false
+      - key: SUPABASE_DB_PORT
+        value: "5432"
+      # Email (SMTP)
+      - key: EMAIL_HOST
+        value: "smtp.gmail.com"
+      - key: EMAIL_PORT
+        value: "587"
+      - key: EMAIL_USE_TLS
+        value: "True"
+      - key: EMAIL_HOST_USER
+        sync: false
+      - key: EMAIL_HOST_PASSWORD
+        sync: false
+      - key: ADMIN_EMAIL
+        sync: false
+
+  # Cron Job for Application Reminders (Daily at 8 AM UTC = 2 PM Bangladesh)
+  - type: cron
+    name: send-reminders
+    runtime: python
+    plan: free
+    rootDir: Backend/portfolio
+    schedule: "0 8 * * *"
+    buildCommand: pip install -r requirements.txt
+    startCommand: python manage.py send_reminders
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.0"
+      - key: SECRET_KEY
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: SECRET_KEY
+      - key: SUPABASE_DB_HOST
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: SUPABASE_DB_HOST
+      - key: SUPABASE_DB_NAME
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: SUPABASE_DB_NAME
+      - key: SUPABASE_DB_USER
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: SUPABASE_DB_USER
+      - key: SUPABASE_DB_PASSWORD
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: SUPABASE_DB_PASSWORD
+      - key: SUPABASE_DB_PORT
+        value: "5432"
+      - key: EMAIL_HOST
+        value: "smtp.gmail.com"
+      - key: EMAIL_PORT
+        value: "587"
+      - key: EMAIL_USE_TLS
+        value: "True"
+      - key: EMAIL_HOST_USER
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: EMAIL_HOST_USER
+      - key: EMAIL_HOST_PASSWORD
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: EMAIL_HOST_PASSWORD
+      - key: ADMIN_EMAIL
+        fromService:
+          name: portfolio-api
+          type: web
+          envVarKey: ADMIN_EMAIL
