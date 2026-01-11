@@ -47,6 +47,13 @@ services:
         sync: false
       - key: ADMIN_EMAIL
         sync: false
+      # Cloudinary (Media Storage)
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
 
   # Cron Job for Application Reminders (Daily at 8 AM UTC = 2 PM Bangladesh)
   - type: cron

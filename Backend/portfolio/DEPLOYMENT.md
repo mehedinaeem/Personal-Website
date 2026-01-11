@@ -1,115 +1,151 @@
-# Render Deployment Guide
-
-Deploy your Django Portfolio backend to Render.com with this guide.
-
-## Quick Deploy
-
-### Option 1: Blueprint (Recommended)
-
-1. Push your code to GitHub
-2. Go to [Render Dashboard](https://dashboard.render.com/)
-3. Click **New** → **Blueprint**
-4. Connect your GitHub repository
-5. Render will detect `render.yaml` and create:
-   - **Web Service** (Django API)
-   - **Cron Job** (Daily reminders at 8 AM UTC)
-
-### Option 2: Manual Setup
-
-#### Create Web Service
-1. **New** → **Web Service**
-2. Connect GitHub repo
-3. Configure:
-   - **Name:** `portfolio-api`
-   - **Root Directory:** `Backend/portfolio`
-   - **Runtime:** Python 3
-   - **Build Command:** `chmod +x build.sh && ./build.sh`
-   - **Start Command:** `gunicorn portfolio.wsgi:application --bind 0.0.0.0:$PORT`
-
-#### Create Cron Job
-1. **New** → **Cron Job**
-2. Configure:
-   - **Name:** `send-reminders`
-   - **Root Directory:** `Backend/portfolio`
-   - **Schedule:** `0 8 * * *` (8 AM UTC = 2 PM Bangladesh)
-   - **Command:** `python manage.py send_reminders`
+# Complete Render Deployment Guide
+## Django + Supabase + Cloudinary
 
 ---
 
-## Environment Variables
+## 🚀 Step 1: Set Up Supabase Database
 
-Set these in Render Dashboard → **Environment**:
+1. Go to [supabase.com](https://supabase.com) → **New Project**
+2. Note your project credentials:
+   - **Dashboard** → **Settings** → **Database**
+   - Copy: Host, Database name, User, Password, Port
 
-### Required Variables
+```
+Host: db.xxxxxxxxxxxx.supabase.co
+Database: postgres
+User: postgres
+Password: your-password
+Port: 5432
+```
 
-```env
-# Django
+---
+
+## 📷 Step 2: Set Up Cloudinary
+
+1. Go to [cloudinary.com](https://cloudinary.com) → **Sign Up Free**
+2. Go to **Dashboard** and copy:
+
+```
+Cloud Name: your-cloud-name
+API Key: 123456789012345
+API Secret: abcdefghijklmnopqrstuvwxyz
+```
+
+---
+
+## 📧 Step 3: Gmail App Password
+
+1. Go to [myaccount.google.com](https://myaccount.google.com)
+2. **Security** → Enable **2-Factor Authentication**
+3. **Security** → **App Passwords** → Generate for "Mail"
+4. Copy the 16-character password
+
+---
+
+## 🖥️ Step 4: Deploy to Render
+
+### Option A: Blueprint (Automatic)
+
+1. **Push code to GitHub**
+2. Go to [dashboard.render.com](https://dashboard.render.com)
+3. **New** → **Blueprint**
+4. Connect your GitHub repo
+5. Render detects `render.yaml` and creates:
+   - ✅ Web Service
+   - ✅ Cron Job (daily at 8 AM UTC)
+
+### Option B: Manual Setup
+
+1. **New** → **Web Service**
+2. Connect GitHub repo
+3. Settings:
+   - **Name:** `portfolio-api`
+   - **Root Directory:** `Backend/portfolio`
+   - **Build Command:** `chmod +x build.sh && ./build.sh`
+   - **Start Command:** `gunicorn portfolio.wsgi:application --bind 0.0.0.0:$PORT`
+
+---
+
+## 🔐 Step 5: Set Environment Variables
+
+In Render Dashboard → **Environment** → Add these:
+
+### Django
+```
 ALLOWED_HOSTS=your-app.onrender.com
 DEBUG=False
+```
 
-# Frontend URL (for CORS)
-CORS_ALLOWED_ORIGINS=https://your-frontend.netlify.app
-
-# Supabase Database
+### Supabase Database
+```
 SUPABASE_DB_HOST=db.xxxxxxxxxxxx.supabase.co
 SUPABASE_DB_NAME=postgres
 SUPABASE_DB_USER=postgres
 SUPABASE_DB_PASSWORD=your-supabase-password
+SUPABASE_DB_PORT=5432
+```
 
-# Email (Gmail SMTP)
+### Cloudinary
+```
+CLOUDINARY_CLOUD_NAME=your-cloud-name
+CLOUDINARY_API_KEY=123456789012345
+CLOUDINARY_API_SECRET=your-api-secret
+```
+
+### Email (Gmail SMTP)
+```
 EMAIL_HOST_USER=mehedinaeem00@gmail.com
-EMAIL_HOST_PASSWORD=your-gmail-app-password
+EMAIL_HOST_PASSWORD=your-16-char-app-password
 ADMIN_EMAIL=mehedinaeem00@gmail.com
 ```
 
-### Auto-Generated (by render.yaml)
-- `SECRET_KEY` - Django secret key
-- `JWT_SIGNING_KEY` - JWT token signing key
+### CORS (Frontend URL)
+```
+CORS_ALLOWED_ORIGINS=https://your-frontend.netlify.app
+```
 
 ---
 
-## Files Created for Deployment
+## ⏰ Step 6: Set Up Cron Job
+
+If using manual setup (not Blueprint):
+
+1. **New** → **Cron Job**
+2. Settings:
+   - **Name:** `send-reminders`
+   - **Root Directory:** `Backend/portfolio`
+   - **Schedule:** `0 8 * * *` (8 AM UTC = 2 PM Bangladesh)
+   - **Command:** `python manage.py send_reminders`
+3. Add same environment variables as web service
+
+---
+
+## ✅ Step 7: Verify Deployment
+
+1. **Check Web Service:** `https://your-app.onrender.com/admin/`
+2. **Check Logs:** Dashboard → Logs tab
+3. **Test API:** `https://your-app.onrender.com/api/applications/`
+
+---
+
+## 📁 Files for Deployment
 
 | File | Purpose |
 |------|---------|
-| `render.yaml` | Render blueprint configuration |
-| `build.sh` | Build script (install deps, migrate, collectstatic) |
-| `runtime.txt` | Python version (3.11.0) |
-| `requirements.txt` | Python dependencies |
-| `applications/management/commands/send_reminders.py` | Cron job command |
+| `render.yaml` | Render blueprint |
+| `build.sh` | Build script |
+| `runtime.txt` | Python 3.11.0 |
+| `requirements.txt` | Dependencies |
+| `.gitignore` | Protects `.env` |
 
 ---
 
-## Verify Deployment
+## ❓ Troubleshooting
 
-After deployment:
-
-1. **Check Web Service:** Visit `https://your-app.onrender.com/admin/`
-2. **Check Logs:** Render Dashboard → Logs
-3. **Test Email:** Trigger a reminder manually:
-   ```bash
-   # In Render Shell
-   python manage.py send_reminders
-   ```
-
----
-
-## Troubleshooting
-
-### Build Fails
-- Check `requirements.txt` has all dependencies
-- Verify Python version in `runtime.txt`
-
-### Database Connection Fails
-- Verify Supabase credentials
-- Check `SUPABASE_DB_*` env vars are set
-- Ensure SSL is enabled (sslmode=require)
-
-### Emails Not Sending
-- Verify Gmail App Password (not regular password)
-- Check `EMAIL_HOST_USER` and `EMAIL_HOST_PASSWORD`
-- Enable "Less secure app access" or use App Password
-
-### CORS Errors
-- Add frontend URL to `CORS_ALLOWED_ORIGINS`
-- Include `https://` prefix
+| Issue | Solution |
+|-------|----------|
+| Build fails | Check `requirements.txt` and Python version |
+| DB connection fails | Verify Supabase credentials, ensure SSL |
+| CORS errors | Add frontend URL with `https://` |
+| Media files not uploading | Check Cloudinary credentials |
+| Emails not sending | Use Gmail App Password, not regular password |
