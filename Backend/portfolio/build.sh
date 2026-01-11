@@ -13,4 +13,8 @@ python manage.py collectstatic --no-input
 echo "🗄️ Running database migrations..."
 python manage.py migrate
 
+echo "👤 Creating superuser..."
+python manage.py create_superuser
+
 echo "✅ Build complete!"
+
