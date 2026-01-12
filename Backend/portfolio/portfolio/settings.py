@@ -102,7 +102,10 @@ if os.getenv('SUPABASE_DB_HOST'):
             'PORT': os.getenv('SUPABASE_DB_PORT', '5432'),
             'OPTIONS': {
                 'sslmode': 'require',
+                'connect_timeout': 30,  # Connection timeout in seconds
             },
+            'CONN_MAX_AGE': 60,  # Keep connections alive for 60 seconds
+            'CONN_HEALTH_CHECKS': True,  # Check connection health
         }
     }
 else:
