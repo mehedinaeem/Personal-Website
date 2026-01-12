@@ -147,9 +147,19 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 30  # 30 days in seconds
 SESSION_EXPIRE_AT_BROWSER_CLOSE = False  # Keep session after browser close
 SESSION_SAVE_EVERY_REQUEST = True  # Refresh session on every request
-SESSION_COOKIE_SECURE = not DEBUG  # HTTPS only in production
+
+# Cookie settings for cross-site compatibility
+SESSION_COOKIE_SECURE = True  # Always use HTTPS
 SESSION_COOKIE_HTTPONLY = True
-SESSION_COOKIE_SAMESITE = 'Lax'
+SESSION_COOKIE_SAMESITE = 'None'  # Allow cross-site (needed for Render)
+
+# CSRF Settings
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_SAMESITE = 'None'  # Allow cross-site
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.onrender.com',
+    'https://*.netlify.app',
+]
 
 
 # =============================================================================
