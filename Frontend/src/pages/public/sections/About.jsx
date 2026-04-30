@@ -76,28 +76,21 @@ const About = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <h3 className="heading-3 mb-4">
-                        CSE Student Building{' '}
-                        <span className="gradient-text">Intelligent Systems</span>
+                        Software Engineer &{' '}
+                        <span className="gradient-text">Researcher</span>
                     </h3>
 
-                    <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        Growing up in Bangladesh, I became interested in using technology to solve real
-                        problems in agriculture, transportation, education, and public safety. My work
-                        focuses on AI, IoT, embedded systems, remote sensing, and intelligent automation,
-                        with an emphasis on practical systems that connect hardware, software, and human needs.
+                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-justify">
+                        CSE student at Jatiya Kabi Kazi Nazrul Islam University, focused on building
+                        scalable, real-world solutions that bridge software and hardware. Skilled in
+                        Django, React, Node.js, and Python, with strong foundations in AI, ML, DL, and CNN.
                     </p>
 
-                    <p className="text-gray-600 dark:text-gray-400 mb-6">
-                        Computer Science and Engineering student with research and project experience in
-                        smart agriculture, edge AI, multilingual voice systems, computer vision, NLP, and
-                        sustainable intelligent systems.
-                    </p>
-
-                    <p className="text-gray-600 dark:text-gray-400 mb-6">
-                        Education: B.Sc. in Computer Science and Engineering at Jatiya Kabi Kazi Nazrul
-                        Islam University, 2023/02-Ongoing. Coursework includes Programming Languages,
-                        Algorithms, Data Structure, Database, Cyber Ethics, Computer Architecture,
-                        Microprocessor, Data Communication, DSP, and Cryptography.
+                    <p className="text-gray-600 dark:text-gray-400 mb-6 text-justify">
+                        Interested in intelligent systems, IoT, embedded systems, computer vision, NLP, and
+                        multilingual voice technologies to solve challenges in agriculture, transportation,
+                        education, and public safety. Actively exploring new technologies, contributing to
+                        projects, and sharing knowledge through teaching and content creation.
                     </p>
 
                     {/* Info */}

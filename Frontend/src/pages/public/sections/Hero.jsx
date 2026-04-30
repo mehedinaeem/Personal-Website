@@ -12,7 +12,10 @@ import { Button } from '../../../components';
 import { useScrollTo } from '../../../hooks';
 
 const roles = [
-    'CSE Student and AI/IoT Researcher',
+    'Software Engineer',
+    'Researcher',
+    'Problem Solver',
+    'Tech Explorer',
 ];
 
 const Hero = () => {
