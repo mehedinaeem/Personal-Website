@@ -13,18 +13,17 @@ import {
     Blog,
     Contact,
 } from './sections';
-import config from '../../config';
 
 const HomePage = () => {
     return (
         <>
             <Helmet>
-                {/* <title>{config.app.name} | {config.app.author}</title> */}
+                <title>Md Mehedi Hasan Naeem | AI, IoT and Intelligent Systems Portfolio</title>
                 <meta
                     name="description"
-                    content="Full-stack developer passionate about creating beautiful, functional, and user-friendly web applications."
+                    content="Portfolio of Md Mehedi Hasan Naeem, a CSE student and researcher building AI, IoT, smart agriculture, edge AI, and intelligent systems projects."
                 />
-                <meta name="keywords" content="portfolio, web developer, full-stack, react, python, django" />
+                <meta name="keywords" content="Md Mehedi Hasan Naeem, AI, IoT, smart agriculture, edge AI, intelligent systems, CSE student, researcher" />
             </Helmet>
 
             <Hero />

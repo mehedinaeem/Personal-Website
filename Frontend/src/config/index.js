@@ -22,8 +22,8 @@ const config = {
 
     // App Configuration
     app: {
-        name: import.meta.env.VITE_APP_NAME || 'Portfolio',
-        author: import.meta.env.VITE_APP_AUTHOR || 'Developer',
+        name: import.meta.env.VITE_APP_NAME || 'Md Mehedi Hasan Naeem Portfolio',
+        author: import.meta.env.VITE_APP_AUTHOR || 'Md Mehedi Hasan Naeem',
     },
 
     // Feature Flags
@@ -35,10 +35,11 @@ const config = {
 
     // Social Links (can be overridden by backend)
     socials: {
-        github: '',
-        linkedin: '',
-        twitter: '',
-        email: '',
+        github: 'https://github.com/mehedinaeem',
+        linkedin: 'https://www.linkedin.com/in/mehedinaeem/',
+        twitter: 'https://x.com/mehedinaeem000',
+        facebook: 'https://www.facebook.com/mehedinaeem00',
+        email: 'mailto:mehedinaeem00@gmail.com',
     },
 };
 

@@ -4,49 +4,89 @@
  */
 
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { HiClock, HiArrowRight, HiBookOpen } from 'react-icons/hi';
+import { HiClock, HiArrowRight, HiDownload } from 'react-icons/hi';
 import { SectionWrapper, Button, Badge } from '../../../components';
 
 const blogPosts = [
     {
         id: 1,
-        title: 'Building Scalable React Applications with Modern Patterns',
-        excerpt: 'Learn how to structure your React apps for scalability using modern patterns like compound components, render props, and hooks.',
-        image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=600&h=400&fit=crop',
-        category: 'React',
-        slug: 'scalable-react-applications',
-        readTime: '8 min read',
-        date: '2024-01-15',
+        title: 'Founder and CEO, Amader Online School',
+        excerpt: 'Creating educational content for students across various subjects.',
+        image: '/assets/portfolio-preview.webp',
+        category: 'Experience',
+        organization: 'Amader Online School',
+        period: 'Founder and CEO',
+        url: 'https://www.youtube.com/@amader_online_school',
+        linkLabel: 'Open YouTube',
     },
     {
         id: 2,
-        title: 'Authentication Best Practices with JWT and Refresh Tokens',
-        excerpt: 'A comprehensive guide to implementing secure authentication in your web applications using JWT and refresh token rotation.',
-        image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop',
-        category: 'Security',
-        slug: 'jwt-authentication-best-practices',
-        readTime: '12 min read',
-        date: '2024-01-10',
+        title: 'Programming Trainer, Mid-Day Programming, JKKNIU',
+        excerpt: 'Conducted programming sessions for juniors, focusing on problem-solving and programming fundamentals.',
+        image: '/assets/projects/smart-campus-transport.webp',
+        category: 'Experience',
+        organization: 'Mid-Day Programming, JKKNIU',
+        period: 'Programming Trainer',
     },
     {
         id: 3,
-        title: 'Optimizing Django REST Framework for Production',
-        excerpt: 'Tips and techniques for making your Django REST API faster and more reliable in production environments.',
-        image: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
-        category: 'Backend',
-        slug: 'optimizing-django-rest-framework',
-        readTime: '10 min read',
-        date: '2024-01-05',
+        title: 'Class Representative, JKKNIU',
+        excerpt: 'Served as class representative for 1.5+ years, managing communication between students and the department.',
+        image: '/assets/projects/food-waste-ml.webp',
+        category: 'Experience',
+        organization: 'JKKNIU',
+        period: 'Class Representative',
+    },
+    {
+        id: 4,
+        title: 'Intel Student Ambassador, Intel Corporation',
+        excerpt: 'Promoting Intel technologies including oneAPI and AI tools, and organizing technical workshops for the university community.',
+        image: '/assets/certifications/intel-student-ambassador-proof.webp',
+        category: 'Leadership',
+        organization: 'Intel Corporation',
+        period: 'Student Ambassador',
+    },
+    {
+        id: 5,
+        title: 'Vice President, JKKNIU Research Society',
+        excerpt: 'Coordinating research and community initiatives.',
+        image: '/assets/projects/lumo-edge-ai.webp',
+        category: 'Leadership',
+        organization: 'JKKNIU Research Society',
+        period: 'Vice President',
+    },
+    {
+        id: 6,
+        title: 'Senior Vice President, JKKNIU MUN Club',
+        excerpt: 'Managing events, training delegates, and supporting organizational activities.',
+        image: '/assets/certifications/hyd-participant-certificate.webp',
+        category: 'Leadership',
+        organization: 'JKKNIU MUN Club',
+        period: 'Senior Vice President',
+    },
+    {
+        id: 7,
+        title: 'President, Dewpara Brothers Sporting Club',
+        excerpt: 'Leading club operations and coordinating sports/community activities.',
+        image: '/assets/portfolio-preview.webp',
+        category: 'Leadership',
+        organization: 'Dewpara Brothers Sporting Club',
+        period: 'President',
+    },
+    {
+        id: 8,
+        title: 'Event Organization & Volunteering',
+        excerpt: 'Organized and coordinated workshops, seminars, campus programs, and community events.',
+        image: '/assets/portfolio-preview.webp',
+        category: 'Leadership',
+        organization: 'Campus and community events',
+        period: 'Organizer and Volunteer',
     },
 ];
 
 const categoryColors = {
-    React: 'badge-primary',
-    Security: 'badge-warning',
-    Backend: 'badge-success',
-    Frontend: 'badge-secondary',
-    DevOps: 'bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300',
+    Experience: 'badge-primary',
+    Leadership: 'badge-success',
 };
 
 const BlogCard = ({ post, index }) => (
@@ -75,10 +115,10 @@ const BlogCard = ({ post, index }) => (
         <div className="p-6">
             {/* Meta */}
             <div className="flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                <span>{new Date(post.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}</span>
+                <span>{post.period}</span>
                 <span className="flex items-center gap-1">
                     <HiClock className="w-4 h-4" />
-                    {post.readTime}
+                    {post.organization}
                 </span>
             </div>
 
@@ -93,13 +133,17 @@ const BlogCard = ({ post, index }) => (
             </p>
 
             {/* Read more */}
-            <Link
-                to={`/blog/${post.slug}`}
-                className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-medium text-sm group/link"
-            >
-                Read More
-                <HiArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
-            </Link>
+            {post.url && (
+                <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary-600 dark:text-primary-400 font-medium text-sm group/link"
+                >
+                    {post.linkLabel || 'Open Link'}
+                    <HiArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" />
+                </a>
+            )}
         </div>
     </motion.article>
 );
@@ -107,9 +151,9 @@ const BlogCard = ({ post, index }) => (
 const Blog = () => {
     return (
         <SectionWrapper
-            id="blog"
-            title="Latest Articles"
-            subtitle="Thoughts, tutorials, and insights"
+            id="experience"
+            title="Experience and Leadership"
+            subtitle="Roles, training, and community initiatives"
             dark
         >
             {/* Blog Grid */}
@@ -122,11 +166,12 @@ const Blog = () => {
             {/* View All CTA */}
             <div className="text-center">
                 <Button
-                    to="/blog"
+                    href="/assets/Md_Mehedi_Hasan_Naeem_CV.pdf"
                     variant="outline"
-                    icon={HiBookOpen}
+                    icon={HiDownload}
+                    download
                 >
-                    View All Articles
+                    Download CV
                 </Button>
             </div>
         </SectionWrapper>

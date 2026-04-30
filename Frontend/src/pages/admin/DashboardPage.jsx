@@ -18,25 +18,25 @@ import { Link } from 'react-router-dom';
 import { Button } from '../../components/ui';
 
 const stats = [
-    { name: 'Projects', value: 12, icon: HiCollection, color: 'from-blue-500 to-cyan-500', path: '/admin/projects' },
-    { name: 'Skills', value: 24, icon: HiLightBulb, color: 'from-yellow-500 to-orange-500', path: '/admin/skills' },
-    { name: 'Blog Posts', value: 8, icon: HiDocument, color: 'from-purple-500 to-pink-500', path: '/admin/blog' },
-    { name: 'Achievements', value: 6, icon: HiAcademicCap, color: 'from-green-500 to-emerald-500', path: '/admin/achievements' },
+    { name: 'Projects', value: 10, icon: HiCollection, color: 'from-blue-500 to-cyan-500', path: '/admin/projects' },
+    { name: 'Skills', value: 34, icon: HiLightBulb, color: 'from-yellow-500 to-orange-500', path: '/admin/skills' },
+    { name: 'Experience Items', value: 8, icon: HiDocument, color: 'from-purple-500 to-pink-500', path: '/admin/blog' },
+    { name: 'Achievements', value: 16, icon: HiAcademicCap, color: 'from-green-500 to-emerald-500', path: '/admin/achievements' },
     { name: 'Messages', value: 15, icon: HiMail, color: 'from-red-500 to-rose-500', path: '/admin/messages' },
 ];
 
 const quickActions = [
     { name: 'Add Project', icon: HiPlus, path: '/admin/projects/new', color: 'btn-primary' },
-    { name: 'Write Blog Post', icon: HiDocument, path: '/admin/blog/new', color: 'btn-secondary' },
+    { name: 'Add Experience Item', icon: HiDocument, path: '/admin/blog/new', color: 'btn-secondary' },
     { name: 'View Messages', icon: HiMail, path: '/admin/messages', color: 'btn-secondary' },
     { name: 'View Site', icon: HiEye, path: '/', external: true, color: 'btn-secondary' },
 ];
 
 const recentActivity = [
-    { type: 'project', action: 'Updated', title: 'E-Commerce Platform', time: '2 hours ago' },
-    { type: 'blog', action: 'Published', title: 'React Best Practices', time: '5 hours ago' },
-    { type: 'message', action: 'New', title: 'from John Doe', time: '1 day ago' },
-    { type: 'achievement', action: 'Added', title: 'AWS Certification', time: '2 days ago' },
+    { type: 'project', action: 'Updated', title: 'Solar-Powered IoT-Based Smart Farming Model', time: '2 hours ago' },
+    { type: 'blog', action: 'Updated', title: 'Experience and Leadership', time: '5 hours ago' },
+    { type: 'message', action: 'New', title: 'portfolio contact message', time: '1 day ago' },
+    { type: 'achievement', action: 'Added', title: 'IEEE i-COSTE 2025 Certificate', time: '2 days ago' },
 ];
 
 const DashboardPage = () => {

@@ -28,7 +28,7 @@ const navItems = [
     { name: 'Applications', path: '/admin/applications', icon: HiClipboardList },
     { name: 'Projects', path: '/admin/projects', icon: HiCollection },
     { name: 'Skills', path: '/admin/skills', icon: HiLightBulb },
-    { name: 'Blog', path: '/admin/blog', icon: HiDocument },
+    { name: 'Experience', path: '/admin/blog', icon: HiDocument },
     { name: 'Achievements', path: '/admin/achievements', icon: HiAcademicCap },
     { name: 'Messages', path: '/admin/messages', icon: HiMail },
     { name: 'Profile', path: '/admin/profile', icon: HiUser },
@@ -97,7 +97,7 @@ const AdminLayout = () => {
                                     {user?.name || 'Admin'}
                                 </p>
                                 <p className="text-sm text-gray-500 dark:text-gray-400 truncate">
-                                    {user?.email || 'admin@example.com'}
+                                    {user?.email || 'mehedinaeem00@gmail.com'}
                                 </p>
                             </div>
                         </div>

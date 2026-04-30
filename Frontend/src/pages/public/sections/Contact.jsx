@@ -13,7 +13,9 @@ import {
     HiLocationMarker,
     HiPaperAirplane
 } from 'react-icons/hi';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
+import { SiCodechef, SiCodeforces, SiGooglescholar, SiLeetcode, SiYoutube } from 'react-icons/si';
 import { SectionWrapper, Button, Input, Textarea } from '../../../components';
 import { useForm, validators } from '../../../hooks';
 import { contactApi } from '../../../api';
@@ -23,27 +25,34 @@ const contactInfo = [
     {
         icon: HiMail,
         label: 'Email',
-        value: 'hello@example.com',
-        href: 'mailto:hello@example.com',
+        value: 'mehedinaeem00@gmail.com',
+        href: 'mailto:mehedinaeem00@gmail.com',
     },
     {
         icon: HiPhone,
         label: 'Phone',
-        value: '+880 1XXX-XXXXXX',
-        href: 'tel:+8801XXXXXXXXX',
+        value: '+880 1943806813',
+        href: 'tel:+8801943806813',
     },
     {
         icon: HiLocationMarker,
         label: 'Location',
-        value: 'Dhaka, Bangladesh',
+        value: 'Purbadhala, Netrokona, Bangladesh',
         href: null,
     },
 ];
 
 const socialLinks = [
-    { icon: FaGithub, href: '#', label: 'GitHub' },
-    { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
-    { icon: FaTwitter, href: '#', label: 'Twitter' },
+    { icon: FaGithub, href: 'https://github.com/mehedinaeem', label: 'GitHub' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/mehedinaeem/', label: 'LinkedIn' },
+    { icon: FaFacebook, href: 'https://www.facebook.com/mehedinaeem00', label: 'Facebook' },
+    { icon: FaXTwitter, href: 'https://x.com/mehedinaeem000', label: 'X' },
+    { icon: HiMail, href: 'mailto:mehedinaeem00@gmail.com', label: 'Email' },
+    { icon: SiGooglescholar, href: 'https://scholar.google.com/citations?user=1rcfRWkAAAAJ&hl=en', label: 'Google Scholar' },
+    { icon: SiLeetcode, href: 'https://leetcode.com/u/mehedinaeem/', label: 'LeetCode' },
+    { icon: SiCodeforces, href: 'https://codeforces.com/profile/mehedinaeem', label: 'Codeforces' },
+    { icon: SiCodechef, href: 'https://www.codechef.com/users/mehedinaeem', label: 'CodeChef' },
+    { icon: SiYoutube, href: 'https://www.youtube.com/@amader_online_school', label: 'Amader Online School YouTube' },
 ];
 
 const Contact = () => {
@@ -110,7 +119,7 @@ const Contact = () => {
         <SectionWrapper
             id="contact"
             title="Get in Touch"
-            subtitle="Have a project in mind? Let's talk!"
+            subtitle="Research, collaboration, and project conversations"
         >
             <div className="grid lg:grid-cols-2 gap-12">
                 {/* Contact Info */}
@@ -123,8 +132,7 @@ const Contact = () => {
                     <h3 className="heading-4 mb-6">Contact Information</h3>
                     <p className="text-gray-600 dark:text-gray-400 mb-8">
                         Feel free to reach out to me for any inquiries, collaborations,
-                        or just to say hello. I'm always open to discussing new projects
-                        and opportunities.
+                        research discussions, technical workshops, or project opportunities.
                     </p>
 
                     {/* Contact details */}
@@ -163,7 +171,7 @@ const Contact = () => {
                         <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
                             Follow me on social media
                         </p>
-                        <div className="flex gap-3">
+                        <div className="flex flex-wrap gap-3">
                             {socialLinks.map((social) => (
                                 <motion.a
                                     key={social.label}
@@ -209,7 +217,7 @@ const Contact = () => {
                                     label="Email"
                                     name="email"
                                     type="email"
-                                    placeholder="your@email.com"
+                                    placeholder="email address"
                                     value={values.email}
                                     onChange={handleChange}
                                     onBlur={handleBlur}

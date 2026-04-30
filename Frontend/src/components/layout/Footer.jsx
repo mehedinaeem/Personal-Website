@@ -8,14 +8,15 @@ import { motion } from 'framer-motion';
 import {
     HiMail,
     HiLocationMarker,
-    HiHeart
+    HiHeart,
+    HiPhone
 } from 'react-icons/hi';
 import {
     FaGithub,
     FaLinkedin,
-    FaTwitter,
-    FaInstagram
+    FaFacebook
 } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { useScrollTo } from '../../hooks';
 
 const Footer = () => {
@@ -26,15 +27,16 @@ const Footer = () => {
         { name: 'Home', href: 'hero' },
         { name: 'About', href: 'about' },
         { name: 'Projects', href: 'projects' },
-        { name: 'Blog', href: 'blog' },
+        { name: 'Experience', href: 'experience' },
         { name: 'Contact', href: 'contact' },
     ];
 
     const socialLinks = [
-        { name: 'GitHub', icon: FaGithub, href: '#' },
-        { name: 'LinkedIn', icon: FaLinkedin, href: '#' },
-        { name: 'Twitter', icon: FaTwitter, href: '#' },
-        { name: 'Instagram', icon: FaInstagram, href: '#' },
+        { name: 'GitHub', icon: FaGithub, href: 'https://github.com/mehedinaeem' },
+        { name: 'LinkedIn', icon: FaLinkedin, href: 'https://www.linkedin.com/in/mehedinaeem/' },
+        { name: 'Facebook', icon: FaFacebook, href: 'https://www.facebook.com/mehedinaeem00' },
+        { name: 'X', icon: FaXTwitter, href: 'https://x.com/mehedinaeem000' },
+        { name: 'Email', icon: HiMail, href: 'mailto:mehedinaeem00@gmail.com' },
     ];
 
     return (
@@ -47,11 +49,11 @@ const Footer = () => {
                             to="/"
                             className="text-2xl font-bold font-display gradient-text inline-block mb-4"
                         >
-                            Portfolio
+                            Md Mehedi Hasan Naeem
                         </Link>
                         <p className="text-gray-600 dark:text-gray-400 mb-6 max-w-md">
-                            Full-stack developer passionate about creating beautiful,
-                            functional, and user-friendly web applications.
+                            CSE Student and AI/IoT Researcher building practical,
+                            research-driven systems for agriculture, automation, edge AI, and human needs.
                         </p>
                         <div className="flex gap-3">
                             {socialLinks.map((social) => (
@@ -99,15 +101,24 @@ const Footer = () => {
                             <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                                 <HiMail className="w-5 h-5 text-primary-500" />
                                 <a
-                                    href="mailto:hello@example.com"
+                                    href="mailto:mehedinaeem00@gmail.com"
                                     className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                                 >
-                                    hello@example.com
+                                    mehedinaeem00@gmail.com
+                                </a>
+                            </li>
+                            <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                                <HiPhone className="w-5 h-5 text-primary-500" />
+                                <a
+                                    href="tel:+8801943806813"
+                                    className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                                >
+                                    +880 1943806813
                                 </a>
                             </li>
                             <li className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                                 <HiLocationMarker className="w-5 h-5 text-primary-500" />
-                                <span>Dhaka, Bangladesh</span>
+                                <span>Purbadhala, Netrokona, Bangladesh</span>
                             </li>
                         </ul>
                     </div>
@@ -117,7 +128,7 @@ const Footer = () => {
                 <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
                         <p className="text-gray-600 dark:text-gray-400 text-sm flex items-center gap-1">
-                            © {currentYear} Portfolio. Made with
+                            © {currentYear} Md Mehedi Hasan Naeem. Made with
                             <HiHeart className="w-4 h-4 text-red-500" />
                             in Bangladesh
                         </p>

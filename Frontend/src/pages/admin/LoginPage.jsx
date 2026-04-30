@@ -103,7 +103,7 @@ const LoginPage = () => {
                                 label="Email"
                                 name="email"
                                 type="email"
-                                placeholder="admin@example.com"
+                                placeholder="admin email"
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}

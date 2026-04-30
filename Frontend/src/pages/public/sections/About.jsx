@@ -4,17 +4,17 @@
  */
 
 import { motion } from 'framer-motion';
-import { HiDownload, HiMail, HiLocationMarker, HiBriefcase } from 'react-icons/hi';
+import { HiDownload, HiMail, HiLocationMarker, HiBriefcase, HiPhone, HiAcademicCap } from 'react-icons/hi';
 import meImg from '../../../assets/images/me.jpg';
 import { SectionWrapper } from '../../../components';
 import { Button } from '../../../components';
 
 const About = () => {
     const stats = [
-        { label: 'Years Experience', value: '5+' },
-        { label: 'Projects Completed', value: '50+' },
-        { label: 'Happy Clients', value: '30+' },
-        { label: 'Technologies', value: '20+' },
+        { label: 'Research & Projects', value: '10' },
+        { label: 'Leadership Roles', value: '5' },
+        { label: 'Presented Works', value: '5+' },
+        { label: 'CSE Journey', value: '2023' },
     ];
 
     return (
@@ -41,7 +41,7 @@ const About = () => {
                         <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
                             <img
                                 src={meImg}
-                                alt="Profile"
+                                alt="Md Mehedi Hasan Naeem"
                                 className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
@@ -61,7 +61,7 @@ const About = () => {
                                 </div>
                                 <div className="min-w-0">
                                     <p className="text-[10px] sm:text-sm text-gray-500 dark:text-gray-400 leading-tight">Currently</p>
-                                    <p className="text-[11px] sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">Open to Work</p>
+                                    <p className="text-[11px] sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">AI/IoT Researcher</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -76,31 +76,57 @@ const About = () => {
                     transition={{ duration: 0.5 }}
                 >
                     <h3 className="heading-3 mb-4">
-                        Passionate Developer Creating{' '}
-                        <span className="gradient-text">Digital Excellence</span>
+                        CSE Student Building{' '}
+                        <span className="gradient-text">Intelligent Systems</span>
                     </h3>
 
                     <p className="text-gray-600 dark:text-gray-400 mb-4">
-                        I'm a full-stack developer with 5+ years of experience building
-                        web applications. I specialize in React, Node.js, and Python,
-                        with a focus on creating scalable and user-friendly solutions.
+                        Growing up in Bangladesh, I became interested in using technology to solve real
+                        problems in agriculture, transportation, education, and public safety. My work
+                        focuses on AI, IoT, embedded systems, remote sensing, and intelligent automation,
+                        with an emphasis on practical systems that connect hardware, software, and human needs.
                     </p>
 
                     <p className="text-gray-600 dark:text-gray-400 mb-6">
-                        When I'm not coding, you'll find me exploring new technologies,
-                        contributing to open-source projects, or sharing knowledge through
-                        blog posts and tech talks.
+                        Computer Science and Engineering student with research and project experience in
+                        smart agriculture, edge AI, multilingual voice systems, computer vision, NLP, and
+                        sustainable intelligent systems.
+                    </p>
+
+                    <p className="text-gray-600 dark:text-gray-400 mb-6">
+                        Education: B.Sc. in Computer Science and Engineering at Jatiya Kabi Kazi Nazrul
+                        Islam University, 2023/02-Ongoing. Coursework includes Programming Languages,
+                        Algorithms, Data Structure, Database, Cyber Ethics, Computer Architecture,
+                        Microprocessor, Data Communication, DSP, and Cryptography.
                     </p>
 
                     {/* Info */}
                     <div className="grid sm:grid-cols-2 gap-4 mb-8">
                         <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                             <HiMail className="w-5 h-5 text-primary-500" />
-                            <span>hello@example.com</span>
+                            <a
+                                href="mailto:mehedinaeem00@gmail.com"
+                                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                            >
+                                mehedinaeem00@gmail.com
+                            </a>
                         </div>
                         <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
                             <HiLocationMarker className="w-5 h-5 text-primary-500" />
-                            <span>Dhaka, Bangladesh</span>
+                            <span>Purbadhala, Netrokona, Bangladesh</span>
+                        </div>
+                        <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                            <HiPhone className="w-5 h-5 text-primary-500" />
+                            <a
+                                href="tel:+8801943806813"
+                                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                            >
+                                +880 1943806813
+                            </a>
+                        </div>
+                        <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
+                            <HiAcademicCap className="w-5 h-5 text-primary-500" />
+                            <span>JKKNIU, B.Sc. CSE</span>
                         </div>
                     </div>
 
@@ -118,8 +144,12 @@ const About = () => {
                     </div>
 
                     {/* CTA */}
-                    <Button icon={HiDownload}>
-                        Download Resume
+                    <Button
+                        icon={HiDownload}
+                        href="/assets/Md_Mehedi_Hasan_Naeem_CV.pdf"
+                        download
+                    >
+                        Download CV
                     </Button>
                 </motion.div>
             </div>

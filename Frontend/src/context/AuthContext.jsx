@@ -24,6 +24,11 @@ export const AuthProvider = ({ children }) => {
     // Check auth status on mount
     useEffect(() => {
         const checkAuth = async () => {
+            if (!window.location.pathname.startsWith('/admin')) {
+                setIsLoading(false);
+                return;
+            }
+
             try {
                 // Try to refresh token on initial load
                 await authApi.refreshToken();

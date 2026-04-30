@@ -6,15 +6,13 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { HiDownload, HiMail, HiArrowDown } from 'react-icons/hi';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaFacebook } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { Button } from '../../../components';
 import { useScrollTo } from '../../../hooks';
 
 const roles = [
-    'Software Engineer',
-    'Researcher',
-    'Problem Solver',
-    'Tech Explorer',
+    'CSE Student and AI/IoT Researcher',
 ];
 
 const Hero = () => {
@@ -125,8 +123,8 @@ const Hero = () => {
                     transition={{ duration: 0.5, delay: 0.3 }}
                     className="text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8 px-2"
                 >
-                    I build exceptional digital experiences that are fast, accessible,
-                    and designed with modern best practices. Let's create something amazing together.
+                    I build practical, research-driven systems in smart agriculture, edge AI,
+                    intelligent automation, remote sensing, and human-centered technology.
                 </motion.p>
 
                 {/* CTAs */}
@@ -149,6 +147,8 @@ const Hero = () => {
                         icon={HiDownload}
                         size="sm"
                         className="w-full sm:w-auto"
+                        href="/assets/Md_Mehedi_Hasan_Naeem_CV.pdf"
+                        download
                     >
                         Download CV
                     </Button>
@@ -171,13 +171,38 @@ const Hero = () => {
                         <FaGithub className="w-6 h-6" />
                     </a>
                     <a
-                        href="https://linkedin.com/in/mehedinaeem"
+                        href="https://www.linkedin.com/in/mehedinaeem/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="p-3 rounded-xl bg-white dark:bg-dark-100 shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300"
                         aria-label="LinkedIn"
                     >
                         <FaLinkedin className="w-6 h-6 text-blue-600" />
+                    </a>
+                    <a
+                        href="https://www.facebook.com/mehedinaeem00"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-xl bg-white dark:bg-dark-100 shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300"
+                        aria-label="Facebook"
+                    >
+                        <FaFacebook className="w-6 h-6 text-blue-600" />
+                    </a>
+                    <a
+                        href="https://x.com/mehedinaeem000"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-3 rounded-xl bg-white dark:bg-dark-100 shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300"
+                        aria-label="X"
+                    >
+                        <FaXTwitter className="w-6 h-6" />
+                    </a>
+                    <a
+                        href="mailto:mehedinaeem00@gmail.com"
+                        className="p-3 rounded-xl bg-white dark:bg-dark-100 shadow-lg hover:shadow-xl transition-shadow hover:-translate-y-1 duration-300"
+                        aria-label="Email"
+                    >
+                        <HiMail className="w-6 h-6 text-primary-500" />
                     </a>
                 </motion.div>
             </div>
