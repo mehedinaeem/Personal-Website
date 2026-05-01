@@ -61,7 +61,7 @@ const About = () => {
                                 </div>
                                 <div className="min-w-0">
                                     <p className="text-[10px] sm:text-sm text-gray-500 dark:text-gray-400 leading-tight">Currently</p>
-                                    <p className="text-[11px] sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">AI/IoT Researcher</p>
+                                    <p className="text-[11px] sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">Research Assistant</p>
                                 </div>
                             </div>
                         </motion.div>
