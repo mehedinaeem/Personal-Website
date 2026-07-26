@@ -10,8 +10,9 @@ import Footer from './Footer';
 const MainLayout = () => {
     return (
         <div className="min-h-screen flex flex-col overflow-x-hidden">
+            <a href="#main-content" className="skip-link">Skip to main content</a>
             <Navbar />
-            <main className="flex-grow overflow-x-hidden">
+            <main id="main-content" className="flex-grow overflow-x-hidden">
                 <Outlet />
             </main>
             <Footer />

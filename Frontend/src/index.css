@@ -145,6 +145,25 @@ body {
   position: relative;
 }
 
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: -5rem;
+  z-index: 100;
+  border-radius: .5rem;
+  background: #fff;
+  color: #111827;
+  padding: .75rem 1rem;
+  box-shadow: 0 4px 16px rgb(0 0 0 / .2);
+}
+
+.skip-link:focus { top: 1rem; }
+
+:focus-visible {
+  outline: 3px solid var(--color-primary-500);
+  outline-offset: 3px;
+}
+
 .dark body {
   background-color: var(--color-dark-300);
   color: #f3f4f6;
@@ -219,6 +238,16 @@ body {
   -webkit-text-fill-color: transparent;
   background-size: 200% auto;
   animation: gradient 8s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
 
 /* Gradient Background */

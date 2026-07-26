@@ -57,6 +57,7 @@ const socialLinks = [
 
 const Contact = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState('');
     const recaptchaRef = useRef(null);
 
     const {
@@ -90,6 +91,7 @@ const Contact = () => {
 
     const onSubmit = async (formData) => {
         setIsSubmitting(true);
+        setStatus('Sending your message…');
 
         try {
             // Get reCAPTCHA token
@@ -106,10 +108,12 @@ const Contact = () => {
             });
 
             toast.success('Message sent successfully! I\'ll get back to you soon.');
+            setStatus('Message sent successfully. I will get back to you soon.');
             reset();
             recaptchaRef.current?.reset();
         } catch (error) {
             toast.error(error.displayMessage || 'Failed to send message. Please try again.');
+            setStatus(error.displayMessage || 'Failed to send message. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -201,9 +205,10 @@ const Contact = () => {
                         <h3 className="heading-4 mb-6">Send me a message</h3>
 
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                            <p className="sr-only" role="status" aria-live="polite">{status}</p>
                             <div className="grid sm:grid-cols-2 gap-4">
                                 <Input
-                                    label="Name"
+                                    label="Full name"
                                     name="name"
                                     placeholder="Your name"
                                     value={values.name}

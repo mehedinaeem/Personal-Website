@@ -24,7 +24,7 @@ const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const quickLinks = [
-        { name: 'Home', href: 'hero' },
+        { name: 'Research', href: 'research' },
         { name: 'About', href: 'about' },
         { name: 'Projects', href: 'projects' },
         { name: 'Experience', href: 'experience' },
@@ -138,12 +138,6 @@ const Footer = () => {
                                 className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                             >
                                 Privacy Policy
-                            </Link>
-                            <Link
-                                to="/terms"
-                                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                            >
-                                Terms of Service
                             </Link>
                         </div>
                     </div>

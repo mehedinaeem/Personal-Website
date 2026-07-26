@@ -1,0 +1,9 @@
+import { Helmet } from 'react-helmet-async';
+import { Link, Navigate, useParams } from 'react-router-dom';
+import { getPublication } from '../../data/publications';
+const PublicationDetailsPage = () => {
+  const { slug } = useParams(); const item = getPublication(slug); if (!item) return <Navigate to="/404" replace />;
+  const fields = [['Authors', item.authors], ['My author position', item.authorPosition], ['Conference or journal', item.venue], ['Publication year', item.year], ['Current status', item.status], ['DOI', item.doi || 'ADD DOI'], ['My individual contribution', item.contribution]];
+  return <article className="section-container max-w-4xl pb-24 pt-32"><Helmet><title>{item.title} | Research</title><meta name="description" content={item.summary} /><link rel="canonical" href={`https://mehedinaeem.dev/research/${item.slug}`} /></Helmet><nav className="mb-7 text-sm" aria-label="Breadcrumb"><Link to="/">Home</Link> / <Link to="/research">Research</Link> / <span aria-current="page">{item.title}</span></nav><p className="font-bold text-primary-600">{item.status}</p><h1 className="heading-1 mt-3">{item.title}</h1><p className="mt-6 text-lg text-gray-600 dark:text-gray-300">{item.summary}</p><dl className="mt-10 divide-y divide-gray-200 border-y border-gray-200 dark:divide-gray-800 dark:border-gray-800">{fields.map(([key, value]) => <div className="grid gap-2 py-5 sm:grid-cols-[190px_1fr]" key={key}><dt className="font-bold">{key}</dt><dd>{key === 'DOI' && item.doi ? <a href={item.doi} target="_blank" rel="noreferrer">{item.doi}</a> : value}</dd></div>)}</dl><h2 className="mt-8 text-xl font-bold">Research keywords</h2><ul className="mt-3 flex flex-wrap gap-2">{item.keywords.map((word) => <li className="rounded bg-gray-100 px-3 py-1 dark:bg-gray-800" key={word}>{word}</li>)}</ul></article>;
+};
+export default PublicationDetailsPage;

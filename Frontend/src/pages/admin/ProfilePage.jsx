@@ -38,7 +38,7 @@ const ProfilePage = () => {
             setProfile(result.data);
             // Populate form with profile data
             Object.keys(result.data).forEach((key) => {
-                if (values.hasOwnProperty(key)) {
+                if (Object.prototype.hasOwnProperty.call(values, key)) {
                     setValue(key, result.data[key] || '');
                 }
             });

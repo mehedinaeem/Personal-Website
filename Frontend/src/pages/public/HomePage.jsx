@@ -8,9 +8,10 @@ import {
     Hero,
     About,
     Skills,
+    Research,
     Projects,
     Achievements,
-    Blog,
+    Experience,
     Contact,
 } from './sections';
 
@@ -29,9 +30,10 @@ const HomePage = () => {
             <Hero />
             <About />
             <Skills />
+            <Research />
             <Projects />
+            <Experience />
             <Achievements />
-            <Blog />
             <Contact />
         </>
     );

@@ -45,11 +45,14 @@ const Textarea = forwardRef(({
                 onBlur={onBlur}
                 rows={rows}
                 disabled={disabled}
+                aria-invalid={showError ? 'true' : 'false'}
+                aria-describedby={showError ? `${name}-error` : undefined}
+                required={required}
                 className={textareaClasses}
                 {...props}
             />
             {showError && (
-                <p className="mt-1 text-sm text-red-500">{error}</p>
+                <p id={`${name}-error`} role="alert" className="mt-1 text-sm text-red-500">{error}</p>
             )}
         </div>
     );

@@ -3,20 +3,30 @@
  * Sets up routing and global providers
  */
 
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider, ThemeProvider } from './context';
 import { ErrorBoundary, ProtectedRoute, MainLayout } from './components';
-import {
-  HomePage,
-  NotFoundPage,
-  LoginPage,
-  AdminLayout,
-  DashboardPage,
-  ProjectsPage,
-  ApplicationsPage,
-} from './pages';
+
+const HomePage = lazy(() => import('./pages/public/HomePage'));
+const NotFoundPage = lazy(() => import('./pages/public/NotFoundPage'));
+const PublicProjectsPage = lazy(() => import('./pages/public/ProjectsPage'));
+const ProjectDetailsPage = lazy(() => import('./pages/public/ProjectDetailsPage'));
+const ResearchPage = lazy(() => import('./pages/public/ResearchPage'));
+const PublicationDetailsPage = lazy(() => import('./pages/public/PublicationDetailsPage'));
+const PrivacyPage = lazy(() => import('./pages/public/PrivacyPage'));
+const LoginPage = lazy(() => import('./pages/admin/LoginPage'));
+const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
+const DashboardPage = lazy(() => import('./pages/admin/DashboardPage'));
+const ProjectsPage = lazy(() => import('./pages/admin/ProjectsPage'));
+const ApplicationsPage = lazy(() => import('./pages/admin/ApplicationsPage'));
+const SkillsPage = lazy(() => import('./pages/admin/SkillsPage'));
+const BlogPage = lazy(() => import('./pages/admin/BlogPage'));
+const AchievementsPage = lazy(() => import('./pages/admin/AchievementsPage'));
+const MessagesPage = lazy(() => import('./pages/admin/MessagesPage'));
+const ProfilePage = lazy(() => import('./pages/admin/ProfilePage'));
 
 const App = () => {
   return (
@@ -25,10 +35,16 @@ const App = () => {
         <AuthProvider>
           <ErrorBoundary>
             <BrowserRouter>
+              <Suspense fallback={<div className="min-h-screen grid place-items-center" role="status">Loading…</div>}>
               <Routes>
                 {/* Public Routes */}
                 <Route element={<MainLayout />}>
                   <Route path="/" element={<HomePage />} />
+                  <Route path="/projects" element={<PublicProjectsPage />} />
+                  <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
+                  <Route path="/research" element={<ResearchPage />} />
+                  <Route path="/research/:slug" element={<PublicationDetailsPage />} />
+                  <Route path="/privacy" element={<PrivacyPage />} />
                 </Route>
 
                 {/* Admin Routes */}
@@ -44,17 +60,17 @@ const App = () => {
                   <Route index element={<DashboardPage />} />
                   <Route path="applications" element={<ApplicationsPage />} />
                   <Route path="projects" element={<ProjectsPage />} />
-                  {/* Add more admin routes as needed */}
-                  <Route path="skills" element={<DashboardPage />} />
-                  <Route path="blog" element={<DashboardPage />} />
-                  <Route path="achievements" element={<DashboardPage />} />
-                  <Route path="messages" element={<DashboardPage />} />
-                  <Route path="profile" element={<DashboardPage />} />
+                  <Route path="skills" element={<SkillsPage />} />
+                  <Route path="blog" element={<BlogPage />} />
+                  <Route path="achievements" element={<AchievementsPage />} />
+                  <Route path="messages" element={<MessagesPage />} />
+                  <Route path="profile" element={<ProfilePage />} />
                 </Route>
 
                 {/* 404 */}
                 <Route path="*" element={<NotFoundPage />} />
               </Routes>
+              </Suspense>
             </BrowserRouter>
 
             {/* Toast Notifications */}

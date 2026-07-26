@@ -1,0 +1,5 @@
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { publications } from '../../data/publications';
+const ResearchPage = () => <div className="section-container pb-24 pt-32"><Helmet><title>Research and Publications | Md Mehedi Hasan Naeem</title><meta name="description" content="Research publications and presented work in AI, IoT, computer vision, remote sensing, and edge AI." /><link rel="canonical" href="https://mehedinaeem.dev/research" /></Helmet><h1 className="heading-1">Research and Publications</h1><div className="mt-10 space-y-5">{publications.map((item) => <article className="card p-6" key={item.slug}><p className="text-sm font-bold text-primary-600">{item.status} · {item.year}</p><h2 className="mt-2 text-2xl font-bold"><Link to={`/research/${item.slug}`}>{item.title}</Link></h2><p className="mt-2 text-sm text-gray-500">{item.venue}</p><p className="mt-4 text-gray-600 dark:text-gray-300">{item.summary}</p><Link className="mt-5 inline-block font-semibold text-primary-600" to={`/research/${item.slug}`}>Publication details →</Link></article>)}</div></div>;
+export default ResearchPage;

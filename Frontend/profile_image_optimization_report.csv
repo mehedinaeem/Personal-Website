@@ -1,0 +1,2 @@
+original_path,optimized_path,original_width,original_height,new_width,new_height,original_file_size,new_file_size,reduction_percentage,output_format,processing_status
+src/assets/images/me.jpg,public/assets/optimized/profile/me.webp,904,1162,800,1028,108783,46824,56.96,WEBP,optimized

@@ -53,12 +53,15 @@ const Input = forwardRef(({
                     onChange={onChange}
                     onBlur={onBlur}
                     disabled={disabled}
+                    aria-invalid={showError ? 'true' : 'false'}
+                    aria-describedby={showError ? `${name}-error` : undefined}
+                    required={required}
                     className={inputClasses}
                     {...props}
                 />
             </div>
             {showError && (
-                <p className="mt-1 text-sm text-red-500">{error}</p>
+                <p id={`${name}-error`} role="alert" className="mt-1 text-sm text-red-500">{error}</p>
             )}
         </div>
     );

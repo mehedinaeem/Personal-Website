@@ -1,0 +1,18 @@
+original_path,optimized_path,original_width,original_height,new_width,new_height,original_file_size,new_file_size,reduction_percentage,output_format,processing_status
+public/assets/certifications/alp-leadership-program-certificate.webp,public/assets/optimized/certifications/alp-leadership-program-certificate.webp,1200,927,1200,927,120580,120580,0.0,WEBP,copied: source already optimized
+public/assets/certifications/flood-impact-cropland-certificate.webp,public/assets/optimized/certifications/flood-impact-cropland-certificate.webp,1200,848,1200,848,46266,46266,0.0,WEBP,copied: source already optimized
+public/assets/certifications/hyd-participant-certificate.webp,public/assets/optimized/certifications/hyd-participant-certificate.webp,1200,903,1200,903,55424,55424,0.0,WEBP,copied: source already optimized
+public/assets/certifications/intel-student-ambassador-proof.webp,public/assets/optimized/certifications/intel-student-ambassador-proof.webp,1200,927,1200,927,22430,22430,0.0,WEBP,copied: source already optimized
+public/assets/certifications/intelligent-solar-agri-automation-certificate.webp,public/assets/optimized/certifications/intelligent-solar-agri-automation-certificate.webp,1200,848,1200,848,90092,90092,0.0,WEBP,copied: source already optimized
+public/assets/certifications/iot-ai-safety-biltek-certificate.webp,public/assets/optimized/certifications/iot-ai-safety-biltek-certificate.webp,1200,848,1200,848,56030,56030,0.0,WEBP,copied: source already optimized
+public/assets/certifications/originals/HYD perticipent cert.jpeg,public/assets/optimized/certifications/originals/HYD perticipent cert.webp,1600,1204,1200,903,122910,75652,38.45,WEBP,optimized
+public/assets/certifications/spisfm-icoste-2025-certificate.webp,public/assets/optimized/certifications/spisfm-icoste-2025-certificate.webp,1200,847,1200,847,82060,82060,0.0,WEBP,copied: source already optimized
+public/assets/certifications/tree-canopy-afforestation-certificate.webp,public/assets/optimized/certifications/tree-canopy-afforestation-certificate.webp,1200,848,1200,848,91012,91012,0.0,WEBP,copied: source already optimized
+public/assets/portfolio-preview.webp,public/assets/optimized/portfolio-preview.webp,1200,630,1200,630,28886,28886,0.0,WEBP,copied: source already optimized
+public/assets/projects/VP_Research.png,public/assets/optimized/projects/VP_Research.webp,1080,1350,1080,1350,744244,108584,85.41,WEBP,optimized
+public/assets/projects/banana-disease-ai.webp,public/assets/optimized/projects/banana-disease-ai.webp,900,600,900,600,12774,12774,0.0,WEBP,copied: source already optimized
+public/assets/projects/food-waste-ml.webp,public/assets/optimized/projects/food-waste-ml.webp,900,600,900,600,11676,11676,0.0,WEBP,copied: source already optimized
+public/assets/projects/lumo-edge-ai.webp,public/assets/optimized/projects/lumo-edge-ai.webp,900,600,900,600,10454,10454,0.0,WEBP,copied: source already optimized
+public/assets/projects/mun.png,public/assets/optimized/projects/mun.png,989,547,989,547,289280,265340,8.28,PNG,optimized
+public/assets/projects/nazrul-poetry-nlp.webp,public/assets/optimized/projects/nazrul-poetry-nlp.webp,900,600,900,600,12486,12486,0.0,WEBP,copied: source already optimized
+public/assets/projects/smart-campus-transport.webp,public/assets/optimized/projects/smart-campus-transport.webp,900,600,900,600,13388,13388,0.0,WEBP,copied: source already optimized

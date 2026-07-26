@@ -1,153 +1,26 @@
-/**
- * About Section
- * Profile info with image and bio
- */
-
-import { motion } from 'framer-motion';
-import { HiDownload, HiMail, HiLocationMarker, HiBriefcase, HiPhone, HiAcademicCap } from 'react-icons/hi';
-import meImg from '../../../assets/images/me.jpg';
+import { HiAcademicCap, HiDownload, HiLocationMarker, HiMail } from 'react-icons/hi';
 import { SectionWrapper } from '../../../components';
-import { Button } from '../../../components';
 
-const About = () => {
-    const stats = [
-        { label: 'Research & Projects', value: '10' },
-        { label: 'Leadership Roles', value: '5' },
-        { label: 'Presented Works', value: '5+' },
-        { label: 'CSE Journey', value: '2023' },
-    ];
-
-    return (
-        <SectionWrapper
-            id="about"
-            title="About Me"
-            subtitle="Get to know me better"
-            dark
-        >
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-                {/* Image */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="relative"
-                >
-                    <div className="relative w-full max-w-md mx-auto">
-                        {/* Background decoration */}
-                        <div className="absolute -inset-4 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-2xl opacity-20 blur-2xl" />
-
-                        {/* Image container */}
-                        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
-                            <img
-                                src={meImg}
-                                alt="Md Mehedi Hasan Naeem"
-                                className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                        </div>
-
-                        {/* Floating card - Extra small on mobile */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.3 }}
-                            className="absolute bottom-0 right-0 sm:-bottom-6 sm:-right-6 glass-strong p-1.5 sm:p-4 rounded-md sm:rounded-xl shadow-xl max-w-[140px] sm:max-w-none"
-                        >
-                            <div className="flex items-center gap-1.5 sm:gap-3">
-                                <div className="w-6 h-6 sm:w-12 sm:h-12 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
-                                    <HiBriefcase className="w-3 h-3 sm:w-6 sm:h-6 text-white" />
-                                </div>
-                                <div className="min-w-0">
-                                    <p className="text-[10px] sm:text-sm text-gray-500 dark:text-gray-400 leading-tight">Currently</p>
-                                    <p className="text-[11px] sm:text-base font-semibold text-gray-900 dark:text-white whitespace-nowrap">Research Assistant</p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </motion.div>
-
-                {/* Content */}
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                >
-                    <h3 className="heading-3 mb-4">
-                        Software Engineer &{' '}
-                        <span className="gradient-text">Researcher</span>
-                    </h3>
-
-                    <p className="text-gray-600 dark:text-gray-400 mb-4 text-justify">
-                        CSE student at Jatiya Kabi Kazi Nazrul Islam University, focused on building
-                        scalable, real-world solutions that bridge software and hardware. Skilled in
-                        Django, React, Node.js, and Python, with strong foundations in AI, ML, DL, and CNN.
-                    </p>
-
-                    <p className="text-gray-600 dark:text-gray-400 mb-6 text-justify">
-                        Interested in intelligent systems, IoT, embedded systems, computer vision, NLP, and
-                        multilingual voice technologies to solve challenges in agriculture, transportation,
-                        education, and public safety. Actively exploring new technologies, contributing to
-                        projects, and sharing knowledge through teaching and content creation.
-                    </p>
-
-                    {/* Info */}
-                    <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                        <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                            <HiMail className="w-5 h-5 text-primary-500" />
-                            <a
-                                href="mailto:mehedinaeem00@gmail.com"
-                                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                            >
-                                mehedinaeem00@gmail.com
-                            </a>
-                        </div>
-                        <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                            <HiLocationMarker className="w-5 h-5 text-primary-500" />
-                            <span>Purbadhala, Netrokona, Bangladesh</span>
-                        </div>
-                        <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                            <HiPhone className="w-5 h-5 text-primary-500" />
-                            <a
-                                href="tel:+8801943806813"
-                                className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                            >
-                                +880 1943806813
-                            </a>
-                        </div>
-                        <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400">
-                            <HiAcademicCap className="w-5 h-5 text-primary-500" />
-                            <span>JKKNIU, B.Sc. CSE</span>
-                        </div>
-                    </div>
-
-                    {/* Stats */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
-                        {stats.map((stat) => (
-                            <div
-                                key={stat.label}
-                                className="text-center p-4 rounded-xl bg-white dark:bg-dark-100 shadow-md"
-                            >
-                                <p className="text-2xl font-bold gradient-text">{stat.value}</p>
-                                <p className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    {/* CTA */}
-                    <Button
-                        icon={HiDownload}
-                        href="/assets/Md_Mehedi_Hasan_Naeem_CV.pdf"
-                        download
-                    >
-                        Download CV
-                    </Button>
-                </motion.div>
-            </div>
-        </SectionWrapper>
-    );
-};
-
+const About = () => (
+  <SectionWrapper id="about" title="About Me" subtitle="Research-minded engineering with practical outcomes">
+    <div className="grid items-center gap-10 lg:grid-cols-[.8fr_1.2fr]">
+      <img src="/assets/optimized/profile/me.webp" alt="Md Mehedi Hasan Naeem" width="800" height="1028" loading="lazy" decoding="async" className="mx-auto aspect-square w-full max-w-sm rounded-2xl object-cover shadow-xl" />
+      <div>
+        <h3 className="text-2xl font-bold">CSE student, researcher, and technical community contributor</h3>
+        <p className="mt-4 max-w-3xl leading-relaxed text-gray-600 dark:text-gray-300">
+          I study Computer Science and Engineering at Jatiya Kabi Kazi Nazrul Islam University. My work focuses on AI, computer vision, IoT, embedded systems, edge deployment, and research-driven web software.
+        </p>
+        <p className="mt-4 max-w-3xl leading-relaxed text-gray-600 dark:text-gray-300">
+          I am especially interested in useful systems for agriculture, transportation, safety, education, and offline access. Alongside research and development, I contribute to technical leadership and student communities. My direction is to build trustworthy intelligent systems that can move from experiments into real environments.
+        </p>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 text-sm">
+          <li className="flex items-center gap-2"><HiAcademicCap className="text-primary-500" /> B.Sc. in CSE, JKKNIU</li>
+          <li className="flex items-center gap-2"><HiLocationMarker className="text-primary-500" /> Netrokona, Bangladesh</li>
+          <li className="flex items-center gap-2"><HiMail className="text-primary-500" /> <a href="mailto:mehedinaeem00@gmail.com">mehedinaeem00@gmail.com</a></li>
+        </ul>
+        <a className="btn btn-primary mt-7" href="/assets/Md_Mehedi_Hasan_Naeem_CV.pdf" download>Download CV <HiDownload /></a>
+      </div>
+    </div>
+  </SectionWrapper>
+);
 export default About;
