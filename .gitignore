@@ -1,0 +1,26 @@
+# Environment files (keep local values out of Git)
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# Python
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+db.sqlite3
+*.sqlite3
+staticfiles/
+media/
+
+# Frontend build and dependencies
+node_modules/
+dist/
+.vite/
+
+# OS and editors
+.DS_Store
+.idea/
+.vscode/
