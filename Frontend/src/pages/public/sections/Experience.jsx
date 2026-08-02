@@ -10,9 +10,13 @@ const Experience = () => (
           <article className="card p-6">
             <p className="text-sm font-semibold text-primary-600">{item.startDate} — {item.endDate}</p>
             <h3 className="mt-1 text-xl font-bold">{item.position}</h3>
-            <p className="text-gray-600 dark:text-gray-300"><a href={item.organizationUrl} target="_blank" rel="noreferrer">{item.organization}</a> · {item.location}</p>
+            <p className="text-gray-600 dark:text-gray-300">
+              {item.organizationUrl ? <a href={item.organizationUrl} target="_blank" rel="noreferrer">{item.organization}</a> : item.organization}
+              {' · '}{item.location}
+            </p>
             <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-gray-600 dark:text-gray-300">{item.responsibilities.map((value) => <li key={value}>{value}</li>)}</ul>
             {item.outcomes.map((value) => <p className="mt-3 text-sm" key={value}><strong>Outcome:</strong> {value}</p>)}
+            {item.evidenceUrl && <a className="mt-4 inline-block text-sm font-semibold text-primary-600" href={item.evidenceUrl} target="_blank" rel="noreferrer">View evidence ↗</a>}
           </article>
         </li>
       ))}

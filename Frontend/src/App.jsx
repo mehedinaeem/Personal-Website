@@ -27,6 +27,10 @@ const BlogPage = lazy(() => import('./pages/admin/BlogPage'));
 const AchievementsPage = lazy(() => import('./pages/admin/AchievementsPage'));
 const MessagesPage = lazy(() => import('./pages/admin/MessagesPage'));
 const ProfilePage = lazy(() => import('./pages/admin/ProfilePage'));
+const TasksPage = lazy(() => import('./pages/admin/TasksPage'));
+const TaskFormPage = lazy(() => import('./pages/admin/TaskFormPage'));
+const TaskDetailsPage = lazy(() => import('./pages/admin/TaskDetailsPage'));
+const DailyReviewPage = lazy(() => import('./pages/admin/DailyReviewPage'));
 
 const App = () => {
   return (
@@ -65,6 +69,13 @@ const App = () => {
                   <Route path="achievements" element={<AchievementsPage />} />
                   <Route path="messages" element={<MessagesPage />} />
                   <Route path="profile" element={<ProfilePage />} />
+                  <Route path="today" element={<TasksPage view="today" />} />
+                  <Route path="tasks" element={<TasksPage />} />
+                  <Route path="tasks/new" element={<TaskFormPage />} />
+                  <Route path="tasks/:id" element={<TaskDetailsPage />} />
+                  <Route path="tasks/:id/edit" element={<TaskFormPage />} />
+                  <Route path="tasks/:id/logs" element={<TaskDetailsPage logsOnly />} />
+                  <Route path="daily-review" element={<DailyReviewPage />} />
                 </Route>
 
                 {/* 404 */}

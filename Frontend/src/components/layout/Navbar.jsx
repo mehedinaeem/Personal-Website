@@ -14,28 +14,36 @@ const navLinks = [
     { name: 'Home', href: 'hero' },
     { name: 'About', href: 'about' },
     { name: 'Skills', href: 'skills' },
+    { name: 'Research', href: 'research' },
     { name: 'Projects', href: 'projects' },
-    { name: 'Achievements', href: 'achievements' },
     { name: 'Experience', href: 'experience' },
+    { name: 'Achievements', href: 'achievements' },
     { name: 'Contact', href: 'contact' },
 ];
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const { isDark, toggleTheme } = useTheme();
-    const { scrollPosition, scrollDirection } = useScrollPosition();
+    const { scrollPosition } = useScrollPosition();
     const scrollTo = useScrollTo();
     const location = useLocation();
     const activeSection = useActiveSection(navLinks.map((link) => link.href));
 
     const isScrolled = scrollPosition > 50;
-    const isHidden = scrollDirection === 'down' && scrollPosition > 200;
     const isHomePage = location.pathname === '/';
 
     // Close mobile menu on route change
     useEffect(() => {
         setIsOpen(false);
     }, [location]);
+
+    useEffect(() => {
+        const closeOnEscape = (event) => {
+            if (event.key === 'Escape') setIsOpen(false);
+        };
+        document.addEventListener('keydown', closeOnEscape);
+        return () => document.removeEventListener('keydown', closeOnEscape);
+    }, []);
 
     const handleNavClick = (href) => {
         if (isHomePage) {
@@ -49,11 +57,9 @@ const Navbar = () => {
     return (
         <>
             <motion.nav
-                initial={{ y: -150 }}
-                animate={{
-                    y: isHidden ? -150 : 0,
-                }}
-                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                initial={{ y: -24, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.35, ease: 'easeOut' }}
                 className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'py-3' : 'py-5'
                     }`}
             >
@@ -147,45 +153,14 @@ const Navbar = () => {
                                     <button
                                         key={link.href}
                                         onClick={() => handleNavClick(link.href)}
-                                        className="relative group"
+                                        className={`relative rounded-xl px-4 py-2 text-sm font-semibold tracking-wide transition-colors duration-200 ${
+                                            isHomePage && activeSection === link.href
+                                                ? 'bg-sky-600 text-white shadow-sm'
+                                                : 'text-gray-700 hover:bg-gray-100 hover:text-gray-950 dark:text-gray-300 dark:hover:bg-slate-700 dark:hover:text-white'
+                                        }`}
+                                        aria-current={isHomePage && activeSection === link.href ? 'location' : undefined}
                                     >
-                                        {/* Active pill background with enhanced shadow */}
-                                        {isHomePage && activeSection === link.href && (
-                                            <motion.div
-                                                layoutId="navPill"
-                                                className="absolute inset-0 bg-gradient-to-br from-sky-500 via-violet-500 to-violet-600 rounded-xl shadow-[0_4px_16px_-2px_rgba(14,165,233,0.4)] dark:shadow-[0_4px_20px_-2px_rgba(14,165,233,0.6)]"
-                                                transition={{
-                                                    type: 'spring',
-                                                    stiffness: 400,
-                                                    damping: 30
-                                                }}
-                                            />
-                                        )}
-
-                                        {/* Hover background */}
-                                        {!(isHomePage && activeSection === link.href) && (
-                                            <motion.div
-                                                className="absolute inset-0 bg-white/70 dark:bg-slate-700/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                                            />
-                                        )}
-
-                                        <span className={`relative z-10 block px-4 py-2 text-sm font-semibold tracking-wide transition-all duration-200 ${isHomePage && activeSection === link.href
-                                            ? 'text-white'
-                                            : 'text-gray-700 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white'
-                                            }`}>
-                                            {link.name}
-                                        </span>
-
-                                        {/* Active indicator dot */}
-                                        {isHomePage && activeSection === link.href && (
-                                            <motion.div
-                                                layoutId="navDot"
-                                                className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-white shadow-sm"
-                                                initial={{ scale: 0 }}
-                                                animate={{ scale: 1 }}
-                                                transition={{ duration: 0.2 }}
-                                            />
-                                        )}
+                                        {link.name}
                                     </button>
                                 ))}
                             </div>
@@ -245,8 +220,9 @@ const Navbar = () => {
                             <div className="hidden lg:block w-px h-8 bg-gradient-to-b from-transparent via-gray-300 to-transparent dark:via-gray-600" />
 
                             {/* CTA Button (desktop only) */}
-                            <Link
-                                to="/admin/login"
+                            <button
+                                type="button"
+                                onClick={() => handleNavClick('research')}
                                 className="hidden lg:block"
                             >
                                 <motion.div
@@ -259,7 +235,7 @@ const Navbar = () => {
 
                                     <div className="relative px-5 py-2.5 bg-gradient-to-r from-sky-500 to-violet-600 rounded-xl text-white font-semibold text-sm shadow-lg shadow-sky-500/25 hover:shadow-sky-500/40 transition-shadow duration-300">
                                         <span className="flex items-center gap-2">
-                                            <span>Get Started</span>
+                                            <span>View Research</span>
                                             <motion.span
                                                 animate={{ x: [0, 4, 0] }}
                                                 transition={{
@@ -273,7 +249,7 @@ const Navbar = () => {
                                         </span>
                                     </div>
                                 </motion.div>
-                            </Link>
+                            </button>
 
                             {/* Mobile Menu Button with enhanced styling */}
                             <motion.button
@@ -283,6 +259,8 @@ const Navbar = () => {
                                     : 'bg-white/80 dark:bg-slate-800/80 backdrop-blur-xl border border-white/60 dark:border-gray-700/60'
                                     }`}
                                 aria-label="Toggle menu"
+                                aria-expanded={isOpen}
+                                aria-controls="mobile-menu"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
@@ -330,6 +308,7 @@ const Navbar = () => {
                     <>
                         {/* Enhanced Backdrop */}
                         <motion.div
+                            id="mobile-menu"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
@@ -469,9 +448,10 @@ const Navbar = () => {
 
                             {/* Enhanced Bottom CTA */}
                             <div className="p-5 border-t border-gray-200 dark:border-gray-700/50 bg-gradient-to-t from-gray-50/50 to-transparent dark:from-slate-800/50">
-                                <Link
-                                    to="/admin/login"
-                                    onClick={() => setIsOpen(false)}
+                                <button
+                                    type="button"
+                                    onClick={() => handleNavClick('research')}
+                                    className="w-full"
                                 >
                                     <motion.div
                                         whileHover={{ scale: 1.02 }}
@@ -483,7 +463,7 @@ const Navbar = () => {
 
                                         <div className="relative w-full text-center px-6 py-4 bg-gradient-to-r from-sky-500 to-violet-600 text-white font-bold rounded-xl shadow-xl shadow-sky-500/30 hover:shadow-sky-500/50 transition-all duration-300">
                                             <span className="flex items-center justify-center gap-2">
-                                                <span>Get Started</span>
+                                                <span>View Research</span>
                                                 <motion.span
                                                     animate={{ x: [0, 4, 0] }}
                                                     transition={{
@@ -497,7 +477,7 @@ const Navbar = () => {
                                             </span>
                                         </div>
                                     </motion.div>
-                                </Link>
+                                </button>
                             </div>
                         </motion.div>
                     </>

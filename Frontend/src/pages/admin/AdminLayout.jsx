@@ -20,11 +20,16 @@ import {
     HiMoon,
     HiSun,
     HiClipboardList,
+    HiCalendar,
+    HiCheckCircle,
 } from 'react-icons/hi';
 import { useAuth, useTheme } from '../../context';
 
 const navItems = [
     { name: 'Dashboard', path: '/admin', icon: HiHome },
+    { name: 'Today', path: '/admin/today', icon: HiCalendar },
+    { name: 'Tasks', path: '/admin/tasks', icon: HiCheckCircle },
+    { name: 'Daily Review', path: '/admin/daily-review', icon: HiDocument },
     { name: 'Applications', path: '/admin/applications', icon: HiClipboardList },
     { name: 'Projects', path: '/admin/projects', icon: HiCollection },
     { name: 'Skills', path: '/admin/skills', icon: HiLightBulb },

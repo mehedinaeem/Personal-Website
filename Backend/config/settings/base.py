@@ -73,7 +73,10 @@ DATABASES = {"default": dj_database_url.config(default=f"sqlite:///{BASE_DIR / '
 
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+        "OPTIONS": {"min_length": 12},
+    },
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
@@ -118,6 +121,14 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
 }
+REST_FRAMEWORK["DEFAULT_THROTTLE_RATES"] = {"auth_login": "5/minute"}
+
+AUTH_REFRESH_COOKIE_NAME = "portfolio_refresh"
+AUTH_REFRESH_COOKIE_PATH = "/api/v1/auth/"
+AUTH_REFRESH_COOKIE_HTTPONLY = True
+AUTH_REFRESH_COOKIE_SECURE = False
+AUTH_REFRESH_COOKIE_SAMESITE = "Lax"
+AUTH_REFRESH_COOKIE_MAX_AGE = int(SIMPLE_JWT["REFRESH_TOKEN_LIFETIME"].total_seconds())
 
 DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "")
 EMAIL_HOST = os.getenv("EMAIL_HOST", "")

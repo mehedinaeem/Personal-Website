@@ -14,10 +14,20 @@ const api = axios.create({
         'Content-Type': 'application/json',
     },
     withCredentials: true, // For httpOnly cookies
+    withXSRFToken: true,
+});
+
+const refreshClient = axios.create({
+    baseURL: config.api.baseUrl,
+    timeout: config.api.timeout,
+    withCredentials: true,
+    withXSRFToken: true,
 });
 
 // Token storage (in-memory for security)
 let accessToken = null;
+let refreshPromise = null;
+let csrfToken = null;
 
 // Set access token
 export const setAccessToken = (token) => {
@@ -32,12 +42,20 @@ export const clearAccessToken = () => {
     accessToken = null;
 };
 
+export const setCsrfToken = (token) => {
+    csrfToken = token;
+    refreshClient.defaults.headers.common['X-CSRFToken'] = token;
+};
+
 // Request interceptor
 api.interceptors.request.use(
     (config) => {
         // Add authorization header if token exists
         if (accessToken) {
             config.headers.Authorization = `Bearer ${accessToken}`;
+        }
+        if (csrfToken && !['get', 'head', 'options'].includes(config.method?.toLowerCase())) {
+            config.headers['X-CSRFToken'] = csrfToken;
         }
         return config;
     },
@@ -53,21 +71,28 @@ api.interceptors.response.use(
     },
     async (error) => {
         const originalRequest = error.config;
+        const isAuthRequest = ['/auth/login/', '/auth/refresh/'].some((path) =>
+            originalRequest?.url?.endsWith(path)
+        );
 
         // Handle 401 Unauthorized - try to refresh token
-        if (error.response?.status === 401 && !originalRequest._retry) {
+        if (error.response?.status === 401 && originalRequest && !originalRequest._retry && !isAuthRequest) {
             originalRequest._retry = true;
 
             try {
-                // Attempt to refresh the token
-                const response = await axios.post(
-                    `${config.api.baseUrl}/auth/refresh/`,
-                    {},
-                    { withCredentials: true }
-                );
+                if (!refreshPromise) {
+                    refreshPromise = refreshClient
+                        .post('/auth/refresh/', {})
+                        .then((response) => {
+                            setAccessToken(response.data.access);
+                            return response.data.access;
+                        })
+                        .finally(() => {
+                            refreshPromise = null;
+                        });
+                }
 
-                const { access } = response.data;
-                setAccessToken(access);
+                const access = await refreshPromise;
 
                 // Retry original request with new token
                 originalRequest.headers.Authorization = `Bearer ${access}`;
@@ -76,6 +101,9 @@ api.interceptors.response.use(
                 // Refresh failed - clear token and redirect to login
                 clearAccessToken();
                 window.dispatchEvent(new CustomEvent('auth:logout'));
+                if (window.location.pathname.startsWith('/admin') && window.location.pathname !== '/admin/login') {
+                    window.location.assign('/admin/login');
+                }
                 return Promise.reject(refreshError);
             }
         }
@@ -107,8 +135,12 @@ const extractErrorMessage = (error) => {
             return data.detail;
         }
 
-        if (data.error) {
+        if (typeof data.error === 'string') {
             return data.error;
+        }
+
+        if (data.error?.message) {
+            return data.error.message;
         }
 
         // Handle validation errors
