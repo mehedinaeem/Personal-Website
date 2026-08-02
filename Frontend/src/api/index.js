@@ -10,5 +10,6 @@ export { default as blogsApi } from './blogs';
 export { default as achievementsApi } from './achievements';
 export { default as contactApi } from './contact';
 export { default as profileApi } from './profile';
-export { default as applicationsApi } from './applications';
+export { default as applicationsApi, opportunitiesApi, captureApi } from './applications';
 export { default as tasksApi, dailyReviewsApi } from './tasks';
+export { goalsApi, reviewsApi, activitiesApi, progressApi, learningApi, travelApi } from './planning';

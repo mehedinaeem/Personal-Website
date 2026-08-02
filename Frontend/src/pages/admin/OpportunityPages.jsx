@@ -1,0 +1,48 @@
+import { useCallback, useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { applicationsApi, opportunitiesApi } from '../../api';
+import { Button, Card, Input, PageLoader, Textarea } from '../../components/ui';
+import { applicationStages } from './ApplicationsPage';
+import { fieldClass, labelFor, pageResults } from './taskOptions';
+
+const types = ['job','internship','scholarship','fellowship','conference','competition','volunteer','other'];
+const platforms = ['facebook','linkedin','website','email','telegram','other'];
+const statuses = ['captured','reviewing','saved','ignored','expired'];
+const modes = ['remote','onsite','hybrid','not_specified'];
+const empty = { title: '', organization: '', opportunity_type: 'job', source_platform: 'website', source_url: '', application_url: '', summary: '', location: '', work_mode: 'not_specified', deadline: '', eligibility: '', requirements: '', funding_or_salary: '', contact_information: '', extraction_confidence: 0, is_deadline_confirmed: false, status: 'captured' };
+const inputDate = (value) => value ? new Date(value).toISOString().slice(0, 16) : '';
+
+export const OpportunitiesPage = ({ view = 'all' }) => {
+    const [rows, setRows] = useState([]), [loading, setLoading] = useState(true), [error, setError] = useState(''), [type, setType] = useState('');
+    const load = useCallback(async () => { setLoading(true); setError(''); try { const method = view === 'upcoming' ? 'getUpcoming' : view === 'expired' ? 'getExpired' : 'getAll'; setRows(pageResults(await opportunitiesApi[method]({ opportunity_type: type || undefined }))); } catch (e) { setError(e.displayMessage || 'Could not load opportunities.'); } finally { setLoading(false); } }, [type, view]);
+    useEffect(() => { load(); }, [load]);
+    const remove = async (row) => { if (!window.confirm(`Delete “${row.title}”?`)) return; await opportunitiesApi.delete(row.id); load(); };
+    if (loading) return <PageLoader />;
+    return <div className="space-y-6"><div className="flex flex-col sm:flex-row justify-between gap-4"><div><h1 className="text-3xl font-bold">{view === 'upcoming' ? 'Upcoming Deadlines' : view === 'expired' ? 'Expired Opportunities' : 'Opportunities'}</h1><p className="text-gray-500">Save opportunities before deciding whether to apply.</p></div><Button to="/admin/opportunities/new">Add Opportunity</Button></div><label className="block max-w-sm">Opportunity type<select className={fieldClass} value={type} onChange={(e) => setType(e.target.value)}><option value="">All types</option>{types.map((x) => <option key={x} value={x}>{labelFor(x)}</option>)}</select></label>{error && <div role="alert" className="p-4 bg-red-50 text-red-700 rounded-xl">{error}</div>}{!rows.length && !error ? <Card hover={false}>No opportunities found.</Card> : rows.map((row) => <Card hover={false} key={row.id}><div className="flex flex-col sm:flex-row justify-between gap-4"><div><Link className="text-lg font-semibold text-sky-600" to={`/admin/opportunities/${row.id}`}>{row.title}</Link><p className="text-sm text-gray-500">{row.organization} · {labelFor(row.opportunity_type)} · {labelFor(row.status)}</p>{row.deadline && <p className={row.is_deadline_passed ? 'text-red-600 mt-2' : 'mt-2'}>{row.is_deadline_passed ? 'Deadline passed: ' : 'Deadline: '}{new Date(row.deadline).toLocaleString()}</p>}</div><Button size="sm" variant="danger" onClick={() => remove(row)}>Delete</Button></div></Card>)}</div>;
+};
+
+export const OpportunityFormPage = () => {
+    const { id } = useParams(); const navigate = useNavigate(); const [form, setForm] = useState(empty), [loading, setLoading] = useState(Boolean(id)), [error, setError] = useState('');
+    useEffect(() => { if (id) opportunitiesApi.get(id).then((value) => setForm({ ...value, deadline: inputDate(value.deadline) })).catch((e) => setError(e.displayMessage)).finally(() => setLoading(false)); }, [id]);
+    const change = (e) => setForm({ ...form, [e.target.name]: e.target.type === 'checkbox' ? e.target.checked : e.target.value });
+    const submit = async (e) => { e.preventDefault(); try { const payload = { ...form, deadline: form.deadline || null, extraction_confidence: Number(form.extraction_confidence) }; const saved = id ? await opportunitiesApi.update(id, payload) : await opportunitiesApi.create(payload); toast.success('Opportunity saved'); navigate(`/admin/opportunities/${saved.id}`); } catch (err) { setError(err.displayMessage || 'Could not save opportunity.'); } };
+    if (loading) return <PageLoader />;
+    return <div className="max-w-4xl mx-auto space-y-5"><h1 className="text-3xl font-bold">{id ? 'Edit Opportunity' : 'Add Opportunity'}</h1><Card hover={false}><form onSubmit={submit} className="space-y-3">{error && <p role="alert" className="p-3 bg-red-50 text-red-700 rounded-lg">{error}</p>}<Input label="Title" name="title" value={form.title} onChange={change} required /><Input label="Organization" name="organization" value={form.organization} onChange={change} required /><div className="grid sm:grid-cols-2 gap-3">{[['opportunity_type',types],['source_platform',platforms],['work_mode',modes],['status',statuses]].map(([name, values]) => <label key={name}>{labelFor(name)}<select className={fieldClass} name={name} value={form[name]} onChange={change}>{values.map((x) => <option key={x} value={x}>{labelFor(x)}</option>)}</select></label>)}</div><div className="grid sm:grid-cols-2 gap-3"><Input label="Source URL" type="url" name="source_url" value={form.source_url} onChange={change} /><Input label="Application URL" type="url" name="application_url" value={form.application_url} onChange={change} /><Input label="Location" name="location" value={form.location} onChange={change} /><Input label="Deadline" type="datetime-local" name="deadline" value={form.deadline} onChange={change} /></div><Textarea label="Summary" name="summary" value={form.summary} onChange={change} /><Textarea label="Eligibility" name="eligibility" value={form.eligibility} onChange={change} /><Textarea label="Requirements" name="requirements" value={form.requirements} onChange={change} /><Input label="Funding or salary" name="funding_or_salary" value={form.funding_or_salary} onChange={change} /><Input label="Contact information (never enter passwords or identity documents)" name="contact_information" value={form.contact_information} onChange={change} /><Input label="Extraction confidence (0–100)" type="number" min="0" max="100" name="extraction_confidence" value={form.extraction_confidence} onChange={change} /><label className="flex gap-2"><input type="checkbox" name="is_deadline_confirmed" checked={form.is_deadline_confirmed} onChange={change} /> Deadline confirmed</label><Button type="submit">Save Opportunity</Button></form></Card></div>;
+};
+
+export const OpportunityDetailsPage = () => {
+    const { id } = useParams(); const navigate = useNavigate(); const [row, setRow] = useState(null), [loading, setLoading] = useState(true), [error, setError] = useState('');
+    const load = useCallback(() => opportunitiesApi.get(id).then(setRow).catch((e) => setError(e.displayMessage || 'Could not load opportunity.')).finally(() => setLoading(false)), [id]); useEffect(() => { load(); }, [load]);
+    const applied = async () => { if (row.user_application_id) return navigate(`/admin/applications/${row.user_application_id}`); const application = await opportunitiesApi.markApplied(id); toast.success('Marked as applied'); navigate(`/admin/applications/${application.id}`); };
+    if (loading) return <PageLoader />; if (error) return <div role="alert">{error}</div>;
+    return <div className="space-y-6"><div className="flex flex-col sm:flex-row justify-between gap-4"><div><h1 className="text-3xl font-bold">{row.title}</h1><p className="text-gray-500">{row.organization} · {labelFor(row.opportunity_type)}</p></div><div className="flex gap-2"><Button variant="secondary" to={`/admin/opportunities/${id}/edit`}>Edit</Button><Button onClick={applied}>{row.has_applied ? 'Open Application' : 'Mark Applied'}</Button></div></div><Card hover={false}><p className="whitespace-pre-wrap">{row.summary || 'No summary.'}</p>{row.deadline && <p className="mt-4"><strong>Deadline:</strong> {new Date(row.deadline).toLocaleString()}</p>}{row.eligibility && <p className="mt-3"><strong>Eligibility:</strong> {row.eligibility}</p>}{row.requirements && <p className="mt-3"><strong>Requirements:</strong> {row.requirements}</p>}</Card></div>;
+};
+
+export const ApplicationDetailsPage = () => {
+    const { id } = useParams(); const [row, setRow] = useState(null), [loading, setLoading] = useState(true), [error, setError] = useState('');
+    useEffect(() => { applicationsApi.get(id).then(setRow).catch((e) => setError(e.displayMessage)).finally(() => setLoading(false)); }, [id]);
+    const changeStage = async (stage) => { const updated = await applicationsApi.update(id, { stage }); setRow(updated); toast.success('Stage updated'); };
+    if (loading) return <PageLoader />; if (error) return <div role="alert">{error}</div>;
+    return <div className="space-y-6"><h1 className="text-3xl font-bold">{row.opportunity_title}</h1><Card hover={false}><p>{row.organization}</p><label className="block mt-4 max-w-sm">Application stage<select className={fieldClass} value={row.stage} onChange={(e) => changeStage(e.target.value)}>{applicationStages.map((x) => <option key={x} value={x}>{labelFor(x)}</option>)}</select></label>{row.applied_at && <p className="mt-4">Applied: {new Date(row.applied_at).toLocaleString()}</p>}{row.next_action && <p className="mt-2"><strong>Next:</strong> {row.next_action}</p>}</Card></div>;
+};

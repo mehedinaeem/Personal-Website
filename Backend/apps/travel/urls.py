@@ -1,2 +1,7 @@
+from rest_framework.routers import DefaultRouter
+from .views import TravelPlanViewSet
+
 app_name = "travel"
-urlpatterns = []
+router = DefaultRouter()
+router.register("plans", TravelPlanViewSet, basename="plan")
+urlpatterns = router.urls

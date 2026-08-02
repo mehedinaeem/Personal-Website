@@ -121,7 +121,7 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
 }
-REST_FRAMEWORK["DEFAULT_THROTTLE_RATES"] = {"auth_login": "5/minute"}
+REST_FRAMEWORK["DEFAULT_THROTTLE_RATES"] = {"auth_login": "5/minute", "capture_extract": "10/hour"}
 
 AUTH_REFRESH_COOKIE_NAME = "portfolio_refresh"
 AUTH_REFRESH_COOKIE_PATH = "/api/v1/auth/"

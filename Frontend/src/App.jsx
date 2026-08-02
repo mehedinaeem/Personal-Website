@@ -31,6 +31,17 @@ const TasksPage = lazy(() => import('./pages/admin/TasksPage'));
 const TaskFormPage = lazy(() => import('./pages/admin/TaskFormPage'));
 const TaskDetailsPage = lazy(() => import('./pages/admin/TaskDetailsPage'));
 const DailyReviewPage = lazy(() => import('./pages/admin/DailyReviewPage'));
+const GoalsPage = lazy(() => import('./pages/admin/PlanningPages').then((module) => ({ default: module.GoalsPage })));
+const GoalEditorPage = lazy(() => import('./pages/admin/PlanningPages').then((module) => ({ default: module.GoalEditorPage })));
+const ProgressPage = lazy(() => import('./pages/admin/PlanningPages').then((module) => ({ default: module.ProgressPage })));
+const ActivitiesPage = lazy(() => import('./pages/admin/PlanningPages').then((module) => ({ default: module.ActivitiesPage })));
+const LearningPage = lazy(() => import('./pages/admin/PlanningPages').then((module) => ({ default: module.LearningPage })));
+const TravelPage = lazy(() => import('./pages/admin/PlanningPages').then((module) => ({ default: module.TravelPage })));
+const OpportunitiesPage = lazy(() => import('./pages/admin/OpportunityPages').then((module) => ({ default: module.OpportunitiesPage })));
+const OpportunityFormPage = lazy(() => import('./pages/admin/OpportunityPages').then((module) => ({ default: module.OpportunityFormPage })));
+const OpportunityDetailsPage = lazy(() => import('./pages/admin/OpportunityPages').then((module) => ({ default: module.OpportunityDetailsPage })));
+const ApplicationDetailsPage = lazy(() => import('./pages/admin/OpportunityPages').then((module) => ({ default: module.ApplicationDetailsPage })));
+const CapturePage = lazy(() => import('./pages/admin/CapturePage'));
 
 const App = () => {
   return (
@@ -63,6 +74,16 @@ const App = () => {
                 >
                   <Route index element={<DashboardPage />} />
                   <Route path="applications" element={<ApplicationsPage />} />
+                  <Route path="applications/follow-up" element={<ApplicationsPage filter="follow-up" />} />
+                  <Route path="applications/stage/:stage" element={<ApplicationsPage />} />
+                  <Route path="applications/:id" element={<ApplicationDetailsPage />} />
+                  <Route path="opportunities" element={<OpportunitiesPage />} />
+                  <Route path="opportunities/new" element={<OpportunityFormPage />} />
+                  <Route path="opportunities/upcoming" element={<OpportunitiesPage view="upcoming" />} />
+                  <Route path="opportunities/:id" element={<OpportunityDetailsPage />} />
+                  <Route path="opportunities/:id/edit" element={<OpportunityFormPage />} />
+                  <Route path="capture" element={<CapturePage />} />
+                  <Route path="capture/:id" element={<CapturePage />} />
                   <Route path="projects" element={<ProjectsPage />} />
                   <Route path="skills" element={<SkillsPage />} />
                   <Route path="blog" element={<BlogPage />} />
@@ -76,6 +97,20 @@ const App = () => {
                   <Route path="tasks/:id/edit" element={<TaskFormPage />} />
                   <Route path="tasks/:id/logs" element={<TaskDetailsPage logsOnly />} />
                   <Route path="daily-review" element={<DailyReviewPage />} />
+                  <Route path="goals" element={<GoalsPage />} />
+                  <Route path="goals/new" element={<GoalEditorPage />} />
+                  <Route path="goals/:id" element={<GoalEditorPage />} />
+                  <Route path="progress" element={<ProgressPage />} />
+                  <Route path="progress/daily" element={<ProgressPage period="daily" />} />
+                  <Route path="progress/monthly" element={<ProgressPage period="monthly" />} />
+                  <Route path="progress/yearly" element={<ProgressPage period="yearly" />} />
+                  <Route path="activities" element={<ActivitiesPage />} />
+                  <Route path="activities/new" element={<ActivitiesPage createOnly />} />
+                  <Route path="learning" element={<LearningPage />} />
+                  <Route path="learning/:id" element={<LearningPage />} />
+                  <Route path="travel" element={<TravelPage />} />
+                  <Route path="travel/new" element={<TravelPage createOnly />} />
+                  <Route path="travel/:id" element={<TravelPage />} />
                 </Route>
 
                 {/* 404 */}
