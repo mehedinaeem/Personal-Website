@@ -19,6 +19,7 @@ class TravelPlan(models.Model):
     transportation = models.TextField(blank=True)
     accommodation = models.TextField(blank=True)
     notes = models.TextField(blank=True)
+    default_reminders_enabled = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

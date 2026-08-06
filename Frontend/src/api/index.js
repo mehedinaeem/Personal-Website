@@ -13,3 +13,5 @@ export { default as profileApi } from './profile';
 export { default as applicationsApi, opportunitiesApi, captureApi } from './applications';
 export { default as tasksApi, dailyReviewsApi } from './tasks';
 export { goalsApi, reviewsApi, activitiesApi, progressApi, learningApi, travelApi } from './planning';
+export { default as remindersApi } from './reminders';
+export { default as dashboardApi } from './dashboard';

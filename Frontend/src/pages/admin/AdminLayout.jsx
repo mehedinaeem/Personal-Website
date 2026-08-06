@@ -38,6 +38,7 @@ const navItems = [
     { name: 'Applications', path: '/admin/applications', icon: HiClipboardList },
     { name: 'Opportunities', path: '/admin/opportunities', icon: HiCollection },
     { name: 'Capture Link', path: '/admin/capture', icon: HiDocument },
+    { name: 'Reminders', path: '/admin/reminders', icon: HiCalendar },
     { name: 'Projects', path: '/admin/projects', icon: HiCollection },
     { name: 'Skills', path: '/admin/skills', icon: HiLightBulb },
     { name: 'Experience', path: '/admin/blog', icon: HiDocument },

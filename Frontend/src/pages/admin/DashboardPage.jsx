@@ -1,156 +1,16 @@
-/**
- * Admin Dashboard Page
- * Overview statistics and quick actions
- */
-
-import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import {
-    HiCollection,
-    HiLightBulb,
-    HiDocument,
-    HiAcademicCap,
-    HiMail,
-    HiEye,
-    HiPlus,
-} from 'react-icons/hi';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '../../components/ui';
+import { dashboardApi, progressApi } from '../../api';
+import { Card, PageLoader } from '../../components/ui';
+import { PlannedChart, TrendChart } from '../../components/admin/AnalyticsCharts';
 
-const stats = [
-    { name: 'Projects', value: 10, icon: HiCollection, color: 'from-blue-500 to-cyan-500', path: '/admin/projects' },
-    { name: 'Skills', value: 34, icon: HiLightBulb, color: 'from-yellow-500 to-orange-500', path: '/admin/skills' },
-    { name: 'Experience Items', value: 8, icon: HiDocument, color: 'from-purple-500 to-pink-500', path: '/admin/blog' },
-    { name: 'Achievements', value: 16, icon: HiAcademicCap, color: 'from-green-500 to-emerald-500', path: '/admin/achievements' },
-    { name: 'Messages', value: 15, icon: HiMail, color: 'from-red-500 to-rose-500', path: '/admin/messages' },
-];
+const actions = [['Add Task','/admin/tasks/new'],['Add Goal','/admin/goals/new'],['Log New Work','/admin/activities/new'],['Add Learning Item','/admin/learning'],['Log Learning Session','/admin/learning'],['Paste Opportunity Link','/admin/capture'],['Add Opportunity','/admin/opportunities/new'],['Create Travel Plan','/admin/travel/new'],['Complete Daily Review','/admin/daily-review'],['Complete Monthly Review','/admin/progress/monthly'],['View Yearly Progress','/admin/progress/yearly']];
+const List = ({ title, rows, render }) => <Card hover={false}><h2 className="text-lg font-semibold mb-3">{title}</h2>{rows?.length ? rows.map(render) : <p className="text-gray-500">Nothing to show.</p>}</Card>;
 
-const quickActions = [
-    { name: 'Add Project', icon: HiPlus, path: '/admin/projects/new', color: 'btn-primary' },
-    { name: 'Add Experience Item', icon: HiDocument, path: '/admin/blog/new', color: 'btn-secondary' },
-    { name: 'View Messages', icon: HiMail, path: '/admin/messages', color: 'btn-secondary' },
-    { name: 'View Site', icon: HiEye, path: '/', external: true, color: 'btn-secondary' },
-];
-
-const recentActivity = [
-    { type: 'project', action: 'Updated', title: 'Solar-Powered IoT-Based Smart Farming Model', time: '2 hours ago' },
-    { type: 'blog', action: 'Updated', title: 'Experience and Leadership', time: '5 hours ago' },
-    { type: 'message', action: 'New', title: 'portfolio contact message', time: '1 day ago' },
-    { type: 'achievement', action: 'Added', title: 'IEEE i-COSTE 2025 Certificate', time: '2 days ago' },
-];
-
-const DashboardPage = () => {
-    return (
-        <>
-            <Helmet>
-                <title>Dashboard | Admin</title>
-            </Helmet>
-
-            <div className="space-y-8">
-                {/* Header */}
-                <div>
-                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-                        Dashboard
-                    </h1>
-                    <p className="text-gray-600 dark:text-gray-400">
-                        Welcome back! Here's an overview of your portfolio.
-                    </p>
-                </div>
-
-                {/* Stats */}
-                <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-                    {stats.map((stat, index) => (
-                        <motion.div
-                            key={stat.name}
-                            initial={{ opacity: 0, y: 20 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
-                        >
-                            <Link
-                                to={stat.path}
-                                className="card p-6 block hover:border-primary-300 dark:hover:border-primary-700"
-                            >
-                                <div className="flex items-center gap-4">
-                                    <div className={`p-3 rounded-xl bg-gradient-to-br ${stat.color}`}>
-                                        <stat.icon className="w-6 h-6 text-white" />
-                                    </div>
-                                    <div>
-                                        <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                                            {stat.value}
-                                        </p>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            {stat.name}
-                                        </p>
-                                    </div>
-                                </div>
-                            </Link>
-                        </motion.div>
-                    ))}
-                </div>
-
-                <div className="grid lg:grid-cols-3 gap-8">
-                    {/* Quick Actions */}
-                    <div className="lg:col-span-1">
-                        <div className="card p-6">
-                            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                                Quick Actions
-                            </h2>
-                            <div className="space-y-3">
-                                {quickActions.map((action) => (
-                                    <Link
-                                        key={action.name}
-                                        to={action.path}
-                                        target={action.external ? '_blank' : undefined}
-                                        className={`flex items-center gap-3 w-full px-4 py-3 rounded-xl transition-all ${action.color === 'btn-primary'
-                                                ? 'bg-primary-500 text-white hover:bg-primary-600'
-                                                : 'bg-gray-100 dark:bg-dark-100 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-dark-200'
-                                            }`}
-                                    >
-                                        <action.icon className="w-5 h-5" />
-                                        {action.name}
-                                    </Link>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Recent Activity */}
-                    <div className="lg:col-span-2">
-                        <div className="card p-6">
-                            <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                                Recent Activity
-                            </h2>
-                            <div className="space-y-4">
-                                {recentActivity.map((activity, index) => (
-                                    <motion.div
-                                        key={index}
-                                        initial={{ opacity: 0, x: -20 }}
-                                        animate={{ opacity: 1, x: 0 }}
-                                        transition={{ delay: index * 0.1 }}
-                                        className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 dark:bg-dark-100"
-                                    >
-                                        <div className={`w-2 h-2 rounded-full ${activity.type === 'project' ? 'bg-blue-500' :
-                                                activity.type === 'blog' ? 'bg-purple-500' :
-                                                    activity.type === 'message' ? 'bg-red-500' :
-                                                        'bg-green-500'
-                                            }`} />
-                                        <div className="flex-1 min-w-0">
-                                            <p className="font-medium text-gray-900 dark:text-white truncate">
-                                                {activity.action}: {activity.title}
-                                            </p>
-                                            <p className="text-sm text-gray-500 dark:text-gray-400">
-                                                {activity.time}
-                                            </p>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </>
-    );
-};
-
-export default DashboardPage;
+export default function DashboardPage() {
+    const [summary, setSummary] = useState(null), [analytics, setAnalytics] = useState(null), [loading, setLoading] = useState(true), [error, setError] = useState('');
+    useEffect(() => { Promise.all([dashboardApi.summary(), progressApi.analytics({ period: '30d' })]).then(([a, b]) => { setSummary(a); setAnalytics(b); }).catch((e) => setError(e.displayMessage || 'Could not load dashboard.')).finally(() => setLoading(false)); }, []);
+    if (loading) return <PageLoader />; if (error) return <div role="alert" className="p-4 bg-red-50 text-red-700 rounded-xl">{error}</div>;
+    const cards = [['Tasks completed this week',summary.tasks_completed_this_week],['Weekly completion',`${summary.weekly_completion_percentage}%`],['Today work',`${summary.today_work_minutes} min`],['Today learning',`${summary.today_learning_minutes} min`]];
+    return <div className="space-y-6"><div><h1 className="text-3xl font-bold">Productivity dashboard</h1><p className="text-gray-500">Private overview using Asia/Dhaka boundaries.</p></div><div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">{cards.map(([name,value]) => <Card hover={false} key={name}><p className="text-sm text-gray-500">{name}</p><p className="text-2xl font-bold">{value}</p></Card>)}</div><Card hover={false}><h2 className="text-lg font-semibold mb-3">Quick actions</h2><div className="flex flex-wrap gap-2">{actions.map(([name,path]) => <Link className="px-3 py-2 rounded-lg bg-sky-600 text-white" key={name} to={path}>{name}</Link>)}</div></Card><div className="grid lg:grid-cols-2 gap-5"><List title="Today’s important tasks" rows={summary.today_tasks} render={(x) => <Link className="block py-2 border-t" key={x.id} to={`/admin/tasks/${x.id}`}>{x.title} · {x.progress_percentage}%</Link>} /><List title="Today’s goals" rows={summary.daily_goals} render={(x) => <Link className="block py-2 border-t" key={x.id} to={`/admin/goals/${x.id}`}>{x.title} · {x.current_value}/{x.target_value}</Link>} /><List title="Overdue work" rows={summary.overdue_tasks} render={(x) => <Link className="block py-2 border-t text-red-600" key={x.id} to={`/admin/tasks/${x.id}`}>{x.title}</Link>} /><List title="Opportunities closing within 7 days" rows={summary.upcoming_opportunity_deadlines} render={(x) => <Link className="block py-2 border-t" key={x.id} to={`/admin/opportunities/${x.id}`}>{x.title} · {new Date(x.deadline).toLocaleString()}</Link>} /></div><TrendChart data={analytics.daily_trend} /><PlannedChart data={analytics.planned_vs_completed} /><div className="grid lg:grid-cols-2 gap-5"><List title="Applications requiring follow-up" rows={summary.applications_needing_follow_up} render={(x) => <Link className="block py-2 border-t" key={x.id} to={`/admin/applications/${x.id}`}>{x.opportunity__title} · {x.stage}</Link>} /><List title="Upcoming travel plans" rows={summary.upcoming_travel_plans} render={(x) => <Link className="block py-2 border-t" key={x.id} to={`/admin/travel/${x.id}`}>{x.destination} · {x.start_date}</Link>} /><List title="Recently captured links" rows={summary.recently_captured_links} render={(x) => <Link className="block py-2 border-t truncate" key={x.id} to={`/admin/capture/${x.id}`}>{x.extracted_data?.title || x.url}</Link>} /><List title="Failed notifications" rows={summary.notification_failures} render={(x) => <Link className="block py-2 border-t text-red-600" key={x.id} to="/admin/reminders">{x.reminder_type} · {x.last_error}</Link>} /></div></div>;
+}

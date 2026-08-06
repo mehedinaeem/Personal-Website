@@ -14,13 +14,14 @@ SECRET_KEY = require_setting("DJANGO_SECRET_KEY", SECRET_KEY)  # noqa: F405
 DATABASE_URL = require_setting("DATABASE_URL", os.getenv("DATABASE_URL"))  # noqa: F405
 DATABASES = {"default": dj_database_url.parse(DATABASE_URL, conn_max_age=600, conn_health_checks=True)}  # noqa: F405
 
-ALLOWED_HOSTS = ["api.mehedinaeem.dev"]
-CORS_ALLOWED_ORIGINS = ["https://mehedinaeem.dev", "https://www.mehedinaeem.dev"]
-CSRF_TRUSTED_ORIGINS = [
-    "https://mehedinaeem.dev",
-    "https://www.mehedinaeem.dev",
-    "https://api.mehedinaeem.dev",
-]
+ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", "api.mehedinaeem.dev")  # noqa: F405
+CORS_ALLOWED_ORIGINS = env_list(  # noqa: F405
+    "CORS_ALLOWED_ORIGINS", "https://mehedinaeem.dev,https://www.mehedinaeem.dev"
+)
+CSRF_TRUSTED_ORIGINS = env_list(  # noqa: F405
+    "CSRF_TRUSTED_ORIGINS",
+    "https://mehedinaeem.dev,https://www.mehedinaeem.dev,https://api.mehedinaeem.dev",
+)
 
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 SECURE_SSL_REDIRECT = True
@@ -36,4 +37,5 @@ SECURE_HSTS_SECONDS = 31_536_000
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
 X_FRAME_OPTIONS = "DENY"

@@ -17,6 +17,21 @@ class TravelPlanSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError({"end_date": "End date cannot precede start date."})
         return attrs
 
+    def create(self, validated_data):
+        plan = super().create(validated_data)
+        from apps.notifications.reminders import create_default_travel_reminders
+        create_default_travel_reminders(plan)
+        return plan
+
+    def update(self, instance, validated_data):
+        plan = super().update(instance, validated_data)
+        from apps.notifications.reminders import cancel_defaults, create_default_travel_reminders
+        if plan.default_reminders_enabled:
+            create_default_travel_reminders(plan)
+        else:
+            cancel_defaults(plan, "travel_plan")
+        return plan
+
 
 class TravelItineraryItemSerializer(serializers.ModelSerializer):
     class Meta:
@@ -33,6 +48,12 @@ class TravelItineraryItemSerializer(serializers.ModelSerializer):
         if timezone.is_naive(attrs["start_at"]) or timezone.is_naive(attrs["end_at"]):
             raise serializers.ValidationError("Itinerary datetimes must include timezone information.")
         return attrs
+
+    def create(self, validated_data):
+        item = super().create(validated_data)
+        from apps.notifications.reminders import create_default_itinerary_reminder
+        create_default_itinerary_reminder(item, enabled=item.travel_plan.default_reminders_enabled)
+        return item
 
 
 class TravelChecklistItemSerializer(serializers.ModelSerializer):

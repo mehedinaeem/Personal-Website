@@ -21,6 +21,14 @@ URL_RE = re.compile(r"https?://[^\s<>]+", re.IGNORECASE)
 TELEGRAM_TIMEOUT = httpx.Timeout(5.0, connect=3.0)
 
 
+class TelegramTemporaryError(RuntimeError):
+    pass
+
+
+class TelegramPermanentError(RuntimeError):
+    pass
+
+
 def configured_chat_id():
     return str(settings.TELEGRAM_CHAT_ID).strip()
 
@@ -46,8 +54,14 @@ def send_telegram_message(chat_id, text):
             timeout=TELEGRAM_TIMEOUT,
         )
         response.raise_for_status()
+    except (httpx.TimeoutException, httpx.NetworkError) as exc:
+        raise TelegramTemporaryError("Telegram delivery failed temporarily.") from exc
+    except httpx.HTTPStatusError as exc:
+        if exc.response.status_code == 429 or exc.response.status_code >= 500:
+            raise TelegramTemporaryError("Telegram delivery failed temporarily.") from exc
+        raise TelegramPermanentError("Telegram rejected the message.") from exc
     except httpx.HTTPError as exc:
-        raise RuntimeError("Telegram delivery failed.") from exc
+        raise TelegramTemporaryError("Telegram delivery failed temporarily.") from exc
 
 
 def review_url(captured):

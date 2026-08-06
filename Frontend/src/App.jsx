@@ -42,6 +42,8 @@ const OpportunityFormPage = lazy(() => import('./pages/admin/OpportunityPages').
 const OpportunityDetailsPage = lazy(() => import('./pages/admin/OpportunityPages').then((module) => ({ default: module.OpportunityDetailsPage })));
 const ApplicationDetailsPage = lazy(() => import('./pages/admin/OpportunityPages').then((module) => ({ default: module.ApplicationDetailsPage })));
 const CapturePage = lazy(() => import('./pages/admin/CapturePage'));
+const RemindersPage = lazy(() => import('./pages/admin/RemindersPage'));
+const AnalyticsPage = lazy(() => import('./pages/admin/AnalyticsPage'));
 
 const App = () => {
   return (
@@ -84,6 +86,7 @@ const App = () => {
                   <Route path="opportunities/:id/edit" element={<OpportunityFormPage />} />
                   <Route path="capture" element={<CapturePage />} />
                   <Route path="capture/:id" element={<CapturePage />} />
+                  <Route path="reminders" element={<RemindersPage />} />
                   <Route path="projects" element={<ProjectsPage />} />
                   <Route path="skills" element={<SkillsPage />} />
                   <Route path="blog" element={<BlogPage />} />
@@ -101,9 +104,12 @@ const App = () => {
                   <Route path="goals/new" element={<GoalEditorPage />} />
                   <Route path="goals/:id" element={<GoalEditorPage />} />
                   <Route path="progress" element={<ProgressPage />} />
-                  <Route path="progress/daily" element={<ProgressPage period="daily" />} />
-                  <Route path="progress/monthly" element={<ProgressPage period="monthly" />} />
-                  <Route path="progress/yearly" element={<ProgressPage period="yearly" />} />
+                  <Route path="dashboard" element={<DashboardPage />} />
+                  <Route path="progress/daily" element={<AnalyticsPage section="daily" />} />
+                  <Route path="progress/monthly" element={<AnalyticsPage section="monthly" />} />
+                  <Route path="progress/yearly" element={<AnalyticsPage section="yearly" />} />
+                  <Route path="learning/analytics" element={<AnalyticsPage section="learning" />} />
+                  <Route path="travel/calendar" element={<AnalyticsPage section="travel" />} />
                   <Route path="activities" element={<ActivitiesPage />} />
                   <Route path="activities/new" element={<ActivitiesPage createOnly />} />
                   <Route path="learning" element={<LearningPage />} />

@@ -26,6 +26,7 @@ class Opportunity(models.Model):
     contact_information = models.TextField(blank=True)
     extraction_confidence = models.PositiveSmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(100)])
     is_deadline_confirmed = models.BooleanField(default=False)
+    default_reminders_enabled = models.BooleanField(default=True)
     status = models.CharField(max_length=16, choices=STATUSES, default="captured")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

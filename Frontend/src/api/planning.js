@@ -15,7 +15,11 @@ export const goalsApi = {
 };
 export const reviewsApi = resource('/progress/reviews/');
 export const activitiesApi = resource('/progress/activities/');
-export const progressApi = { summary: (params) => api.get('/progress/summary/', { params }).then(data) };
+export const progressApi = {
+    summary: (params) => api.get('/progress/summary/', { params }).then(data),
+    analytics: (params) => api.get('/progress/analytics/', { params }).then(data),
+    exportCsv: (params) => api.get('/progress/analytics/export/', { params, responseType: 'blob' }).then((response) => response.data),
+};
 export const learningApi = {
     ...resource('/learning/items/'),
     sessions: (id) => api.get(`/learning/items/${id}/sessions/`).then(data),

@@ -15,6 +15,7 @@ urlpatterns = [
     path("api/v1/applications/", include("apps.opportunities.application_urls")),
     path("api/v1/capture/", include("apps.capture.urls")),
     path("api/v1/telegram/", include("apps.notifications.urls")),
+    path("api/v1/reminders/", include("apps.notifications.reminder_urls")),
     path("api/v1/dashboard/", include("apps.dashboard.urls")),
     path("api/v1/contacts/", include("apps.contacts.urls")),
     path("api/v1/portfolio/", include("apps.portfolio.urls")),

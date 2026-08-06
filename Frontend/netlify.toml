@@ -6,7 +6,6 @@
   
 [build.environment]
   NODE_VERSION = "20"
-  NPM_FLAGS = "--legacy-peer-deps"
 
 # Environment Variables (set in Netlify dashboard)
 # VITE_API_BASE_URL - Your production backend API URL
@@ -20,13 +19,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-# API Proxy (optional - if you want to proxy API calls)
-# [[redirects]]
-#   from = "/api/*"
-#   to = "https://your-backend.onrender.com/api/:splat"
-#   status = 200
-#   force = true
 
 # Security Headers
 [[headers]]

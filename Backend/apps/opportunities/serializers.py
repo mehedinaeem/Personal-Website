@@ -34,6 +34,21 @@ class OpportunitySerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("Deadline must include timezone information.")
         return value
 
+    def create(self, validated_data):
+        opportunity = super().create(validated_data)
+        from apps.notifications.reminders import create_default_opportunity_reminders
+        create_default_opportunity_reminders(opportunity)
+        return opportunity
+
+    def update(self, instance, validated_data):
+        opportunity = super().update(instance, validated_data)
+        from apps.notifications.reminders import cancel_defaults, create_default_opportunity_reminders
+        if not opportunity.default_reminders_enabled or not opportunity.is_deadline_confirmed:
+            cancel_defaults(opportunity, "opportunity")
+        else:
+            create_default_opportunity_reminders(opportunity)
+        return opportunity
+
 
 def validate_checklist(value):
     if not isinstance(value, list):

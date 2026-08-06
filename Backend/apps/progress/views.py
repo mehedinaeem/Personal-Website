@@ -8,12 +8,15 @@ from rest_framework import filters, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
+from django.http import HttpResponse
+import csv
 
 from apps.learning.models import LearningSession
 from apps.tasks.models import Task, TaskProgressLog
 from apps.travel.models import TravelPlan
 from .models import ActivityLog, Goal, ProgressReview
 from .serializers import ActivityLogSerializer, GoalSerializer, ProgressReviewSerializer
+from .analytics import analytics_data
 
 
 class OwnedViewSet(viewsets.ModelViewSet):
@@ -160,3 +163,34 @@ def progress_summary(request):
         "learning_breakdown": list(learning.values("learning_item__skill").annotate(minutes=Sum("minutes_spent")).order_by("learning_item__skill")),
         "travel_summary": {"plans": TravelPlan.objects.filter(owner=user, start_date__lte=end, end_date__gte=start).count()},
     })
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def analytics(request):
+    try:
+        return Response(analytics_data(request.user, request.query_params))
+    except (ValueError, KeyError):
+        return Response({"detail": "Invalid analytics filters or date range."}, status=400)
+
+
+def csv_safe(value):
+    text = "" if value is None else str(value)
+    return "'" + text if text[:1] in {"=", "+", "-", "@", "\t", "\r"} else text
+
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def analytics_csv(request):
+    try: data = analytics_data(request.user, request.query_params)
+    except (ValueError, KeyError): return Response({"detail": "Invalid analytics filters or date range."}, status=400)
+    dataset = request.query_params.get("dataset", "daily_activity")
+    mapping = {"daily_activity": data["daily_trend"], "monthly_progress": data["planned_vs_completed"], "yearly_progress": data["monthly_trend"], "learning_sessions": data["learning_by_topic"], "activity_logs": data["category_breakdown"], "travel_plans": data["travel_timeline"]}
+    if dataset not in mapping: return Response({"detail": "Invalid CSV dataset."}, status=400)
+    rows = mapping[dataset]; response = HttpResponse(content_type="text/csv; charset=utf-8")
+    response["Content-Disposition"] = f'attachment; filename="analytics-{dataset}.csv"'
+    writer = csv.writer(response)
+    if rows:
+        headers = list(rows[0]); writer.writerow(headers)
+        for row in rows: writer.writerow([csv_safe(row.get(key)) for key in headers])
+    return response
