@@ -4,7 +4,7 @@ import { SectionWrapper } from '../../../components';
 const About = () => (
   <SectionWrapper id="about" title="About Me" subtitle="Research-minded engineering with practical outcomes">
     <div className="grid items-center gap-10 lg:grid-cols-[.8fr_1.2fr]">
-      <img src="/assets/optimized/profile/me.webp" alt="Md Mehedi Hasan Naeem" width="800" height="1028" loading="lazy" decoding="async" className="mx-auto aspect-square w-full max-w-sm rounded-2xl object-cover shadow-xl" />
+      <img src="/assets/optimized/profile/me.webp" alt="Md Mehedi Hasan Naeem" width="800" height="792" loading="lazy" decoding="async" className="mx-auto aspect-square w-full max-w-sm rounded-2xl object-cover shadow-xl" />
       <div>
         <h3 className="text-2xl font-bold">CSE student, researcher, and technical community contributor</h3>
         <p className="mt-4 max-w-3xl leading-relaxed text-gray-600 dark:text-gray-300">
