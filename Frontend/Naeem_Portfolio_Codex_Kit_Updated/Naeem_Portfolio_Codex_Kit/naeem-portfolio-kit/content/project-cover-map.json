@@ -1,0 +1,184 @@
+[
+  {
+    "projectId": "smartpresence",
+    "projectTitle": "SmartPresence",
+    "websitePath": "assets/projects/covers/smartpresence-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/SmartPresence"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 135466,
+    "sha256": "fb12d095430ca293c9f22abc3bed245de2e1b039c3a21ea37ba6b4c293cea3f6",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "lumo",
+    "projectTitle": "LUMO",
+    "websitePath": "assets/projects/covers/lumo-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/Lumo"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 118342,
+    "sha256": "30a3332b2f457149f9ba389bc874fe702417aefec7e8e47afa57835f278f4f9c",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "bitol",
+    "projectTitle": "BITOL · Banana surface-condition detection",
+    "websitePath": "assets/projects/covers/bitol-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/Bitol_Computer_Vision_System"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 82300,
+    "sha256": "82086b9547e97cc0f8540949a0c9f8bb62ff8c27e9b6664ff927f9fdb8076b30",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "theatrestageai",
+    "projectTitle": "TheatreStageAI",
+    "websitePath": "assets/projects/covers/theatrestageai-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/ThetreStageAI"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 120040,
+    "sha256": "ba0780705c706f39ebffe9d2628c10e8fd71a7960645f74302e1a620141670ca",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "food-waste",
+    "projectTitle": "Restaurant food-waste modelling",
+    "websitePath": "assets/projects/covers/food-waste-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/restaurant-food-management-ml"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 132496,
+    "sha256": "692961c50bdfc9dcdce90dbf5fbe4e4ae07bc8faf355aff5eee3429e2c562835",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "campus-transport",
+    "projectTitle": "Smart Campus, Smart Transport",
+    "websitePath": "assets/projects/covers/campus-transport-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/Smart-Campus-Smart-Transport"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 174552,
+    "sha256": "620966c579683f730f420ac1591343e415706da7cc3e904a575664c77bf5efe4",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "research-society",
+    "projectTitle": "JKKNIU Research Society",
+    "websitePath": "assets/projects/covers/research-society-cover.jpg",
+    "sourceType": "website_screenshot",
+    "sourceUrls": [
+      "https://jkkniurs.org/",
+      "https://github.com/mehedinaeem/JKKNIU-Research-Society"
+    ],
+    "method": "Actual public website screenshot; saved unchanged.",
+    "width": 1348,
+    "height": 926,
+    "bytes": 86994,
+    "sha256": "a4e7c04739315c741aad11a277f10f989f715ea110ccc6260fcb83225c952726",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "munc",
+    "projectTitle": "JKKNIU Model United Nations Club",
+    "websitePath": "assets/projects/covers/munc-cover.jpg",
+    "sourceType": "website_screenshot",
+    "sourceUrls": [
+      "https://jkkniu-munc.tech/",
+      "https://github.com/mehedinaeem/JKKNIU-MUNC"
+    ],
+    "method": "Actual public website screenshot; saved unchanged.",
+    "width": 1348,
+    "height": 926,
+    "bytes": 106412,
+    "sha256": "a79418191780de607e262865e72de94b4593c362a084728a009dc2da375db715",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "aos",
+    "projectTitle": "Amader Online School",
+    "websitePath": "assets/projects/covers/aos-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/AOS"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 129614,
+    "sha256": "8595ae61d29e7108fe35fd3b07018dc9d32a8898743044e0fa3a87cea394dec5",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "office-energy",
+    "projectTitle": "Office Energy Monitor",
+    "websitePath": "assets/projects/covers/office-energy-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/OFFICE-ENERGY-MONITOR"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 102954,
+    "sha256": "42bbb1121aba4e42165cdd2b7552ec31047505746eb73e22607977b2f433acf0",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "spam-email",
+    "projectTitle": "Spam email classification",
+    "websitePath": "assets/projects/covers/spam-email-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/Spam_Email_Naive_Bayes"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 99176,
+    "sha256": "c91bfeec6a4407a07aeccfe799ebacae9648b916aa730bc510030080f4f87212",
+    "containsProjectName": true
+  },
+  {
+    "projectId": "smartstudy",
+    "projectTitle": "SmartStudyAI",
+    "websitePath": "assets/projects/covers/smartstudy-cover.webp",
+    "sourceType": "image_gen",
+    "sourceUrls": [
+      "https://github.com/mehedinaeem/SmartStudyAi"
+    ],
+    "method": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "width": 1672,
+    "height": 941,
+    "bytes": 101476,
+    "sha256": "05ba08dc9c67b1bef60dbadafa92a62c6ab207b8f319d96f9f5b843793492a9c",
+    "containsProjectName": true
+  }
+]

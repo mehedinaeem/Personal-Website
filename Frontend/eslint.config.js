@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import { defineConfig, globalIgnores } from 'eslint/config'
 
 export default defineConfig([
-  globalIgnores(['dist', 'node_modules', '.vite']),
+  globalIgnores(['dist', 'node_modules', '.vite', 'tools/portfolio-source', 'Naeem_Portfolio_Codex_Kit', 'Naeem_Portfolio_Codex_Kit_Updated']),
   {
     files: ['**/*.{js,jsx}'],
     extends: [

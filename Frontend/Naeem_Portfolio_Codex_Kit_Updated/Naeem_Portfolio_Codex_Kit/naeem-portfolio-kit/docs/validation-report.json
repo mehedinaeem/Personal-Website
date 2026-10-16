@@ -1,0 +1,29 @@
+{
+  "result": "passed",
+  "scope": "Static integrity and source validation; not browser visual or interaction QA.",
+  "checks": [
+    "HTML structure: unique IDs, one H1, 28 described images, section targets, and local references.",
+    "Structured content and 66 asset mappings resolve to local files.",
+    "All 20 original upload hashes match the preserved source bytes.",
+    "All 12 project cards use named image assets with recorded provenance.",
+    "Research counts, distinct entries, selected projects, and user corrections are consistent.",
+    "Public/private directory boundary and dependency-free frontend source checked.",
+    "Pillow image decoding checks: 66 images passed."
+  ],
+  "errors": [],
+  "counts": {
+    "originalUploads": 20,
+    "projects": 12,
+    "roles": 11,
+    "researchRecords": 12
+  },
+  "metrics": {
+    "conferencePapers": 7,
+    "firstAuthorConferencePapers": 6,
+    "publishedInIEEEXplore": 1,
+    "presentedPublicationInProgress": 2,
+    "acceptedAwaitingPresentation": 4,
+    "journalUnderReview": 1,
+    "publicPreprints": 2
+  }
+}

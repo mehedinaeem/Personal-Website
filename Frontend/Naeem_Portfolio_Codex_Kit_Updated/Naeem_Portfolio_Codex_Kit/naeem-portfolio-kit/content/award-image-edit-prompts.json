@@ -1,0 +1,32 @@
+{
+  "updated": "2026-10-16",
+  "edits": [
+    {
+      "id": "digital-transformation",
+      "source": "assets/awards/digital-transformation-trophy.webp",
+      "prompt": "Use case: background-extraction\nAsset type: portfolio award card, transparent trophy photograph.\nInput image 1: EDIT TARGET, original real award photograph.\nPrimary request: Remove ONLY the surrounding wall, furniture and floor background outside the actual trophy silhouette. Keep the black and silver Digital Transformation & Leadership Award with gold star and black base. Preserve the exact JKKNIU Research Society multicolour logo, university seal, English lettering and Md. Mehedi Hasan Naeem name. Do not redesign or regenerate the trophy. Keep all foreground lettering, emblems, proportions, colours, photographic textures and inscriptions as close to the original pixels as possible.\nComposition: single complete trophy including the base, upright, centred with generous transparent padding on a square canvas; trophy approximately 85% of canvas height; no added shadows.\nBackdrop: actual transparent alpha, not white and not a painted checkerboard.\nConstraints: no new text, no translated or retypeset text, no changed logos, no beautification, no extra objects, no invented trophy detail, no solid backdrop. Keep the photograph's existing lighting and perspective; change only background transparency.",
+      "method": "image_gen built-in transparent background edit",
+      "projectSource": "evidence/award-image-update/generated-cutouts/exec-fdf49e8c-0c17-49ad-973d-3c5f38a2381c.png",
+      "output": "assets/awards/cards/digital-transformation-card.png",
+      "notes": "AI background-extraction edit for card thumbnail presentation. Use unchanged original trophy photograph for evidence and close reading of inscriptions."
+    },
+    {
+      "id": "hsc-academic-recognition",
+      "source": "assets/awards/hsc-academic-recognition.webp",
+      "prompt": "Use case: background-extraction\nAsset type: portfolio award card, transparent trophy photograph.\nInput image 1: EDIT TARGET, original real award photograph.\nPrimary request: Remove ONLY the surrounding wall, furniture and floor background outside the actual trophy silhouette. Keep the red and black HSC academic recognition trophy with round AUC crest, building photograph, Bengali inscriptions and black base. Preserve the exact crest, building photograph and Bengali lettering. Do not redesign or regenerate the trophy. Keep all foreground lettering, emblems, proportions, colours, photographic textures and inscriptions as close to the original pixels as possible.\nComposition: single complete trophy including the base, upright, centred with generous transparent padding on a square canvas; trophy approximately 85% of canvas height; no added shadows.\nBackdrop: actual transparent alpha, not white and not a painted checkerboard.\nConstraints: no new text, no translated or retypeset text, no changed logos, no beautification, no extra objects, no invented trophy detail, no solid backdrop. Keep the photograph's existing lighting and perspective; change only background transparency.",
+      "method": "image_gen built-in transparent background edit",
+      "projectSource": "evidence/award-image-update/generated-cutouts/exec-2c807027-7cac-484e-adbf-69e4baafd499.png",
+      "output": "assets/awards/cards/hsc-academic-recognition-card.png",
+      "notes": "AI background-extraction edit for card thumbnail presentation. Use unchanged original trophy photograph for evidence and close reading of inscriptions."
+    },
+    {
+      "id": "world-vision-jsc-recognition",
+      "source": "assets/awards/world-vision-jsc-recognition.webp",
+      "prompt": "Use case: background-extraction\nAsset type: portfolio award card, transparent trophy photograph.\nInput image 1: EDIT TARGET, original real award photograph.\nPrimary request: Remove ONLY the surrounding wall, furniture and floor background outside the actual trophy silhouette. Keep the oval red and black World Vision JSC recognition trophy with pale green label and base. Preserve the exact World Vision logo, Bengali text including year 2015, name, all typography and original scratches. Do not redesign or regenerate the trophy. Keep all foreground lettering, emblems, proportions, colours, photographic textures and inscriptions as close to the original pixels as possible.\nComposition: single complete trophy including the base, upright, centred with generous transparent padding on a square canvas; trophy approximately 85% of canvas height; no added shadows.\nBackdrop: actual transparent alpha, not white and not a painted checkerboard.\nConstraints: no new text, no translated or retypeset text, no changed logos, no beautification, no extra objects, no invented trophy detail, no solid backdrop. Keep the photograph's existing lighting and perspective; change only background transparency.",
+      "method": "image_gen built-in transparent background edit",
+      "projectSource": "evidence/award-image-update/generated-cutouts/exec-e9ea4528-33f3-4d25-9f7f-a960a0a176fa.png",
+      "output": "assets/awards/cards/world-vision-jsc-recognition-card.png",
+      "notes": "AI background-extraction edit for card thumbnail presentation. Use unchanged original trophy photograph for evidence and close reading of inscriptions."
+    }
+  ]
+}

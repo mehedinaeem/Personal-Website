@@ -1,0 +1,511 @@
+[
+  {
+    "id": "award-digital-digital-transformation-trophy",
+    "sourceFile": "evidence/original-uploads/image(20261015-153453).png",
+    "websitePath": "assets/awards/digital-transformation-trophy.webp",
+    "alt": "Digital Transformation & Leadership Award trophy",
+    "owner": "award-digital",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "award-hsc-hsc-academic-recognition",
+    "sourceFile": "evidence/original-uploads/image(20261015-153549).png",
+    "websitePath": "assets/awards/hsc-academic-recognition.webp",
+    "alt": "Academic recognition trophy from Krishi Bishwabidyalay College",
+    "owner": "award-hsc",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "award-jsc-world-vision-jsc-recognition",
+    "sourceFile": "evidence/original-uploads/image(20261015-153555).png",
+    "websitePath": "assets/awards/world-vision-jsc-recognition.webp",
+    "alt": "World Vision Bangladesh recognition for JSC GPA 5",
+    "owner": "award-jsc",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "award-digital-digital-transformation-presentation",
+    "sourceFile": "evidence/original-uploads/image(20261015-154309).png",
+    "websitePath": "assets/awards/digital-transformation-presentation.webp",
+    "alt": "Receiving the Digital Transformation & Leadership Award",
+    "owner": "award-digital",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "sport-cricket-cse-fest-captain",
+    "sourceFile": "evidence/original-uploads/image(20261015-154958).png",
+    "websitePath": "assets/sports/cse-fest-captain.webp",
+    "alt": "Naeem with the CSE Fest runner-up trophy and medal",
+    "owner": "sport-cricket",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "sport-cricket-cse-fest-team",
+    "sourceFile": "evidence/original-uploads/image(20261015-155006).png",
+    "websitePath": "assets/sports/cse-fest-team.webp",
+    "alt": "CSE Fest runner-up team members with their trophy",
+    "owner": "sport-cricket",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "sport-cricket-cse-fest-with-faculty",
+    "sourceFile": "evidence/original-uploads/image(20261015-155013).png",
+    "websitePath": "assets/sports/cse-fest-with-faculty.webp",
+    "alt": "CSE Fest trophy photograph with a faculty member",
+    "owner": "sport-cricket",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "role-programming-hero-programming-hero-ambassador",
+    "sourceFile": "evidence/original-uploads/image(20261015-155316).png",
+    "websitePath": "assets/leadership/programming-hero-ambassador.webp",
+    "alt": "Programming Hero campus ambassador welcome materials",
+    "owner": "role-programming-hero",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "event-compas-compas-conference-materials",
+    "sourceFile": "evidence/original-uploads/image(20261015-155346).png",
+    "websitePath": "assets/conferences/compas-conference-materials.webp",
+    "alt": "COMPAS 2026 conference materials and souvenirs",
+    "owner": "event-compas",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "event-compas-compas-venue",
+    "sourceFile": "evidence/original-uploads/image(20261015-155416).png",
+    "websitePath": "assets/conferences/compas-venue.webp",
+    "alt": "Naeem at the COMPAS 2026 conference venue",
+    "owner": "event-compas",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "event-compas-compas-session",
+    "sourceFile": "evidence/original-uploads/image(20261015-155436).png",
+    "websitePath": "assets/conferences/compas-session.webp",
+    "alt": "Group photograph at a COMPAS 2026 conference session",
+    "owner": "event-compas",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "event-compas-compas-colleagues",
+    "sourceFile": "evidence/original-uploads/image(20261015-155442).png",
+    "websitePath": "assets/conferences/compas-colleagues.webp",
+    "alt": "COMPAS 2026 photograph with colleagues",
+    "owner": "event-compas",
+    "processing": "Full frame, EXIF orientation respected, resized and compressed; original preserved."
+  },
+  {
+    "id": "digital-transformation-award",
+    "sourceFile": "evidence/original-uploads/Digital Transformation & Leadership Award.pdf",
+    "websitePath": "assets/awards/digital-transformation-award.webp",
+    "documentPath": "assets/documents/digital-transformation-award.pdf",
+    "processing": "PDF first-page preview; source certificate unmodified."
+  },
+  {
+    "id": "aspire-leaders-program",
+    "sourceFile": "evidence/original-uploads/Aspire_Leaders_Program_Certificate.pdf",
+    "websitePath": "assets/certificates/aspire-leaders-program.webp",
+    "documentPath": "assets/documents/aspire-leaders-program.pdf",
+    "processing": "PDF first-page preview; source certificate unmodified."
+  },
+  {
+    "id": "intel-student-ambassador",
+    "sourceFile": "evidence/original-uploads/Intel_Student_Ambassador_Certificate.pdf",
+    "websitePath": "assets/certificates/intel-student-ambassador.webp",
+    "documentPath": "assets/documents/intel-student-ambassador.pdf",
+    "processing": "PDF first-page preview; source certificate unmodified."
+  },
+  {
+    "id": "ibm-spss-training",
+    "sourceFile": "evidence/original-uploads/Research_Training_Certificate.pdf",
+    "websitePath": "assets/certificates/ibm-spss-training.webp",
+    "documentPath": "assets/documents/ibm-spss-training.pdf",
+    "processing": "PDF first-page preview; source certificate unmodified."
+  },
+  {
+    "id": "spisfm-icoste-2025",
+    "sourceFile": "evidence/conference-certificates/11th IEEE i-coste 2025.pdf",
+    "websitePath": "assets/certificates/spisfm-icoste-2025.webp",
+    "documentPath": "assets/documents/spisfm-icoste-2025.pdf",
+    "processing": "Full-page PDF preview; source certificate unmodified."
+  },
+  {
+    "id": "biltek-lumo-safety",
+    "sourceFile": "evidence/conference-certificates/13th international Biltek Congress.pdf",
+    "websitePath": "assets/certificates/biltek-lumo-safety.webp",
+    "documentPath": "assets/documents/biltek-lumo-safety.pdf",
+    "processing": "Full-page PDF preview; source certificate unmodified."
+  },
+  {
+    "id": "spicscon-food-waste",
+    "sourceFile": "evidence/conference-certificates/671.pdf",
+    "websitePath": "assets/certificates/spicscon-food-waste.webp",
+    "documentPath": "assets/documents/spicscon-food-waste.pdf",
+    "processing": "Full-page PDF preview; source certificate unmodified."
+  },
+  {
+    "id": "meetcon-solar-automation",
+    "sourceFile": "evidence/conference-certificates/AGRICULTURAL AUTOMATION SYSTEM.pdf",
+    "websitePath": "assets/certificates/meetcon-solar-automation.webp",
+    "documentPath": "assets/documents/meetcon-solar-automation.pdf",
+    "processing": "Full-page PDF preview resized to a maximum of 1,800 pixels; source certificate unmodified."
+  },
+  {
+    "id": "meetcon-tree-canopy",
+    "sourceFile": "evidence/conference-certificates/Meetcon-work international (Tree Canopy).pdf",
+    "websitePath": "assets/certificates/meetcon-tree-canopy.webp",
+    "documentPath": "assets/documents/meetcon-tree-canopy.pdf",
+    "processing": "Full-page PDF preview; source certificate unmodified."
+  },
+  {
+    "id": "cukurova-flood-impact",
+    "sourceFile": "evidence/conference-certificates/ML Based Flood Detect.pdf",
+    "websitePath": "assets/certificates/cukurova-flood-impact.webp",
+    "documentPath": "assets/documents/cukurova-flood-impact.pdf",
+    "processing": "Full-page PDF preview; source certificate unmodified."
+  },
+  {
+    "id": "food-waste",
+    "websitePath": "assets/projects/food-waste.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Personal-Website/blob/main/Frontend/public/assets/optimized/projects/food-waste-ml.webp",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "lumo",
+    "websitePath": "assets/projects/lumo.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Personal-Website/blob/main/Frontend/public/assets/optimized/projects/lumo-edge-ai.webp",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "campus-transport",
+    "websitePath": "assets/projects/campus-transport.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Personal-Website/blob/main/Frontend/public/assets/optimized/projects/smart-campus-transport.webp",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "research-society",
+    "websitePath": "assets/projects/research-society.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Personal-Website/blob/main/Frontend/public/assets/optimized/projects/VP_Research.webp",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "mun",
+    "websitePath": "assets/projects/mun.png",
+    "sourceUrl": "https://github.com/mehedinaeem/Personal-Website/blob/main/Frontend/public/assets/optimized/projects/mun.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "hyd-participant",
+    "websitePath": "assets/certificates/hyd-participant.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Personal-Website/blob/main/Frontend/public/assets/optimized/certifications/hyd-participant-certificate.webp",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "theatrestage-script",
+    "websitePath": "assets/projects/theatrestage-script.png",
+    "sourceUrl": "https://github.com/mehedinaeem/ThetreStageAI/blob/main/docs/images/script_zoom.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "bitol-dataset-examples",
+    "websitePath": "assets/projects/bitol-dataset-examples.png",
+    "sourceUrl": "https://github.com/mehedinaeem/Bitol_Computer_Vision_System/blob/main/paper_figures/04_qualitative/readme_dataset_examples.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "office-energy-dashboard",
+    "websitePath": "assets/projects/office-energy-dashboard.png",
+    "sourceUrl": "https://github.com/mehedinaeem/OFFICE-ENERGY-MONITOR/blob/main/diagrams/dashboard_02.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "smartstudy",
+    "websitePath": "assets/projects/smartstudy.png",
+    "sourceUrl": "https://github.com/mehedinaeem/SmartStudyAi/blob/main/image.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "jkkniurs-official-logo",
+    "websitePath": "assets/leadership/jkkniurs-official-logo.png",
+    "sourceUrl": "https://github.com/mehedinaeem/JKKNIU-Research-Society/blob/main/Frontend/public/media/jkkniurs-logo.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "jkkniu-munc-logo",
+    "websitePath": "assets/leadership/jkkniu-munc-logo.png",
+    "sourceUrl": "https://github.com/mehedinaeem/JKKNIU-MUNC/blob/main/Frontend/public/mun-logo.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "amader-online-school-logo",
+    "websitePath": "assets/leadership/amader-online-school-logo.png",
+    "sourceUrl": "https://github.com/mehedinaeem/AOS/blob/main/public/logo.png",
+    "processing": "Downloaded from the user’s public repository. Official logos are preserved byte-for-byte."
+  },
+  {
+    "id": "profile-portrait",
+    "websitePath": "assets/profile/portrait.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Personal-Website/blob/main/Frontend/public/assets/optimized/profile/me.webp",
+    "processing": "Existing portfolio portrait, unchanged."
+  },
+  {
+    "id": "football-post-photo",
+    "websitePath": "assets/sports/dewpara-football-champions.jpg",
+    "sourceUrl": "https://www.facebook.com/share/p/19NwuQLsTw/",
+    "processing": "Public post preview photo saved locally, unchanged."
+  },
+  {
+    "id": "run-post-photo",
+    "websitePath": "assets/sports/7-5km-run-finisher.jpg",
+    "sourceUrl": "https://www.facebook.com/share/p/18koCxdJxy/",
+    "processing": "Public post preview photo saved locally, unchanged."
+  },
+  {
+    "id": "compas-certificate",
+    "sourceFile": "evidence/conference-certificates/Compass.jpeg",
+    "websitePath": "assets/certificates/compas-lumo.webp",
+    "documentPath": "assets/documents/compas-lumo-presentation.jpeg",
+    "processing": "Full-frame preview, original preserved. Paper 239, correct LUMO presentation."
+  },
+  {
+    "id": "project-cover-smartpresence",
+    "websitePath": "assets/projects/covers/smartpresence-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/SmartPresence",
+    "sourceType": "image_gen",
+    "projectId": "smartpresence",
+    "alt": "SmartPresence named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-lumo",
+    "websitePath": "assets/projects/covers/lumo-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Lumo",
+    "sourceType": "image_gen",
+    "projectId": "lumo",
+    "alt": "LUMO named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-bitol",
+    "websitePath": "assets/projects/covers/bitol-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Bitol_Computer_Vision_System",
+    "sourceType": "image_gen",
+    "projectId": "bitol",
+    "alt": "BITOL · Banana surface-condition detection named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-theatrestageai",
+    "websitePath": "assets/projects/covers/theatrestageai-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/ThetreStageAI",
+    "sourceType": "image_gen",
+    "projectId": "theatrestageai",
+    "alt": "TheatreStageAI named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-food-waste",
+    "websitePath": "assets/projects/covers/food-waste-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/restaurant-food-management-ml",
+    "sourceType": "image_gen",
+    "projectId": "food-waste",
+    "alt": "Restaurant food-waste modelling named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-campus-transport",
+    "websitePath": "assets/projects/covers/campus-transport-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Smart-Campus-Smart-Transport",
+    "sourceType": "image_gen",
+    "projectId": "campus-transport",
+    "alt": "Smart Campus, Smart Transport named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-research-society",
+    "websitePath": "assets/projects/covers/research-society-cover.jpg",
+    "sourceUrl": "https://jkkniurs.org/",
+    "sourceType": "website_screenshot",
+    "projectId": "research-society",
+    "alt": "JKKNIU Research Society website homepage showing its actual project name and branding",
+    "processing": "Actual public website screenshot; saved unchanged.",
+    "promptReference": null
+  },
+  {
+    "id": "project-cover-munc",
+    "websitePath": "assets/projects/covers/munc-cover.jpg",
+    "sourceUrl": "https://jkkniu-munc.tech/",
+    "sourceType": "website_screenshot",
+    "projectId": "munc",
+    "alt": "JKKNIU Model United Nations Club website homepage showing its actual project name and branding",
+    "processing": "Actual public website screenshot; saved unchanged.",
+    "promptReference": null
+  },
+  {
+    "id": "project-cover-aos",
+    "websitePath": "assets/projects/covers/aos-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/AOS",
+    "sourceType": "image_gen",
+    "projectId": "aos",
+    "alt": "Amader Online School named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-office-energy",
+    "websitePath": "assets/projects/covers/office-energy-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/OFFICE-ENERGY-MONITOR",
+    "sourceType": "image_gen",
+    "projectId": "office-energy",
+    "alt": "Office Energy Monitor named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-spam-email",
+    "websitePath": "assets/projects/covers/spam-email-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/Spam_Email_Naive_Bayes",
+    "sourceType": "image_gen",
+    "projectId": "spam-email",
+    "alt": "Spam email classification named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "project-cover-smartstudy",
+    "websitePath": "assets/projects/covers/smartstudy-cover.webp",
+    "sourceUrl": "https://github.com/mehedinaeem/SmartStudyAi",
+    "sourceType": "image_gen",
+    "projectId": "smartstudy",
+    "alt": "SmartStudyAI named project cover with a repository-informed conceptual illustration",
+    "processing": "Built-in image generation; full frame converted to WebP without cropping, relabeling, or compositing.",
+    "promptReference": "content/project-cover-prompts.json"
+  },
+  {
+    "id": "award-cutout-digital-transformation",
+    "sourceFile": "evidence/award-image-update/generated-cutouts/exec-fdf49e8c-0c17-49ad-973d-3c5f38a2381c.png",
+    "websitePath": "assets/awards/cards/digital-transformation-card.png",
+    "alt": "Digital Transformation and Leadership Award trophy with background removed",
+    "owner": "awards",
+    "processing": "Built-in imagegen background extraction, then resized with alpha preserved to a 1200x900 canvas. Unchanged original retained for gallery evidence."
+  },
+  {
+    "id": "award-cutout-hsc-academic-recognition",
+    "sourceFile": "evidence/award-image-update/generated-cutouts/exec-2c807027-7cac-484e-adbf-69e4baafd499.png",
+    "websitePath": "assets/awards/cards/hsc-academic-recognition-card.png",
+    "alt": "HSC academic recognition trophy with background removed",
+    "owner": "awards",
+    "processing": "Built-in imagegen background extraction, then resized with alpha preserved to a 1200x900 canvas. Unchanged original retained for gallery evidence."
+  },
+  {
+    "id": "award-cutout-world-vision-jsc-recognition",
+    "sourceFile": "evidence/award-image-update/generated-cutouts/exec-e9ea4528-33f3-4d25-9f7f-a960a0a176fa.png",
+    "websitePath": "assets/awards/cards/world-vision-jsc-recognition-card.png",
+    "alt": "World Vision JSC recognition trophy with background removed",
+    "owner": "awards",
+    "processing": "Built-in imagegen background extraction, then resized with alpha preserved to a 1200x900 canvas. Unchanged original retained for gallery evidence."
+  },
+  {
+    "id": "award-photo-innovatex",
+    "sourceFile": "website/assets/conferences/Innovatex-hackathon-bubt.png",
+    "websitePath": "assets/conferences/Innovatex-hackathon-bubt.png",
+    "alt": "Team at Innovatex Hackathon 2025, BUBT",
+    "owner": "awards",
+    "processing": "User-added original photograph, unchanged."
+  },
+  {
+    "id": "award-card-innovatex",
+    "sourceFile": "website/assets/conferences/Innovatex-hackathon-bubt.png",
+    "websitePath": "assets/awards/cards/innovatex-hackathon-card.png",
+    "alt": "Team at the Innovatex Hackathon 2025 at BUBT",
+    "owner": "awards",
+    "processing": "Full photograph contained without cropping on a 1200x900 transparent canvas. Event background preserved."
+  },
+  {
+    "id": "award-photo-research-week",
+    "sourceFile": "website/assets/conferences/Research-week-runner up.png",
+    "websitePath": "assets/conferences/Research-week-runner up.png",
+    "alt": "JKKNIU Research Week team and exhibition booth",
+    "owner": "awards",
+    "processing": "User-added original photograph, unchanged."
+  },
+  {
+    "id": "award-card-research-week",
+    "sourceFile": "website/assets/conferences/Research-week-runner up.png",
+    "websitePath": "assets/awards/cards/research-week-card.png",
+    "alt": "JKKNIU team at the Research Week exhibition",
+    "owner": "awards",
+    "processing": "Full photograph contained without cropping on a 1200x900 transparent canvas. Event background preserved."
+  },
+  {
+    "id": "portrait-icon-apple-touch-icon",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "assets/icons/apple-touch-icon.png",
+    "alt": "Portrait of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "Supplied me.png portrait; standard icon size export. Facial features unchanged."
+  },
+  {
+    "id": "portrait-icon-favicon-16",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "assets/icons/favicon-16.png",
+    "alt": "Portrait of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "Supplied me.png portrait; standard icon size export. Facial features unchanged."
+  },
+  {
+    "id": "portrait-icon-favicon-192",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "assets/icons/favicon-192.png",
+    "alt": "Portrait of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "Supplied me.png portrait; standard icon size export. Facial features unchanged."
+  },
+  {
+    "id": "portrait-icon-favicon-32",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "assets/icons/favicon-32.png",
+    "alt": "Portrait of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "Supplied me.png portrait; standard icon size export. Facial features unchanged."
+  },
+  {
+    "id": "portrait-icon-favicon-48",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "assets/icons/favicon-48.png",
+    "alt": "Portrait of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "Supplied me.png portrait; standard icon size export. Facial features unchanged."
+  },
+  {
+    "id": "portrait-icon-favicon-512",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "assets/icons/favicon-512.png",
+    "alt": "Portrait of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "Supplied me.png portrait; standard icon size export. Facial features unchanged."
+  },
+  {
+    "id": "portrait-icon-me",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "assets/icons/me.png",
+    "alt": "Portrait of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "Supplied me.png portrait; standard icon size export. Facial features unchanged."
+  },
+  {
+    "id": "portrait-favicon-ico",
+    "sourceFile": "website/assets/icons/me.png",
+    "websitePath": "favicon.ico",
+    "alt": "Portrait favicon of Md Mehedi Hasan Naeem",
+    "owner": "profile",
+    "processing": "ICO containing 16, 32 and 48 pixel versions of the supplied portrait."
+  }
+]

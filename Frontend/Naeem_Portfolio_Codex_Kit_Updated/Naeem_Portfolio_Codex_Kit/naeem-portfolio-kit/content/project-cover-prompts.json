@@ -1,0 +1,92 @@
+[
+  {
+    "projectId": "smartpresence",
+    "projectTitle": "SmartPresence",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/SmartPresence",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864, for a research project named exactly \"SmartPresence\". A refined editorial technology illustration with light warm-gray background, dark navy typography, small restrained blue and teal accents, soft realistic 3D materials and generous space. Large perfectly legible title \"SmartPresence\" on the left, smaller exact subtitle \"Vision-based Attendance\" beneath it. On the right, an elegant isometric classroom scene with a few faceless abstract student silhouettes, a modest camera, and subtle recognition frames and body-tracking trails. It should suggest computer-vision attendance research, not a screenshot or a finished commercial product. A small bottom line may read exactly \"FaceNet · SVM · YOLO11n · ByteTrack\". All lettering safely inside a 10% inset so it remains visible in project cards. Clean sophisticated composition, crisp typography, no logos, no stock-photo watermark, no accuracy percentages, no names or roll numbers, no implication that fingerprint-to-track integration is complete. The image is an illustrative cover, not technical evaluation evidence.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/smartpresence-cover.webp"
+  },
+  {
+    "projectId": "lumo",
+    "projectTitle": "LUMO",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/Lumo",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. Refined editorial technology illustration, warm off-white background, dark navy modern sans-serif title, restrained blue accents, soft high-quality 3D materials and subtle shadows, generous negative space. Clear large typography on the left and an engaging project-specific illustration on the right. Keep all text within a 10% safe inset; the image will be shown at card size. This is a conceptual project illustration, not a real screenshot or evaluation result. No logos, no watermark, no invented performance numbers, no awards, no extra text except the exact supplied title and subtitle. Title (verbatim): \"LUMO\". Subtitle (verbatim): \"Offline Multilingual Voice Assistant\". Repository basis: a Python assistant with local ASR, a locally quantized language model, offline text-to-speech; research on edge devices and English/Bangla. Depict a compact unbranded edge-computing board, a tasteful microphone and speaker, and a luminous abstract audio waveform that remains locally around the device. Gentle blue and teal light; no internet cloud, no humanoid robot, no fabricated user messages.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/lumo-cover.webp"
+  },
+  {
+    "projectId": "bitol",
+    "projectTitle": "BITOL · Banana surface-condition detection",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/Bitol_Computer_Vision_System",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. Refined editorial technology illustration, warm off-white background, dark navy modern sans-serif title, restrained blue accents, soft high-quality 3D materials and subtle shadows, generous negative space. Clear large typography on the left and an engaging project-specific illustration on the right. Keep all text within a 10% safe inset; the image will be shown at card size. This is a conceptual project illustration, not a real screenshot or evaluation result. No logos, no watermark, no invented performance numbers, no awards, no extra text except the exact supplied title and subtitle. Title (verbatim): \"BITOL\". Subtitle (verbatim): \"Banana Surface-Condition Detection\". Repository basis: YOLOv8n object detection on banana images with healthy/unhealthy visible surface-appearance labels. Depict two or three realistic sculpted bananas with subtle different surface marks and minimal translucent recognition-frame corners, next to a small camera-lens element. Restrained fresh yellow and green with navy and blue typography. Do not depict insects, disease diagnoses, accuracy charts, numeric scores, or medical claims.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/bitol-cover.webp"
+  },
+  {
+    "projectId": "theatrestageai",
+    "projectTitle": "TheatreStageAI",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/ThetreStageAI",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. Refined editorial technology illustration, warm off-white background, dark navy modern sans-serif title, restrained blue accents, soft high-quality 3D materials and subtle shadows, generous negative space. Clear large typography on the left and an engaging project-specific illustration on the right. Keep all text within a 10% safe inset; the image will be shown at card size. This is a conceptual project illustration, not a real screenshot or evaluation result. No logos, no watermark, no invented performance numbers, no awards, no extra text except the exact supplied title and subtitle. Title (verbatim): \"TheatreStageAI\". Subtitle (verbatim): \"Bengali Theatre Production Planning\". Repository basis: research prototype for multi-view retrieval-augmented generation of scenes, actor blocking, stage directions, and lighting cues. Depict an elegant miniature theatre stage with burgundy curtains, warm spotlights, simple abstract actor silhouettes, and a few floating script sheets with decorative lines only. A subtle blue library-card or document motif suggests retrieval. No actual Bengali words or fake dialogue, no performance metrics, no implication of a deployed commercial app.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/theatrestageai-cover.webp"
+  },
+  {
+    "projectId": "food-waste",
+    "projectTitle": "Restaurant food-waste modelling",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/restaurant-food-management-ml",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. A refined editorial illustration, warm off-white background, dark navy sans-serif project title, restrained blue accents, soft high-quality 3D materials and subtle shadows, generous negative space. Large highly legible project name on the left, project-specific sculptural visual on the right. All text within a 10% safe inset, easy to read at project-card size. This is an illustrative project cover, not an actual screenshot or measured result. No logos, no watermark, no numbers, no extra text except the supplied exact title/subtitle. Title exactly: \"Restaurant Food Waste\". Subtitle exactly: \"Machine Learning Research\". Repository basis: exploratory regression using restaurant operational/contextual records and a constructed proxy waste target, with chronological evaluation. Show an elegant miniature restaurant plate, a small bowl with leftover ingredients, subtle vegetables, and a few translucent abstract data tiles and a gentle blue trend line without axes, numbers, or labels. Muted sage-green accents. No claims of real measured waste, no savings percentages, no predictive result dashboard.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/food-waste-cover.webp"
+  },
+  {
+    "projectId": "campus-transport",
+    "projectTitle": "Smart Campus, Smart Transport",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/Smart-Campus-Smart-Transport",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. A refined editorial illustration, warm off-white background, dark navy sans-serif project title, restrained blue accents, soft high-quality 3D materials and subtle shadows, generous negative space. Large highly legible project name on the left, project-specific sculptural visual on the right. All text within a 10% safe inset, easy to read at project-card size. This is an illustrative project cover, not an actual screenshot or measured result. No logos, no watermark, no numbers, no extra text except the supplied exact title/subtitle. Main title exactly, on two balanced lines: \"Smart Campus,\" and \"Smart Transport\". Subtitle exactly: \"Campus Transport Platform\". Repository basis: Django-based routes, schedules, role-based booking, and a tracking prototype; hardware GPS integration is still scope-dependent. Illustrate a clean blue campus shuttle bus on a miniature campus road, a small unbranded map with route markers, and a tasteful blank schedule card. Blue and muted teal accents. No institution logos, no license plates, no fabricated arrival times, no fake live location labels.",
+    "revisionPrompt": "Edit this existing project cover with ONE targeted change: completely remove the small three-line explanatory paragraph beginning \"Repository basis: Django-based routes, schedules,\" and ending \"hardware GPS integration is still scope-dependent.\" Fill that paragraph area with the same clean off-white background. Preserve the exact large title \"Smart Campus, Smart Transport\", preserve the subtitle \"Campus Transport Platform\", and preserve the blue bus, campus, map, schedule card, colors, lighting, landscape composition, and all other visual details. The finished cover must contain only the project title and the subtitle, no body paragraph, no replacement text, no new objects, no logos, no watermark.",
+    "finalWebsitePath": "assets/projects/covers/campus-transport-cover.webp"
+  },
+  {
+    "projectId": "aos",
+    "projectTitle": "Amader Online School",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/AOS",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. A refined editorial illustration, warm off-white background, dark navy sans-serif project title, restrained blue accents, soft high-quality 3D materials and subtle shadows, generous negative space. Large highly legible project name on the left, project-specific sculptural visual on the right. All text within a 10% safe inset, easy to read at project-card size. This is an illustrative project cover, not an actual screenshot or measured result. No logos, no watermark, no numbers, no extra text except the supplied exact title/subtitle. Main title exactly, on two balanced lines: \"Amader Online\" and \"School\". Subtitle exactly: \"Free Educational Resources\". Repository basis: a frontend React educational platform for Bangladeshi school/college students, with class/subject directories and an official educational video archive. Illustrate an elegant open textbook, a laptop with simple unlabeled video-lesson tiles, a notebook, and a small graduation-cap object. Blue and muted coral accents. No recreation or alteration of the real school logo, no real people, no invented certification or university affiliation.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/aos-cover.webp"
+  },
+  {
+    "projectId": "office-energy",
+    "projectTitle": "Office Energy Monitor",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/OFFICE-ENERGY-MONITOR",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. A refined editorial technology illustration, warm off-white background, dark navy modern sans-serif project title, small restrained blue accents, soft high-quality 3D materials, subtle shadows, and generous negative space. Large legible title on the left and an engaging project-specific conceptual illustration on the right. All text within a 10% safe inset so the full title is visible at project-card size. This is illustrative cover art, not an actual screenshot or evaluation result. No logos, no watermark, no performance numbers, no claims of production deployment. Only the two quoted text elements listed below may appear anywhere in the image. Do not print the contextual explanation or these instructions. Text element 1 (title): \"Office Energy Monitor\". Text element 2 (subtitle): \"Simulated Device Monitoring\". Visual context, do not print: the repository is a hackathon simulation with a React dashboard, Django API, room-level fans/lights, power calculations, and a Discord status bot. Show a beautifully crafted miniature open office room with desk, fan and ceiling lights, accompanied by unlabelled toggle controls and a soft blue energy waveform. No fabricated watts, no actual readout figures, no Discord logo; a small abstract chat-bubble motif is acceptable.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/office-energy-cover.webp"
+  },
+  {
+    "projectId": "spam-email",
+    "projectTitle": "Spam email classification",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/Spam_Email_Naive_Bayes",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. A refined editorial technology illustration, warm off-white background, dark navy modern sans-serif project title, small restrained blue accents, soft high-quality 3D materials, subtle shadows, and generous negative space. Large legible title on the left and an engaging project-specific conceptual illustration on the right. All text within a 10% safe inset so the full title is visible at project-card size. This is illustrative cover art, not an actual screenshot or evaluation result. No logos, no watermark, no performance numbers, no claims of production deployment. Only the two quoted text elements listed below may appear anywhere in the image. Do not print the contextual explanation or these instructions. Text element 1 (title): \"Spam Email Classification\". Text element 2 (subtitle): \"Machine Learning for Email\". Visual context, do not print: the repository compares Naive Bayes, Decision Tree, and Random Forest on spam versus legitimate emails. Show elegant sculptural white envelopes passing through a gentle abstract filtering lens, with blue envelopes neatly grouped on one side and a few muted coral envelopes on the other. The visual should suggest classification without implying perfect protection. No real messages, names, addresses, percentages, shield certification or security guarantees.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/spam-email-cover.webp"
+  },
+  {
+    "projectId": "smartstudy",
+    "projectTitle": "SmartStudyAI",
+    "method": "built-in image generation",
+    "reference": "https://github.com/mehedinaeem/SmartStudyAi",
+    "generationPrompt": "Use case: stylized-concept. Create ONE finished landscape 16:9 portfolio project cover, approximately 1536 by 864. A refined editorial technology illustration, warm off-white background, dark navy modern sans-serif project title, small restrained blue accents, soft high-quality 3D materials, subtle shadows, and generous negative space. Large legible title on the left and an engaging project-specific conceptual illustration on the right. All text within a 10% safe inset so the full title is visible at project-card size. This is illustrative cover art, not an actual screenshot or evaluation result. No logos, no watermark, no performance numbers, no claims of production deployment. Only the two quoted text elements listed below may appear anywhere in the image. Do not print the contextual explanation or these instructions. Text element 1 (title): \"SmartStudyAI\". Text element 2 (subtitle): \"Summarize. Learn. Quiz.\". Visual context, do not print: repository metadata describes an AI study tool for summarization, learning, and quizzes. Show an open notebook and a tidy stack of soft-blue study flashcards with decorative unlabelled lines, next to a simple laptop with a blank reading panel and a small abstract blue spark. No extra capabilities, no fake test scores, no grading claims, no university branding, no generated body text.",
+    "revisionPrompt": null,
+    "finalWebsitePath": "assets/projects/covers/smartstudy-cover.webp"
+  }
+]

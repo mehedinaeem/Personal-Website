@@ -1,0 +1,51 @@
+import { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { useLocation, useParams } from 'react-router-dom';
+import data, { researchGroups } from './data';
+import { EvidenceCard, Links, ProjectCard, ResearchCard, PaperReading, Section } from './components';
+import './portfolio.css';
+import ExperienceTimeline from './ExperienceTimeline';
+import PortfolioNavbar from './PortfolioNavbar';
+const groups = { conference: 'Conference papers', journal: 'Journal work', preprints: 'Preprints', abstracts: 'Abstracts & presentations' };
+function Research() {
+  const [group, setGroup] = useState('conference');
+  const [query, setQuery] = useState('');
+  const [status, setStatus] = useState('all');
+  const records = researchGroups[group].filter(p => (status === 'all' || p.statusKey === status) && `${p.title} ${p.authors?.join(' ')} ${p.venue} ${p.summary}`.toLowerCase().includes(query.toLowerCase()));
+  return <Section id="research" eyebrow="01 / Research" title="Ideas, experiments & evidence."><p className="pf-section-intro">Seven IEEE conference papers, six as first author. One published, two presented with proceedings publication in progress, and four accepted. Status snapshot: 15 October 2026.</p><div className="pf-filters" aria-label="Research categories">{Object.entries(groups).map(([key,label]) => <button key={key} aria-pressed={group === key} onClick={() => { setGroup(key); setStatus('all'); }}>{label} <span>{researchGroups[key].length}</span></button>)}</div><div className="pf-search"><label>Search research<input type="search" value={query} onChange={e => setQuery(e.target.value)} placeholder="Title, author, venue or topic…" /></label><label>Status<select value={status} onChange={e => setStatus(e.target.value)}><option value="all">All statuses</option>{[...new Set(researchGroups[group].map(p => p.statusKey))].map(s => <option key={s} value={s}>{s.replaceAll('-',' ')}</option>)}</select></label></div>{group === 'preprints' && <p className="pf-note">These two preprints are alternative versions of the conference papers; they do not add to the seven distinct papers.</p>}<p role="status" className="pf-results">{records.length} {records.length === 1 ? 'record' : 'records'}</p><div className="pf-papers">{records.map(p => <ResearchCard key={`${group}-${p.id}`} paper={p} />)}</div>{!records.length && <p className="pf-empty">No matching research. Try another search or status.</p>}<a className="pf-text-button" href="/assets/portfolio/documents/publications.bib" download>Download conference bibliography ↓</a></Section>;
+}
+function Portrait({ profile: p }) {
+  const [flipped, setFlipped] = useState(false);
+  return <div className={`pf-portrait-shell ${flipped ? 'is-flipped' : ''}`}><div className="pf-portrait-turn"><div className="pf-portrait-front" aria-hidden={flipped}><img src={p.portrait.src} alt={p.portrait.alt} fetchPriority="high" /><div className="pf-portrait-label"><span>COMPUTER VISION & EDGE AI</span><strong>Curiosity into practice.</strong></div></div><div className="pf-portrait-back" aria-hidden={!flipped}><p className="pf-eyebrow">Research & engineering</p><h3>{p.name}</h3><p>{p.institutionShort}</p><div className="pf-tags">{p.interests.map(i => <span key={i}>{i}</span>)}</div></div></div><button className="pf-flip-control" aria-pressed={flipped} onClick={() => setFlipped(!flipped)}>{flipped ? 'Show portrait' : 'Flip portrait'} ↻</button></div>;
+}
+function Projects({ project, slug }) {
+  const [category, setCategory] = useState('All');
+  const [expanded, setExpanded] = useState(false);
+  const [columns, setColumns] = useState(1);
+  const grid = useRef(null);
+  const heading = useRef(null);
+  useEffect(() => {
+    const observer = new ResizeObserver(() => setColumns(getComputedStyle(grid.current).gridTemplateColumns.split(' ').length));
+    observer.observe(grid.current);
+    return () => observer.disconnect();
+  }, []);
+  const matches = project ? [project] : data.projects.filter(p => category === 'All' || p.category === category);
+  const limit = columns * 2;
+  return <Section id="projects" eyebrow="02 / Selected work" title={project ? project.title : 'From an idea to something useful.'}><p ref={heading} className="pf-section-intro">Research prototypes, community platforms, and the engineering behind them.</p>{!project && <div className="pf-filters" aria-label="Project categories">{['All', ...new Set(data.projects.map(p => p.category))].map(c => <button key={c} aria-pressed={category === c} onClick={() => {setCategory(c);setExpanded(false);}}>{c}</button>)}</div>}{slug && !project && <p>Project not found. <a href="/projects">Browse projects</a></p>}<div id="project-results" ref={grid} className="pf-grid pf-project-grid">{(expanded ? matches : matches.slice(0,limit)).map(p => <ProjectCard key={p.id} project={p} />)}</div>{matches.length > limit && <div className="pf-expand"><button aria-expanded={expanded} aria-controls="project-results" onClick={() => { if (expanded) heading.current.scrollIntoView({block:'start'});setExpanded(!expanded);}}>{expanded ? 'Show less ↑' : `View all projects (${matches.length}) ↓`}</button></div>}</Section>;
+}
+export default function Portfolio() {
+  const location = useLocation();
+  const { slug } = useParams();
+  const p = data.profile;
+  const projectRoute = location.pathname.startsWith('/projects');
+  const researchRoute = location.pathname.startsWith('/research');
+  const project = slug && data.projects.find(p => p.id === slug);
+  const paper = slug && [...data.publications,...data.journalManuscripts,...data.abstractPresentations].find(p => p.id === slug);
+  const home = !projectRoute && !researchRoute;
+  return <div className="portfolio"><Helmet><title>{project?.title || paper?.title || 'Md Mehedi Hasan Naeem | Computer Vision & Intelligent Systems'}</title><meta name="description" content="Research and engineering portfolio of Md Mehedi Hasan Naeem — computer vision, privacy-preserving edge AI, and useful digital systems." /><link rel="canonical" href={`https://mehedinaeem.dev${location.pathname}`} /></Helmet><a className="skip-link" href="#main-content">Skip to main content</a><PortfolioNavbar /><main id="main-content">
+  {home && <><section id="home" className="pf-hero"><div className="pf-hero-content"><p className="pf-eyebrow">Research · Engineering · Community</p><h1>Mehedi Hasan<br /><span>Naeem.</span></h1><h2>Researching vision.<br />Building useful systems.</h2><p>{p.intro}</p><div className="pf-actions"><a className="pf-primary" href="#research">Explore my research ↗</a><a className="pf-secondary" href={p.cv} download>Download CV ↓</a></div><Links items={p.socials.slice(0,4)} /><p className="pf-location">{p.location} · {p.institutionShort}</p></div><Portrait profile={p} /></section><div className="pf-research-strip"><span><strong>07</strong> Conference papers</span><span><strong>06</strong> First-author papers</span><span><strong>01</strong> Published in IEEE Xplore</span><a href="#research">View research status ↗</a></div><Section id="about" eyebrow="A little context" title="Research with a practical purpose."><div className="pf-about"><div>{p.about.map(t => <p key={t}>{t}</p>)}<h3>Research interests</h3><div className="pf-tags">{p.interests.map(t => <span key={t}>{t}</span>)}</div></div><aside className="pf-card pf-education"><p className="pf-eyebrow">Education</p>{data.education.map(e => <div key={e.degree}><h3>{e.degree}</h3><p>{e.university}</p><p>{e.period}</p><p>Expected completion: {e.expectedCompletion}</p><details><summary>Relevant coursework</summary><p>{e.coursework.join(' · ')}</p></details></div>)}</aside></div></Section></>}
+  {(!projectRoute) && (paper ? <Section id="research" eyebrow="Research record" title="Research details"><h3>{paper.title}</h3><PaperReading paper={paper} /></Section> : slug ? <Section title="Research record not found"><a href="/research">Browse research</a></Section> : <Research />)}
+  {(!researchRoute) && <Projects project={project} slug={slug} />}
+  {home && <><ExperienceTimeline entries={data.experience} /><Section id="awards" eyebrow="04 / Recognition" title="Milestones along the way."><div className="pf-grid">{data.awards.map(i => <EvidenceCard key={i.id} item={i} />)}</div></Section><Section id="certifications" eyebrow="Continued learning" title="Credentials & training."><div className="pf-grid">{data.certifications.map(i => <EvidenceCard key={i.id} item={i} />)}</div></Section><Section id="conferences" eyebrow="05 / Research community" title="Sharing work. Exchanging ideas."><div className="pf-grid">{data.conferences.map(i => <EvidenceCard key={i.id} item={i} />)}</div></Section><Section id="sports" eyebrow="Beyond the desk" title="Team spirit, on and off the field."><div className="pf-grid">{data.sports.map(i => <EvidenceCard key={i.id} item={i} />)}</div></Section><Section id="skills" eyebrow="06 / Toolkit" title="Tools behind the work."><div className="pf-grid">{data.skills.map(s => <article className="pf-card pf-card-body" key={s.category}><h3>{s.category}</h3><div className="pf-tags">{s.items.map(t => <span key={t}>{t}</span>)}</div></article>)}</div><div className="pf-community">{data.activities.map(a => <div key={a.title}><h3>{a.title}</h3><p>{a.displayDetail || a.detail}</p></div>)}</div></Section></>}
+  <section className="pf-contact" id="contact"><p className="pf-eyebrow">Let’s connect</p><h2>Good work starts<br />with a conversation.</h2><p>For research collaboration, technical projects, and professional opportunities.</p><a className="pf-email" href={`mailto:${p.email}`}>{p.email} ↗</a><Links items={p.socials} /><a href={`tel:${p.phone}`}>{p.phone}</a><p>{p.location}</p></section></main><footer className="pf-footer"><a className="pf-brand" href="/">Naeem<span>.</span></a><p>© {new Date().getFullYear()} {p.name}</p><a href="#main-content">Back to top ↑</a></footer></div>;
+}
