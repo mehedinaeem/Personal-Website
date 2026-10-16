@@ -15,31 +15,16 @@ export const experiences = [
     image: '/assets/optimized/portfolio-preview.webp',
   },
   {
-    position: 'Programming Trainer',
-    organization: 'Mid-Day Programming, JKKNIU',
-    startDate: 'ADD DATE',
-    endDate: 'ADD DATE',
-    location: 'JKKNIU, Bangladesh',
-    responsibilities: [
-      'Conduct programming sessions for junior students.',
-      'Teach problem-solving approaches and programming fundamentals.',
-    ],
-    outcomes: ['Supported junior students through practical programming sessions.'],
-    organizationUrl: null,
-    evidenceUrl: null,
-    image: '/assets/optimized/projects/smart-campus-transport.webp',
-  },
-  {
     position: 'Class Representative',
     organization: 'Jatiya Kabi Kazi Nazrul Islam University',
-    startDate: 'ADD DATE',
-    endDate: 'ADD DATE',
+    startDate: '2023',
+    endDate: '2025',
     location: 'Trishal, Mymensingh, Bangladesh',
     responsibilities: [
       'Managed communication between students and the department.',
       'Represented class concerns and supported academic coordination.',
     ],
-    outcomes: ['Served as class representative for more than 1.5 years.'],
+    outcomes: ['Served as class representative from 2023 to 2025.'],
     organizationUrl: 'https://jkkniu.edu.bd/',
     evidenceUrl: null,
     image: '/assets/optimized/projects/food-waste-ml.webp',
@@ -47,8 +32,8 @@ export const experiences = [
   {
     position: 'Intel Student Ambassador',
     organization: 'Intel Corporation',
-    startDate: '2025',
-    endDate: 'Present',
+    startDate: 'Jun 2025',
+    endDate: 'Sep 2025',
     location: 'Bangladesh',
     responsibilities: [
       'Promote Intel technologies, including oneAPI and AI tools.',
@@ -77,8 +62,8 @@ export const experiences = [
   {
     position: 'Senior Vice President',
     organization: 'JKKNIU Model United Nations Club',
-    startDate: 'ADD DATE',
-    endDate: 'Present',
+    startDate: '2024',
+    endDate: '2025',
     location: 'JKKNIU, Bangladesh',
     responsibilities: [
       'Manage events and organizational activities.',

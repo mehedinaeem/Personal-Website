@@ -10,12 +10,12 @@ import { HelmetProvider } from 'react-helmet-async';
 import { AuthProvider, ThemeProvider } from './context';
 import { ErrorBoundary, ProtectedRoute, MainLayout } from './components';
 
-const HomePage = lazy(() => import('./pages/public/HomePage'));
+const Portfolio = lazy(() => import('./portfolio/Portfolio'));
 const NotFoundPage = lazy(() => import('./pages/public/NotFoundPage'));
-const PublicProjectsPage = lazy(() => import('./pages/public/ProjectsPage'));
-const ProjectDetailsPage = lazy(() => import('./pages/public/ProjectDetailsPage'));
-const ResearchPage = lazy(() => import('./pages/public/ResearchPage'));
-const PublicationDetailsPage = lazy(() => import('./pages/public/PublicationDetailsPage'));
+
+
+
+
 const PrivacyPage = lazy(() => import('./pages/public/PrivacyPage'));
 const LoginPage = lazy(() => import('./pages/admin/LoginPage'));
 const AdminLayout = lazy(() => import('./pages/admin/AdminLayout'));
@@ -55,12 +55,12 @@ const App = () => {
               <Suspense fallback={<div className="min-h-screen grid place-items-center" role="status">Loading…</div>}>
               <Routes>
                 {/* Public Routes */}
+                <Route path="/" element={<Portfolio />} />
+                <Route path="/projects" element={<Portfolio />} />
+                <Route path="/projects/:slug" element={<Portfolio />} />
+                <Route path="/research" element={<Portfolio />} />
+                <Route path="/research/:slug" element={<Portfolio />} />
                 <Route element={<MainLayout />}>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/projects" element={<PublicProjectsPage />} />
-                  <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
-                  <Route path="/research" element={<ResearchPage />} />
-                  <Route path="/research/:slug" element={<PublicationDetailsPage />} />
                   <Route path="/privacy" element={<PrivacyPage />} />
                 </Route>
 

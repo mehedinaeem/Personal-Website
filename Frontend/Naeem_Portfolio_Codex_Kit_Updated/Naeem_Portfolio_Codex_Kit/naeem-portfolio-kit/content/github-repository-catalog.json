@@ -1,0 +1,420 @@
+{
+  "retrievedAt": "2026-10-15",
+  "profile": "https://github.com/mehedinaeem",
+  "repositories": [
+    {
+      "name": "Personal-Website",
+      "html_url": "https://github.com/mehedinaeem/Personal-Website",
+      "description": null,
+      "language": "JavaScript",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Spam_Email_Naive_Bayes",
+      "html_url": "https://github.com/mehedinaeem/Spam_Email_Naive_Bayes",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "AOS",
+      "html_url": "https://github.com/mehedinaeem/AOS",
+      "description": null,
+      "language": "JavaScript",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "JKKNIU-MUNC",
+      "html_url": "https://github.com/mehedinaeem/JKKNIU-MUNC",
+      "description": null,
+      "language": "JavaScript",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Bitol_Computer_Vision_System",
+      "html_url": "https://github.com/mehedinaeem/Bitol_Computer_Vision_System",
+      "description": null,
+      "language": "Jupyter Notebook",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "SmartPresence",
+      "html_url": "https://github.com/mehedinaeem/SmartPresence",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "ThetreStageAI",
+      "html_url": "https://github.com/mehedinaeem/ThetreStageAI",
+      "description": null,
+      "language": "Jupyter Notebook",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "JKKNIU-Research-Society",
+      "html_url": "https://github.com/mehedinaeem/JKKNIU-Research-Society",
+      "description": null,
+      "language": "TypeScript",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "restaurant-food-management-ml",
+      "html_url": "https://github.com/mehedinaeem/restaurant-food-management-ml",
+      "description": null,
+      "language": "Jupyter Notebook",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "OppurtunityCorner",
+      "html_url": "https://github.com/mehedinaeem/OppurtunityCorner",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "DSP",
+      "html_url": "https://github.com/mehedinaeem/DSP",
+      "description": null,
+      "language": "C++",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "OFFICE-ENERGY-MONITOR",
+      "html_url": "https://github.com/mehedinaeem/OFFICE-ENERGY-MONITOR",
+      "description": null,
+      "language": "JavaScript",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "XTTS-Text_to_Voice",
+      "html_url": "https://github.com/mehedinaeem/XTTS-Text_to_Voice",
+      "description": null,
+      "language": "HTML",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Hybrid_Attendance_System",
+      "html_url": "https://github.com/mehedinaeem/Hybrid_Attendance_System",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "EDA-kc_house_data",
+      "html_url": "https://github.com/mehedinaeem/EDA-kc_house_data",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Smart-Campus-Smart-Transport",
+      "html_url": "https://github.com/mehedinaeem/Smart-Campus-Smart-Transport",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "mehedinaeem",
+      "html_url": "https://github.com/mehedinaeem/mehedinaeem",
+      "description": null,
+      "language": null,
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Lumo",
+      "html_url": "https://github.com/mehedinaeem/Lumo",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "lumo-speech-dataset",
+      "html_url": "https://github.com/mehedinaeem/lumo-speech-dataset",
+      "description": "LUMO Multilingual Speech Dataset for evaluating offline voice assistants and edge AI speech systems (English & Bangla).",
+      "language": null,
+      "homepage": "",
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Essential-code-for-Vs",
+      "html_url": "https://github.com/mehedinaeem/Essential-code-for-Vs",
+      "description": null,
+      "language": null,
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "Lab-3rd-Year",
+      "html_url": "https://github.com/mehedinaeem/Lab-3rd-Year",
+      "description": null,
+      "language": "C++",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "FoodManagement",
+      "html_url": "https://github.com/mehedinaeem/FoodManagement",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "SmartFarm",
+      "html_url": "https://github.com/mehedinaeem/SmartFarm",
+      "description": null,
+      "language": null,
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "bus_tracker",
+      "html_url": "https://github.com/mehedinaeem/bus_tracker",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "web",
+      "html_url": "https://github.com/mehedinaeem/web",
+      "description": null,
+      "language": "PHP",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "LAB",
+      "html_url": "https://github.com/mehedinaeem/LAB",
+      "description": null,
+      "language": "C++",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "Research",
+      "html_url": "https://github.com/mehedinaeem/Research",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "SimpleEcommerce",
+      "html_url": "https://github.com/mehedinaeem/SimpleEcommerce",
+      "description": null,
+      "language": "HTML",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Mamar_Bank",
+      "html_url": "https://github.com/mehedinaeem/Mamar_Bank",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "SmartStudyAi",
+      "html_url": "https://github.com/mehedinaeem/SmartStudyAi",
+      "description": "Summarize, learn, and quiz smarter with AI",
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "LAB--3rd-Year-",
+      "html_url": "https://github.com/mehedinaeem/LAB--3rd-Year-",
+      "description": null,
+      "language": "PHP",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "ECommerceApp",
+      "html_url": "https://github.com/mehedinaeem/ECommerceApp",
+      "description": null,
+      "language": "C#",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "AppBazar",
+      "html_url": "https://github.com/mehedinaeem/AppBazar",
+      "description": null,
+      "language": "C#",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "portfolio",
+      "html_url": "https://github.com/mehedinaeem/portfolio",
+      "description": null,
+      "language": "JavaScript",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "dummydb",
+      "html_url": "https://github.com/mehedinaeem/dummydb",
+      "description": "practice for database query",
+      "language": null,
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "PROJECT",
+      "html_url": "https://github.com/mehedinaeem/PROJECT",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Excercise-Python",
+      "html_url": "https://github.com/mehedinaeem/Excercise-Python",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "Clima_tech",
+      "html_url": "https://github.com/mehedinaeem/Clima_tech",
+      "description": null,
+      "language": "HTML",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Alex-ICPC-Training-2023",
+      "html_url": "https://github.com/mehedinaeem/Alex-ICPC-Training-2023",
+      "description": null,
+      "language": "C++",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "Code",
+      "html_url": "https://github.com/mehedinaeem/Code",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Flight-schedular---delay-notification",
+      "html_url": "https://github.com/mehedinaeem/Flight-schedular---delay-notification",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Flight_Scheduler",
+      "html_url": "https://github.com/mehedinaeem/Flight_Scheduler",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "Camera_project",
+      "html_url": "https://github.com/mehedinaeem/Camera_project",
+      "description": null,
+      "language": "Python",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "main"
+    },
+    {
+      "name": "STL",
+      "html_url": "https://github.com/mehedinaeem/STL",
+      "description": null,
+      "language": "C++",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "EXERCISE",
+      "html_url": "https://github.com/mehedinaeem/EXERCISE",
+      "description": null,
+      "language": "C++",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    },
+    {
+      "name": "Hakerrank",
+      "html_url": "https://github.com/mehedinaeem/Hakerrank",
+      "description": null,
+      "language": "C++",
+      "homepage": null,
+      "fork": false,
+      "default_branch": "master"
+    }
+  ]
+}
